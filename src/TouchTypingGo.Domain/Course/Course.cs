@@ -22,6 +22,11 @@ namespace TouchTypingGo.Domain.Course
 
             }
         }
+
+        private Course()
+        {
+              
+        }
         public string Code { get; private set; }
         public string Name { get; private set; }
 
@@ -50,5 +55,23 @@ namespace TouchTypingGo.Domain.Course
                  .Length(2, 150).WithMessage("Onome precisa ter entre 2 e 150 caracteres");
         }
         #endregion
+
+        public static class CourseFactory
+        {
+            public static Course NewCompleteCourse(string code, string name, DateTime limitDate, Teacher teacher)
+            {
+                var course = new Course()
+                {
+                    Code =  code,
+                    Name = name,
+                    LimitDate = limitDate
+                };
+
+                if (teacher != null)
+                
+                    course.Teacher = new Teacher("","");
+                return course;
+            }
+        }
     }
 }

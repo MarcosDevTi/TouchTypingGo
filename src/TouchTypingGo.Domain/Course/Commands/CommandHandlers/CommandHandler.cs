@@ -24,7 +24,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
             foreach (var error in validationResult.Errors)
             {
                 Console.WriteLine(error.ErrorMessage);
-                _bus.RiseEvent(new DomainDotification(error.PropertyName, error.ErrorMessage));
+                _bus.RaiseEvent(new DomainDotification(error.PropertyName, error.ErrorMessage));
             }
         }
 
@@ -35,7 +35,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
             if (commandResponse.Success) return true;
 
             Console.WriteLine("Ocorreu um erro ao salvar os dados no banco");
-            _bus.RiseEvent(new DomainDotification("Commit", "Ocorreu um erro ao salvar os dados no banco"));
+            _bus.RaiseEvent(new DomainDotification("Commit", "Ocorreu um erro ao salvar os dados no banco"));
             return false;
         }
     }

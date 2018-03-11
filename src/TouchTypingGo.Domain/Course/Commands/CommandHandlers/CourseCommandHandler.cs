@@ -25,31 +25,56 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
         public void Handle(CourseRegisterCommand message)
         {
             var course = new Domain.Course.Course(message.Code, message.Name, message.LimitDate);
-            if (!course.IsValid())
-            {
-                ValidationsErrorNotification(course.ValidationResult);
-                return;
-            }
+            if (!CouseValid(course)) return;
             // Validações de negócio
 
             //Persistência
             _courseRepository.Add(course);
 
-            if (Commit())
-            {
-                Console.WriteLine("Curso registrado com sucesso");
-                _bus.RiseEvent(new CourseRegisterEvent(course.Name, course.LimitDate));
-            }
+            if (!Commit()) return;
+            Console.WriteLine("Curso registrado com sucesso");
+            _bus.RaiseEvent(new CourseRegisterEvent(course.Name, course.LimitDate));
         }
 
         public void Handle(CourseUpdateCommand message)
         {
-            throw new NotImplementedException();
+            if (ExistingCourse(message.Id, message.MessageType)) return;
+
+            var course = Course.CourseFactory.NewCompleteCourse(message.Code, message.Name, message.LimitDate, null);
+
+            if (!CouseValid(course)) return;
+
+            _courseRepository.Update(course);
+            if (Commit())
+            {
+                _bus.RaiseEvent(new CourseUpdateEvent(course.Code, course.Name, course.LimitDate));
+            }
         }
 
         public void Handle(DeleteCourseCommand message)
         {
-            throw new NotImplementedException();
+            if (ExistingCourse(message.Id, message.MessageType)) return;
+
+            _courseRepository.Remove(message.Id);
+            if (Commit())
+            {
+                _bus.RaiseEvent(new CourseDeleteEvent(message.Id));
+            }
+        }
+
+        private bool CouseValid(Course course)
+        {
+            if (course.IsValid()) return true;
+            ValidationsErrorNotification(course.ValidationResult);
+            return false;
+        }
+
+        private bool ExistingCourse(Guid id, string messageType)
+        {
+            var course = _courseRepository.GetById(id);
+            if (course != null) return true;
+            _bus.RaiseEvent(new DomainDotification(messageType, "Evento não encontrado"));
+            return false;
         }
     }
 }

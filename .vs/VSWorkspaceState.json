@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\TouchTypingGo.Domain.Core\\Events"
+    "\\src\\TouchTypingGo.Domain",
+    "\\src\\TouchTypingGo.Domain.Core",
+    "\\src\\TouchTypingGo.Domain.Core\\Bus",
+    "\\src\\TouchTypingGo.Domain.Core\\Events",
+    "\\src\\TouchTypingGo.Domain\\Course",
+    "\\src\\TouchTypingGo.Domain\\Course\\Commands",
+    "\\src\\TouchTypingGo.Domain\\Course\\Commands\\CommandHandlers"
   ],
-  "SelectedNode": "\\src",
   "PreviewInSolutionExplorer": false
 }
