@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{8B722BB1-0A43-43AC-98F9-22E36F989348}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{0AB9FABB-73DA-4F17-A69F-CEAF03744E54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{0CFD3C50-C883-4680-9166-A4616F2F26EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.Domain", "src\TouchTypingGo.Domain\TouchTypingGo.Domain.csproj", "{FB84BF3B-20B7-43D7-8499-A908DDACC636}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.Domain.Core", "src\TouchTypingGo.Domain.Core\TouchTypingGo.Domain.Core.csproj", "{0A167446-574B-4BB5-821F-48FBD41B1F60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.ConsoleTesting", "src\TouchTypingGo.ConsoleTesting\TouchTypingGo.ConsoleTesting.csproj", "{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB84BF3B-20B7-43D7-8499-A908DDACC636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB84BF3B-20B7-43D7-8499-A908DDACC636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB84BF3B-20B7-43D7-8499-A908DDACC636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB84BF3B-20B7-43D7-8499-A908DDACC636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A167446-574B-4BB5-821F-48FBD41B1F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A167446-574B-4BB5-821F-48FBD41B1F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A167446-574B-4BB5-821F-48FBD41B1F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A167446-574B-4BB5-821F-48FBD41B1F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB84BF3B-20B7-43D7-8499-A908DDACC636} = {0CFD3C50-C883-4680-9166-A4616F2F26EB}
+		{0A167446-574B-4BB5-821F-48FBD41B1F60} = {0CFD3C50-C883-4680-9166-A4616F2F26EB}
+		{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F} = {0CFD3C50-C883-4680-9166-A4616F2F26EB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {749449B9-D054-4FA6-B48B-2321A70FD61E}
+	EndGlobalSection
+EndGlobal
