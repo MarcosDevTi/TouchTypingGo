@@ -10,7 +10,7 @@ namespace TouchTypingGo.Domain.Course
         public Course(
             string code,
             string name,
-            DateTime limitDate,
+            DateTime? limitDate,
             Guid teacherId)
         {
             Id = Guid.NewGuid();
@@ -21,11 +21,11 @@ namespace TouchTypingGo.Domain.Course
             //DateCreated = new DateTime();
         }
 
-        private Course(){}
+        protected Course(){}
         public string Code { get; private set; }
         public string Name { get; private set; }
 
-        public DateTime LimitDate { get; private set; }
+        public DateTime? LimitDate { get; private set; }
         public virtual ICollection<LeconPresentation> Lecons { get; private set; }
         public virtual ICollection<Student> Students { get; private set; }
         public Guid TeacherId { get; private set; }

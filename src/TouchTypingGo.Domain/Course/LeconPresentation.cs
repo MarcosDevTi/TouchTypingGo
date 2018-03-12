@@ -12,11 +12,11 @@ namespace TouchTypingGo.Domain.Course
         public int TimeReference { get; set; }
         public int PrecisionReference { get; set; }
         public int FontSize { get; set; }
-        public ICollection<Course> Courses { get; private set; }
-
+        public virtual ICollection<Course> Courses { get; private set; }
+        public virtual ICollection<LeconResult> LeconResults { get; private set; }
         public override bool IsValid()
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

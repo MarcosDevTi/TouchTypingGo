@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FluentValidation;
 using TouchTypingGo.Domain.Core.Entities;
 
@@ -23,7 +24,7 @@ namespace TouchTypingGo.Domain.Course
         public string Name { get; set; }
         public string Email { get; set; }
         public Guid CourseId { get; private set; }
-        public virtual Course Course { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
         public override bool IsValid()
         {
             RuleFor(c => c.Name)

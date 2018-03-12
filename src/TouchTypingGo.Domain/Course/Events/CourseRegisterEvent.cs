@@ -9,7 +9,7 @@ namespace TouchTypingGo.Domain.Course.Events
     {
         public CourseRegisterEvent(
             string name,
-            DateTime limitDate)
+            DateTime? limitDate)
         {
             Name = name;
             LimitDate = limitDate;

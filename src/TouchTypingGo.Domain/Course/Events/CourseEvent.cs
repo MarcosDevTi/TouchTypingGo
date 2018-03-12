@@ -10,6 +10,6 @@ namespace TouchTypingGo.Domain.Course.Events
         public Guid Id { get; protected set; }
         public string Code { get; protected set; }
         public string Name { get; protected set; }
-        public DateTime LimitDate { get; protected set; }
+        public DateTime? LimitDate { get; protected set; }
     }
 }

@@ -13,7 +13,7 @@ namespace TouchTypingGo.Domain.Course
 
         public override bool IsValid()
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

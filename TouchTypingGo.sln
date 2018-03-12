@@ -9,11 +9,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Service
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{0CFD3C50-C883-4680-9166-A4616F2F26EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.Domain", "src\TouchTypingGo.Domain\TouchTypingGo.Domain.csproj", "{FB84BF3B-20B7-43D7-8499-A908DDACC636}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.Domain", "src\TouchTypingGo.Domain\TouchTypingGo.Domain.csproj", "{FB84BF3B-20B7-43D7-8499-A908DDACC636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.Domain.Core", "src\TouchTypingGo.Domain.Core\TouchTypingGo.Domain.Core.csproj", "{0A167446-574B-4BB5-821F-48FBD41B1F60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.Domain.Core", "src\TouchTypingGo.Domain.Core\TouchTypingGo.Domain.Core.csproj", "{0A167446-574B-4BB5-821F-48FBD41B1F60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.ConsoleTesting", "src\TouchTypingGo.ConsoleTesting\TouchTypingGo.ConsoleTesting.csproj", "{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.ConsoleTesting", "src\TouchTypingGo.ConsoleTesting\TouchTypingGo.ConsoleTesting.csproj", "{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{33DC379C-5577-4BF1-A368-DF4813AE207F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{A36E8390-6005-4859-A82F-963501547376}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{380DB3AC-72B2-45D4-8D87-9F8510940D96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.Infra.Data", "src\TouchTypingGo.Infra.Data\TouchTypingGo.Infra.Data.csproj", "{D2433E8A-E0DA-403E-A805-BCDE261A020E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.UI", "src\TouchTypingGo.UI\TouchTypingGo.UI.csproj", "{CB8B649F-FC27-4BFC-844A-21FEAB851935}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +43,14 @@ Global
 		{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2433E8A-E0DA-403E-A805-BCDE261A020E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2433E8A-E0DA-403E-A805-BCDE261A020E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2433E8A-E0DA-403E-A805-BCDE261A020E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2433E8A-E0DA-403E-A805-BCDE261A020E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB8B649F-FC27-4BFC-844A-21FEAB851935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB8B649F-FC27-4BFC-844A-21FEAB851935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB8B649F-FC27-4BFC-844A-21FEAB851935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB8B649F-FC27-4BFC-844A-21FEAB851935}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +59,10 @@ Global
 		{FB84BF3B-20B7-43D7-8499-A908DDACC636} = {0CFD3C50-C883-4680-9166-A4616F2F26EB}
 		{0A167446-574B-4BB5-821F-48FBD41B1F60} = {0CFD3C50-C883-4680-9166-A4616F2F26EB}
 		{5D5CEE37-54D1-4790-B4B3-7E489ADDF29F} = {0CFD3C50-C883-4680-9166-A4616F2F26EB}
+		{A36E8390-6005-4859-A82F-963501547376} = {33DC379C-5577-4BF1-A368-DF4813AE207F}
+		{380DB3AC-72B2-45D4-8D87-9F8510940D96} = {33DC379C-5577-4BF1-A368-DF4813AE207F}
+		{D2433E8A-E0DA-403E-A805-BCDE261A020E} = {A36E8390-6005-4859-A82F-963501547376}
+		{CB8B649F-FC27-4BFC-844A-21FEAB851935} = {8B722BB1-0A43-43AC-98F9-22E36F989348}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {749449B9-D054-4FA6-B48B-2321A70FD61E}
