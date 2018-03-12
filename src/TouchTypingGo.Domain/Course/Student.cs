@@ -8,8 +8,8 @@ namespace TouchTypingGo.Domain.Course
     {
         public string Name { get; set; }
         public string Email { get; set; }
-        public ICollection<Course> Course { get; private set; }
-        public ICollection<LeconResult> LeconResults { get; private set; }
+        public virtual ICollection<Course> Course { get; private set; }
+        public virtual ICollection<LeconResult> LeconResults { get; private set; }
 
         public override bool IsValid()
         {

@@ -9,5 +9,6 @@ namespace TouchTypingGo.Domain.Course.Commands
         public string Code { get; protected set; }
         public string Name { get; protected set; }
         public DateTime LimitDate { get; protected set; }
+        public Guid TeacherId { get; protected set; }
     }
 }

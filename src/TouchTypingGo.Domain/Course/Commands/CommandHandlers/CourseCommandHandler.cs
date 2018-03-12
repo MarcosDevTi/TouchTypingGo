@@ -24,7 +24,8 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
         }
         public void Handle(CourseRegisterCommand message)
         {
-            var course = new Domain.Course.Course(message.Code, message.Name, message.LimitDate);
+           
+            var course = Course.CourseFactory.NewCourseFactory(message.Code, message.Name, message.LimitDate, message.TeacherId);
             if (!CouseValid(course)) return;
             // Validações de negócio
 
@@ -40,7 +41,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
         {
             if (ExistingCourse(message.Id, message.MessageType)) return;
 
-            var course = Course.CourseFactory.NewCompleteCourse(message.Code, message.Name, message.LimitDate, null);
+            var course = Course.CourseFactory.NewCourseFactory(message.Code, message.Name, message.LimitDate, message.TeacherId);
 
             if (!CouseValid(course)) return;
 

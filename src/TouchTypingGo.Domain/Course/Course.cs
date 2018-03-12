@@ -10,30 +10,39 @@ namespace TouchTypingGo.Domain.Course
         public Course(
             string code,
             string name,
-            DateTime dateLimit)
+            DateTime limitDate,
+            Guid teacherId)
         {
             Id = Guid.NewGuid();
             Code = code;
             Name = name;
+            LimitDate = limitDate;
+            TeacherId = teacherId;
             //DateCreated = new DateTime();
-
-            if (Name.Length < 3)
-            {
-
-            }
         }
 
-        private Course()
-        {
-              
-        }
+        private Course(){}
         public string Code { get; private set; }
         public string Name { get; private set; }
 
         public DateTime LimitDate { get; private set; }
-        public ICollection<LeconPresentation> Lecons { get; private set; }
-        public ICollection<Student> Students { get; private set; }
-        public Teacher Teacher { get;private set; }
+        public virtual ICollection<LeconPresentation> Lecons { get; private set; }
+        public virtual ICollection<Student> Students { get; private set; }
+        public Guid TeacherId { get; private set; }
+        public virtual Teacher Teacher { get;private set; }
+        public bool Deleted { get; private set; }
+
+        public void SetTeacher(Teacher teacher)
+        {
+            if (!teacher.IsValid()) return;
+            Teacher = teacher;
+        }
+
+        public void DeleteCourse()
+        {
+            //TODO: Deve validar alguma regra?
+            Deleted = true;
+        }
 
         public override bool IsValid()
         {
@@ -46,6 +55,9 @@ namespace TouchTypingGo.Domain.Course
         {
             ValidateName();
             ValidationResult = Validate(this);
+
+            //Aditionals validations
+            TeacherValidation();
         }
 
         private void ValidateName()
@@ -54,22 +66,30 @@ namespace TouchTypingGo.Domain.Course
                  .NotEmpty().WithMessage("O nome não pode ser vazio")
                  .Length(2, 150).WithMessage("Onome precisa ter entre 2 e 150 caracteres");
         }
+
+        private void TeacherValidation()
+        {
+            if (Teacher.IsValid()) return;
+
+            foreach (var error in Teacher.ValidationResult.Errors)
+            {
+                ValidationResult.Errors.Add(error);
+            }
+        }
         #endregion
 
         public static class CourseFactory
         {
-            public static Course NewCompleteCourse(string code, string name, DateTime limitDate, Teacher teacher)
+            public static Course NewCourseFactory(string code, string name, DateTime limitDate, Guid teacherId)
             {
                 var course = new Course()
                 {
                     Code =  code,
                     Name = name,
-                    LimitDate = limitDate
+                    LimitDate = limitDate,
+                    TeacherId = teacherId
                 };
 
-                if (teacher != null)
-                
-                    course.Teacher = new Teacher("","");
                 return course;
             }
         }

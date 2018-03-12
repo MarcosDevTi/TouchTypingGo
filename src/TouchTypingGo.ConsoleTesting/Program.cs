@@ -7,7 +7,7 @@ namespace TouchTypingGo.ConsoleTesting
     {
         static void Main(string[] args)
         {
-            var course = new Course("Aghjgk", "f", DateTime.Now);
+            var course = new Course("AS45A", "Curso Teste", DateTime.MaxValue, Guid.NewGuid());
 
             Console.WriteLine(course.ToString());
 

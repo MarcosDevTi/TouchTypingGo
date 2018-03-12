@@ -7,11 +7,13 @@ namespace TouchTypingGo.Domain.Course.Commands
         public CourseRegisterCommand(
             string code, 
             string name, 
-            DateTime limitDate)
+            DateTime limitDate,
+            Guid teacherId)
         {
             Code = code;
             Name = name;
             LimitDate = limitDate;
+            TeacherId = teacherId;
         }
     }
 }
