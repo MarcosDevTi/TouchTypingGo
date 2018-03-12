@@ -21,9 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{380DB3AC-72B2-45D4-8D87-9F8510940D96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.Infra.Data", "src\TouchTypingGo.Infra.Data\TouchTypingGo.Infra.Data.csproj", "{D2433E8A-E0DA-403E-A805-BCDE261A020E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.Infra.Data", "src\TouchTypingGo.Infra.Data\TouchTypingGo.Infra.Data.csproj", "{D2433E8A-E0DA-403E-A805-BCDE261A020E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.UI", "src\TouchTypingGo.UI\TouchTypingGo.UI.csproj", "{CB8B649F-FC27-4BFC-844A-21FEAB851935}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.UI", "src\TouchTypingGo.UI\TouchTypingGo.UI.csproj", "{CB8B649F-FC27-4BFC-844A-21FEAB851935}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

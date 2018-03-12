@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using TouchTypingGo.Domain.Core.Entities;
 
 namespace TouchTypingGo.Domain.Course
@@ -18,7 +19,9 @@ namespace TouchTypingGo.Domain.Course
         public bool Active { get; private set; }
         public Guid LeconPresentationId { get; private set; }
         public virtual LeconPresentation LeconPresentation { get; private set; }
+        [NotMapped]
         public virtual ICollection<Student> Students { get; private set; }
+        [NotMapped]
         public virtual ICollection<Course> Courses { get; private set; }
 
         public override bool IsValid()

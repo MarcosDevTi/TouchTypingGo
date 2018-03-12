@@ -1,0 +1,4 @@
+C:\touchtypinggo\TouchTypingGo\TouchTypingGo.Data.Test\obj\Debug\netstandard2.0\TouchTypingGo.Data.Test.csprojResolveAssemblyReference.cache
+C:\touchtypinggo\TouchTypingGo\TouchTypingGo.Data.Test\obj\Debug\netstandard2.0\TouchTypingGo.Data.Test.csproj.CoreCompileInputs.cache
+C:\touchtypinggo\TouchTypingGo\TouchTypingGo.Data.Test\obj\Debug\netstandard2.0\TouchTypingGo.Data.Test.AssemblyInfoInputs.cache
+C:\touchtypinggo\TouchTypingGo\TouchTypingGo.Data.Test\obj\Debug\netstandard2.0\TouchTypingGo.Data.Test.AssemblyInfo.cs

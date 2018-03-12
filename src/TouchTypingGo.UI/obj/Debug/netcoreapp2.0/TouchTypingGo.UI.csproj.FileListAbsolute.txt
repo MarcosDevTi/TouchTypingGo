@@ -10,3 +10,10 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\Touc
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\TouchTypingGo.UI.AssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\TouchTypingGo.UI.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\TouchTypingGo.UI.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\appsettings.json
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.Data.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.Data.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.pdb

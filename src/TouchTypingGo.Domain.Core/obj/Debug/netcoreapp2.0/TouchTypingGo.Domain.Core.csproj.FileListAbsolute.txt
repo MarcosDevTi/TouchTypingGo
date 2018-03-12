@@ -14,4 +14,3 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreap
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.AssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
-C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.csprojResolveAssemblyReference.cache

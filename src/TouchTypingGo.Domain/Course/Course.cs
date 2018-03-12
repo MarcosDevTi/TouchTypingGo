@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using FluentValidation;
 using TouchTypingGo.Domain.Core.Entities;
 
@@ -26,7 +27,9 @@ namespace TouchTypingGo.Domain.Course
         public string Name { get; private set; }
 
         public DateTime? LimitDate { get; private set; }
+        [NotMapped]
         public virtual ICollection<LeconPresentation> Lecons { get; private set; }
+        [NotMapped]
         public virtual ICollection<Student> Students { get; private set; }
         public Guid TeacherId { get; private set; }
         public virtual Teacher Teacher { get;private set; }
