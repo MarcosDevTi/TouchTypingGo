@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using TouchTypingGo.Application.ViewModels;
+
+namespace TouchTypingGo.Application.Interfaces
+{
+    public interface ICourseAppService : IDisposable
+    {
+        void Add(CourseViewModel courseViewModel);
+        IEnumerable<CourseViewModel> GetAll();
+        IEnumerable<CourseViewModel> GetCourseByTeacher(Guid teacherId);
+        CourseViewModel GetById(Guid id);
+        void Update(CourseViewModel courseViewModel);
+        void Delete(Guid id);
+    }
+}

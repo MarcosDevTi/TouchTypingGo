@@ -3,11 +3,11 @@
 namespace TouchTypingGo.Domain.Course.Events.EventHandlers
 {
     public class CourseEventHandler :
-        IHandler<CourseRegisterEvent>,
+        IHandler<CourseAddEvent>,
         IHandler<CourseUpdateEvent>,
         IHandler<CourseDeleteEvent>
     {
-        public void Handle(CourseRegisterEvent message)
+        public void Handle(CourseAddEvent message)
         {
             // Enviar um e-mail
         }

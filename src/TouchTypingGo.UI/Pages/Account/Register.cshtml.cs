@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using TouchTypingGo.UI.Data;
+using TouchTypingGo.UI.Extensions;
 using TouchTypingGo.UI.Services;
 
 namespace TouchTypingGo.UI.Pages.Account

@@ -5,9 +5,9 @@ using TouchTypingGo.Domain.Core.Events;
 
 namespace TouchTypingGo.Domain.Course.Events
 {
-    public class CourseRegisterEvent : CourseEvent
+    public class CourseAddEvent : CourseEvent
     {
-        public CourseRegisterEvent(
+        public CourseAddEvent(
             string name,
             DateTime? limitDate)
         {

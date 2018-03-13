@@ -8,9 +8,9 @@ using TouchTypingGo.Domain.Course.Repository;
 namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
 {
     public class CourseCommandHandler : CommandHandler,
-        IHandler<CourseRegisterCommand>,
+        IHandler<CourseAddCommand>,
         IHandler<CourseUpdateCommand>,
-        IHandler<DeleteCourseCommand>
+        IHandler<CourseDeleteCommand>
     {
         private readonly ICourseRepository _courseRepository;
         private readonly IBus _bus;
@@ -22,7 +22,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
             _courseRepository = courseRepository;
             _bus = bus;
         }
-        public void Handle(CourseRegisterCommand message)
+        public void Handle(CourseAddCommand message)
         {
            
             var course = Course.CourseFactory.NewCourseFactory(message.Code, message.Name, message.LimitDate, message.TeacherId);
@@ -34,7 +34,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
 
             if (!Commit()) return;
             Console.WriteLine("Curso registrado com sucesso");
-            _bus.RaiseEvent(new CourseRegisterEvent(course.Name, course.LimitDate));
+            _bus.RaiseEvent(new CourseAddEvent(course.Name, course.LimitDate));
         }
 
         public void Handle(CourseUpdateCommand message)
@@ -52,7 +52,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
             }
         }
 
-        public void Handle(DeleteCourseCommand message)
+        public void Handle(CourseDeleteCommand message)
         {
             if (ExistingCourse(message.Id, message.MessageType)) return;
 

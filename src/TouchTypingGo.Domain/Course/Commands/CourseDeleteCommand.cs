@@ -2,9 +2,9 @@
 
 namespace TouchTypingGo.Domain.Course.Commands
 {
-    public class DeleteCourseCommand : CourseCommand
+    public class CourseDeleteCommand : CourseCommand
     {
-        public DeleteCourseCommand(Guid id)
+        public CourseDeleteCommand(Guid id)
         {
             Id = id;
             AggregateId = Id;

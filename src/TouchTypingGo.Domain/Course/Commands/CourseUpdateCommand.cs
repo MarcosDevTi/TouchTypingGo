@@ -6,7 +6,7 @@ namespace TouchTypingGo.Domain.Course.Commands
     {
         public CourseUpdateCommand(
             string name,
-            DateTime limitDate)
+            DateTime? limitDate)
         {
             Name = name;
             LimitDate = limitDate;

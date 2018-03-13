@@ -2,12 +2,12 @@
 
 namespace TouchTypingGo.Domain.Course.Commands
 {
-    public class CourseRegisterCommand : CourseCommand
+    public class CourseAddCommand : CourseCommand
     {
-        public CourseRegisterCommand(
+        public CourseAddCommand(
             string code, 
             string name, 
-            DateTime limitDate,
+            DateTime? limitDate,
             Guid teacherId)
         {
             Code = code;

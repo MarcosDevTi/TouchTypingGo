@@ -83,7 +83,7 @@ namespace TouchTypingGo.Domain.Course
 
         public static class CourseFactory
         {
-            public static Course NewCourseFactory(string code, string name, DateTime limitDate, Guid teacherId)
+            public static Course NewCourseFactory(string code, string name, DateTime? limitDate, Guid teacherId)
             {
                 var course = new Course()
                 {

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TouchTypingGo.UI.Data;
+using TouchTypingGo.UI.Extensions;
 using TouchTypingGo.UI.Services;
 
 namespace TouchTypingGo.UI.Pages.Account

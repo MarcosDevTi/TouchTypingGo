@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-TouchTypingGo.Site-77AF43AC-892D-4E6E-BBDD-A4A1AC87FDE8</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TouchTypingGo.Application\TouchTypingGo.Application.csproj" />
+    <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.Bus\TouchTypingGo.Infra.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.IoC\TouchTypingGo.Infra.CrossCutting.IoC.csproj" />
+  </ItemGroup>
+
+</Project>
