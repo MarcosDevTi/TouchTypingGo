@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <UserSecretsId>aspnet-TouchTypingGo.Site-77AF43AC-892D-4E6E-BBDD-A4A1AC87FDE8</UserSecretsId>
+    <UserSecretsId>TouchTypingGo.Site</UserSecretsId>
   </PropertyGroup>
 
 

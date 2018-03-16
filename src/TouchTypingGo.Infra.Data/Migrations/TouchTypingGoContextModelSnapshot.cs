@@ -125,8 +125,6 @@ namespace TouchTypingGo.Infra.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid>("CourseId");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("varchar(150)");

@@ -8,6 +8,7 @@ using AutoMapper;
 using TouchTypingGo.Application.AutoMapper;
 using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Course.Commands;
+using TouchTypingGo.Domain.Course.Commands.Course;
 
 namespace TouchTypingGo.Application.ViewModels
 {
@@ -35,13 +36,16 @@ namespace TouchTypingGo.Application.ViewModels
         public DateTime? LimitDate { get;  set; }
         public virtual ICollection<LeconPresentationViewModel> Lecons { get;  set; }      
         public virtual ICollection<StudentViewModel> Students { get;  set; }
+        public Guid TeacherId { get; set; }
+        [Display(Name = "Professor")]
         public virtual TeacherViewModel Teacher { get;  set; }
        
         public bool Deleted { get;  set; }
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
             configuration.CreateMap<CourseViewModel, CourseAddCommand>()
-                .ConstructUsing(x => new CourseAddCommand(x.Code, x.Name, x.LimitDate, x.Teacher.Id));
+                
+                .ConstructUsing(x => new CourseAddCommand(x.Code, x.Name, x.LimitDate, Guid.NewGuid()));
 
             configuration.CreateMap<CourseViewModel, CourseUpdateCommand>()
                 .ConstructUsing(x => new CourseUpdateCommand(x.Name, x.LimitDate));

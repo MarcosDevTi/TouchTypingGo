@@ -30,7 +30,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
 
         protected bool Commit()
         {
-            if (!_notifications.HasNotifications()) return false;
+            if (_notifications.HasNotifications()) return false;
             var commandResponse = _uow.Commit();
             if (commandResponse.Success) return true;
 

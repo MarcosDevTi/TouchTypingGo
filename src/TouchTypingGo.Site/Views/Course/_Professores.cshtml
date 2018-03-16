@@ -1,0 +1,6 @@
+﻿@using TouchTypingGo.Application.ViewModels
+@model CourseViewModel
+ @{
+     var teachers = (IEnumerable<SelectListItem>) new TeacherViewModel().Teachers();
+ }
+<select asp-for="TeacherId" asp-items="@teachers" class="form-control"></select>

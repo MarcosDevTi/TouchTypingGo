@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TouchTypingGo.Site.Extensions;
 using TouchTypingGo.Site.Models;
 using TouchTypingGo.Site.Models.AccountViewModels;
 using TouchTypingGo.Site.Services;

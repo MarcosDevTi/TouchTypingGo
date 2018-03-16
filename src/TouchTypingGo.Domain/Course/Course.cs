@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using FluentValidation;
+using FluentValidation.Results;
 using TouchTypingGo.Domain.Core.Entities;
 
 namespace TouchTypingGo.Domain.Course
@@ -37,8 +38,10 @@ namespace TouchTypingGo.Domain.Course
 
         public void SetTeacher(Teacher teacher)
         {
-            if (!teacher.IsValid()) return;
-            Teacher = teacher;
+           // if (!teacher.IsValid()) return;
+
+            Teacher = new Teacher("jkjkjda", "email@gmail.com");
+
         }
 
         public void DeleteCourse()

@@ -1,14 +1,23 @@
 ﻿@model IEnumerable<TouchTypingGo.Application.ViewModels.CourseViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista de Cursos";
 }
 
-<h2>Index</h2>
+<h2>@ViewData["Title"]</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <div class="pull-left">
+                <a asp-action="Create" class="btn btn-primary">
+                    <span title="Novo Curso" class="glyphicon glyphicon-plus-sign"> Novo Curso</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -43,9 +52,15 @@
                 @Html.DisplayFor(modelItem => item.Deleted)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a> 
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-search"></span>
+                </a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
             </td>
         </tr>
 }

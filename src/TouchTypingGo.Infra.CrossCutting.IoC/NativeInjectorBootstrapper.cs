@@ -10,6 +10,7 @@ using TouchTypingGo.Domain.Core.Events;
 using TouchTypingGo.Domain.Core.Notifications;
 using TouchTypingGo.Domain.Course.Commands;
 using TouchTypingGo.Domain.Course.Commands.CommandHandlers;
+using TouchTypingGo.Domain.Course.Commands.Course;
 using TouchTypingGo.Domain.Course.Events;
 using TouchTypingGo.Domain.Course.Events.EventHandlers;
 using TouchTypingGo.Domain.Course.Repository;
@@ -43,6 +44,7 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
 
             //Infra - Data
             services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<TouchTypingGoContext>();
 

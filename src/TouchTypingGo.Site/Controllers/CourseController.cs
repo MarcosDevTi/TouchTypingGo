@@ -1,29 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
+using TouchTypingGo.Domain.Core.Notifications;
 
-namespace TouchTypingGo.UI.Controllers
+namespace TouchTypingGo.Site.Controllers
 {
-    public class CourseController : Controller
+    public class CourseController : BaseController
     {
         private readonly ICourseAppService _courseAppService;
 
-        public CourseController(ICourseAppService courseAppService)
+        public CourseController(ICourseAppService courseAppService,
+            IDomainNotificationHandler<DomainDotification> notifications) : base(notifications)
         {
             _courseAppService = courseAppService;
         }
-        // GET: Course
+
         public IActionResult Index()
         {
             return View(_courseAppService.GetAll());
         }
 
-        // GET: Course/Details/5
         public IActionResult Details(Guid? id)
         {
             if (id == null)
@@ -34,13 +31,11 @@ namespace TouchTypingGo.UI.Controllers
             return View(courseViewModel);
         }
 
-        // GET: Course/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Course/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(CourseViewModel courseViewModel)
@@ -48,16 +43,16 @@ namespace TouchTypingGo.UI.Controllers
             if (!ModelState.IsValid) return View(courseViewModel);
            _courseAppService.Add(courseViewModel);
 
+            ViewBag.SuccessCreated = ValidOperation() ? "success,Curso criado com sucesso!" : "error,O curso não foi refistrado, verifique as mensagens";
             return View(courseViewModel);
         }
 
-        // GET: Course/Edit/5
-        public IActionResult Edit(int id)
+        public IActionResult Edit(Guid id)
         {
-            return View();
+            var course = _courseAppService.GetById(id);
+            return View(course);
         }
 
-        // POST: Course/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(CourseViewModel courseViewModel)
@@ -68,7 +63,6 @@ namespace TouchTypingGo.UI.Controllers
             return View(courseViewModel);
         }
 
-        // GET: Course/Delete/5
         public IActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -79,7 +73,6 @@ namespace TouchTypingGo.UI.Controllers
             return View(courseViewModel);
         }
 
-        // POST: Course/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(Guid id)

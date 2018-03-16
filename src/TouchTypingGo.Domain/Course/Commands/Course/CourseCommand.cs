@@ -1,7 +1,7 @@
 ﻿using System;
 using TouchTypingGo.Domain.Core.Commands;
 
-namespace TouchTypingGo.Domain.Course.Commands
+namespace TouchTypingGo.Domain.Course.Commands.Course
 {
     public abstract class CourseCommand : Command
     {

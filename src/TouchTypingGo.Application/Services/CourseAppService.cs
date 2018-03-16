@@ -6,6 +6,7 @@ using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Course.Commands;
+using TouchTypingGo.Domain.Course.Commands.Course;
 using TouchTypingGo.Domain.Course.Repository;
 
 namespace TouchTypingGo.Application.Services
@@ -52,6 +53,7 @@ namespace TouchTypingGo.Application.Services
 
         public CourseViewModel GetById(Guid id)
         {
+            var teste = _mapper.Map<CourseViewModel>(_courseRepository.GetById(id));
             return _mapper.Map<CourseViewModel>(_courseRepository.GetById(id));
         }
 

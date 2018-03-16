@@ -2,10 +2,11 @@
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Events;
 using TouchTypingGo.Domain.Core.Notifications;
+using TouchTypingGo.Domain.Course.Commands.CommandHandlers;
 using TouchTypingGo.Domain.Course.Events;
 using TouchTypingGo.Domain.Course.Repository;
 
-namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
+namespace TouchTypingGo.Domain.Course.Commands.Course
 {
     public class CourseCommandHandler : CommandHandler,
         IHandler<CourseAddCommand>,
@@ -13,22 +14,25 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
         IHandler<CourseDeleteCommand>
     {
         private readonly ICourseRepository _courseRepository;
+        private readonly ITeacherRepository _teacherRepository;
         private readonly IBus _bus;
         public CourseCommandHandler(
             ICourseRepository courseRepository,
+            ITeacherRepository teacherRepository,
             IUnitOfWork uow,
             IBus bus, IDomainNotificationHandler<DomainDotification> notification) : base(uow, bus, notification)
         {
             _courseRepository = courseRepository;
+            _teacherRepository = teacherRepository;
             _bus = bus;
         }
         public void Handle(CourseAddCommand message)
         {
            
-            var course = Course.CourseFactory.NewCourseFactory(message.Code, message.Name, message.LimitDate, message.TeacherId);
-            if (!CouseValid(course)) return;
+            var course = Domain.Course.Course.CourseFactory.NewCourseFactory(message.Code, message.Name, message.LimitDate, message.TeacherId);
+           // if (!CouseValid(course)) return;
             // Validações de negócio
-
+            course.SetTeacher(_teacherRepository.GetById(message.TeacherId));
             //Persistência
             _courseRepository.Add(course);
 
@@ -41,7 +45,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
         {
             if (ExistingCourse(message.Id, message.MessageType)) return;
 
-            var course = Course.CourseFactory.NewCourseFactory(message.Code, message.Name, message.LimitDate, message.TeacherId);
+            var course = Domain.Course.Course.CourseFactory.NewCourseFactory(message.Code, message.Name, message.LimitDate, message.TeacherId);
 
             if (!CouseValid(course)) return;
 
@@ -63,7 +67,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
             }
         }
 
-        private bool CouseValid(Course course)
+        private bool CouseValid(Domain.Course.Course course)
         {
             if (course.IsValid()) return true;
             ValidationsErrorNotification(course.ValidationResult);

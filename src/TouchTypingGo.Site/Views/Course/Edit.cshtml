@@ -1,0 +1,54 @@
+﻿@using TouchTypingGo.Application.ViewModels
+@model CourseViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Code" class="control-label"></label>
+                <input asp-for="Code" class="form-control" />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LimitDate" class="control-label"></label>
+                <input asp-for="LimitDate" class="form-control" />
+                <span asp-validation-for="LimitDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Teacher" class="control-label"></label>
+                <div class="col-md-10">
+                    @Html.Partial("_Professores")
+                </div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Deleted" /> @Html.DisplayNameFor(model => model.Deleted)
+                    </label>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

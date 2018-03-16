@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TouchTypingGo.Domain.Course.Commands
+namespace TouchTypingGo.Domain.Course.Commands.Course
 {
     public class CourseDeleteCommand : CourseCommand
     {

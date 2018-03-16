@@ -25,5 +25,7 @@ namespace TouchTypingGo.Site.Data
         }
 
         public DbSet<TouchTypingGo.Application.ViewModels.CourseViewModel> CourseViewModel { get; set; }
+
+        public DbSet<TouchTypingGo.Application.ViewModels.TeacherViewModel> TeacherViewModel { get; set; }
     }
 }

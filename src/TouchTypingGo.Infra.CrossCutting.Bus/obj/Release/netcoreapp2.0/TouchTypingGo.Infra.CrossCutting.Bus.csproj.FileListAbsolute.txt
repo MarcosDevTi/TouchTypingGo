@@ -1,0 +1,11 @@
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.deps.json
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\bin\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\bin\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.csprojResolveAssemblyReference.cache
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.csproj.CoreCompileInputs.cache
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.AssemblyInfoInputs.cache
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.AssemblyInfo.cs
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.pdb

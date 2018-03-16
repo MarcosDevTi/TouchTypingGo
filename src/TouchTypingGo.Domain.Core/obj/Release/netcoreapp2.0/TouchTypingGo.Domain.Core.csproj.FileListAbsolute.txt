@@ -1,0 +1,8 @@
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\bin\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.deps.json
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\bin\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\bin\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.csproj.CoreCompileInputs.cache
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.AssemblyInfoInputs.cache
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.AssemblyInfo.cs
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
