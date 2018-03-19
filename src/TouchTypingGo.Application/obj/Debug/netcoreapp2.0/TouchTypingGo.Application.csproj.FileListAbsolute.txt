@@ -1,15 +1,15 @@
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\TouchTypingGo.Application.deps.json
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\TouchTypingGo.Application.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\TouchTypingGo.Application.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\obj\Debug\netcoreapp2.0\TouchTypingGo.Application.csprojResolveAssemblyReference.cache
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\obj\Debug\netcoreapp2.0\TouchTypingGo.Application.csproj.CoreCompileInputs.cache
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\obj\Debug\netcoreapp2.0\TouchTypingGo.Application.AssemblyInfoInputs.cache
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\obj\Debug\netcoreapp2.0\TouchTypingGo.Application.AssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\obj\Debug\netcoreapp2.0\TouchTypingGo.Application.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\obj\Debug\netcoreapp2.0\TouchTypingGo.Application.pdb
-C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
-C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.xml

@@ -16,11 +16,11 @@ namespace TouchTypingGo.Infra.Data.Repository
         {
         }
 
-        public override Teacher GetById(Guid id)
-        {
-            var sql = @"SELECT * FROM TEACHER " +
-                      "WHERE Id = @oid";
-            return Db.Database.GetDbConnection().Query<Teacher>(sql, new {oid = id}).FirstOrDefault();
-        }
+        //public override Teacher GetById(Guid id)
+        //{
+        //    var sql = @"SELECT * FROM TEACHER " +
+        //              "WHERE Id = @oid";
+        //    return Db.Database.GetDbConnection().Query<Teacher>(sql, new {oid = id}).FirstOrDefault();
+        //}
     }
 }

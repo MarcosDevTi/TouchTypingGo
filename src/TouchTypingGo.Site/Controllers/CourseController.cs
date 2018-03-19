@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Notifications;
+using TouchTypingGo.Domain.Interfaces;
 
 namespace TouchTypingGo.Site.Controllers
 {
@@ -11,7 +12,8 @@ namespace TouchTypingGo.Site.Controllers
         private readonly ICourseAppService _courseAppService;
 
         public CourseController(ICourseAppService courseAppService,
-            IDomainNotificationHandler<DomainDotification> notifications) : base(notifications)
+            IDomainNotificationHandler<DomainDotification> notifications,
+            IUser user) : base(notifications, user)
         {
             _courseAppService = courseAppService;
         }
@@ -33,6 +35,7 @@ namespace TouchTypingGo.Site.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.TeachersSelect = _courseAppService.Teachers();
             return View();
         }
 
@@ -40,6 +43,7 @@ namespace TouchTypingGo.Site.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(CourseViewModel courseViewModel)
         {
+           
             if (!ModelState.IsValid) return View(courseViewModel);
            _courseAppService.Add(courseViewModel);
 

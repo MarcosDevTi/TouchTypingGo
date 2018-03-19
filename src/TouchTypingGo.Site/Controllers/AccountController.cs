@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
@@ -10,32 +11,45 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using TouchTypingGo.Site.Extensions;
-using TouchTypingGo.Site.Models;
-using TouchTypingGo.Site.Models.AccountViewModels;
-using TouchTypingGo.Site.Services;
+using TouchTypingGo.Application.Interfaces;
+using TouchTypingGo.Application.ViewModels;
+using TouchTypingGo.Infra.CrossCutting.Identity.Models;
+using TouchTypingGo.Infra.CrossCutting.Identity.Models.AccountViewModels;
+using TouchTypingGo.Infra.CrossCutting.Identity.Services;
+using TouchTypingGo.Domain.Core.Notifications;
+using TouchTypingGo.Domain.Interfaces;
+using TouchTypingGo.Infra.CrossCutting.Identity.Extensions;
+using TouchTypingGo.Site.Controllers.Extentions;
 
 namespace TouchTypingGo.Site.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
+        private readonly IStudentAppService _studentAppService;
+        private readonly ITeacherAppService _teacherAppService;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            IDomainNotificationHandler<DomainDotification> notification, 
+            IStudentAppService studentAppService, 
+            ITeacherAppService teacherAppService,
+            IUser user) : base(notification, user)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            _studentAppService = studentAppService;
+            _teacherAppService = teacherAppService;
         }
 
         [TempData]
@@ -60,8 +74,6 @@ namespace TouchTypingGo.Site.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
@@ -225,6 +237,29 @@ namespace TouchTypingGo.Site.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    if (model.Student)
+                    {
+                        var student = new StudentViewModel
+                        {
+                            Id = Guid.Parse(user.Id),
+                            Name = model.Name,
+                            Email = user.Email
+                        };
+                        _studentAppService.Add(student);
+                    }
+                    if (model.Teacher)
+                    {
+                        var teacher = new TeacherViewModel
+                        {
+                            Id = Guid.Parse(user.Id),
+                            Name = model.Name,
+                            Email = user.Email
+                        };
+                        _teacherAppService.Add(teacher);
+                    }
+                    
+                   
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

@@ -46,6 +46,28 @@ namespace TouchTypingGo.Infra.Data.Migrations
                     b.ToTable("Courses");
                 });
 
+            modelBuilder.Entity("TouchTypingGo.Domain.Course.Keyboard", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("KeyboardContent");
+
+                    b.Property<int>("Lcid");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("ValHtml")
+                        .HasColumnType("varchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Keyboard");
+                });
+
             modelBuilder.Entity("TouchTypingGo.Domain.Course.LeconPresentation", b =>
                 {
                     b.Property<Guid>("Id")
@@ -76,8 +98,6 @@ namespace TouchTypingGo.Infra.Data.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<bool>("Active");
-
-                    b.Property<int>("CourseId");
 
                     b.Property<bool>("EhAuthenticated");
 

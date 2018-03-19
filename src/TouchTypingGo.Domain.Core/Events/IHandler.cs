@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TouchTypingGo.Domain.Core.Events
 {
-    public interface IHandler<in T> where T : Message
+    public interface IHandler<in T>
     {
         void Handle(T message);
     }

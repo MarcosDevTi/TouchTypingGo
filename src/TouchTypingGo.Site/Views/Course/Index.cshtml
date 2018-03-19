@@ -46,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LimitDate)
+                @item.LimitDate?.ToString("d")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Deleted)

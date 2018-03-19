@@ -40,7 +40,7 @@ namespace TouchTypingGo.Domain.Course
         {
            // if (!teacher.IsValid()) return;
 
-            Teacher = new Teacher("jkjkjda", "email@gmail.com");
+            Teacher = teacher;
 
         }
 
@@ -70,7 +70,7 @@ namespace TouchTypingGo.Domain.Course
         {
             RuleFor(c => c.Name)
                  .NotEmpty().WithMessage("O nome não pode ser vazio")
-                 .Length(2, 150).WithMessage("Onome precisa ter entre 2 e 150 caracteres");
+                 .Length(2, 150).WithMessage("O nome precisa ter entre 2 e 150 caracteres");
         }
 
         private void TeacherValidation()
@@ -88,15 +88,13 @@ namespace TouchTypingGo.Domain.Course
         {
             public static Course NewCourseFactory(string code, string name, DateTime? limitDate, Guid teacherId)
             {
-                var course = new Course()
+                return new Course
                 {
                     Code =  code,
                     Name = name,
                     LimitDate = limitDate,
                     TeacherId = teacherId
                 };
-
-                return course;
             }
         }
     }

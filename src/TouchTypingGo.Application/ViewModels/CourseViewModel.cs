@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 using System.Text;
 using AutoMapper;
-using TouchTypingGo.Application.AutoMapper;
+using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Course.Commands;
 using TouchTypingGo.Domain.Course.Commands.Course;
@@ -28,11 +28,11 @@ namespace TouchTypingGo.Application.ViewModels
         [Required(ErrorMessage = "O código é obrigatório")]
         [MinLength(2, ErrorMessage = "O tamanho mínimo é {1}")]
         [MaxLength(150, ErrorMessage = "O tamanho máximo é {1}")]
-        [Display(Name = "Nome do Curso")]
+        [Display(Name = "Name do Curso")]
         public string Name { get;  set; }
         [Display(Name = "Data de finalização")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString="{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? LimitDate { get;  set; }
         public virtual ICollection<LeconPresentationViewModel> Lecons { get;  set; }      
         public virtual ICollection<StudentViewModel> Students { get;  set; }
@@ -44,7 +44,6 @@ namespace TouchTypingGo.Application.ViewModels
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
             configuration.CreateMap<CourseViewModel, CourseAddCommand>()
-                
                 .ConstructUsing(x => new CourseAddCommand(x.Code, x.Name, x.LimitDate, Guid.NewGuid()));
 
             configuration.CreateMap<CourseViewModel, CourseUpdateCommand>()

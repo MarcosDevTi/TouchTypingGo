@@ -5107,6 +5107,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
+          "AutoMapper": "6.2.2",
           "FluentValidation": "7.5.0"
         },
         "compile": {
@@ -5129,6 +5130,20 @@
           "bin/placeholder/TouchTypingGo.Infra.CrossCutting.Bus.dll": {}
         }
       },
+      "TouchTypingGo.Infra.CrossCutting.Identity/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.All": "2.0.5",
+          "TouchTypingGo.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TouchTypingGo.Infra.CrossCutting.Identity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TouchTypingGo.Infra.CrossCutting.Identity.dll": {}
+        }
+      },
       "TouchTypingGo.Infra.CrossCutting.IoC/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -5136,6 +5151,7 @@
           "TouchTypingGo.Application": "1.0.0",
           "TouchTypingGo.Domain": "1.0.0",
           "TouchTypingGo.Infra.CrossCutting.Bus": "1.0.0",
+          "TouchTypingGo.Infra.CrossCutting.Identity": "1.0.0",
           "TouchTypingGo.Infra.Data": "1.0.0"
         },
         "compile": {
@@ -13329,6 +13345,11 @@
       "path": "../TouchTypingGo.Infra.CrossCutting.Bus/TouchTypingGo.Infra.CrossCutting.Bus.csproj",
       "msbuildProject": "../TouchTypingGo.Infra.CrossCutting.Bus/TouchTypingGo.Infra.CrossCutting.Bus.csproj"
     },
+    "TouchTypingGo.Infra.CrossCutting.Identity/1.0.0": {
+      "type": "project",
+      "path": "../TouchTypingGo.Infra.CrossCutting.Identity/TouchTypingGo.Infra.CrossCutting.Identity.csproj",
+      "msbuildProject": "../TouchTypingGo.Infra.CrossCutting.Identity/TouchTypingGo.Infra.CrossCutting.Identity.csproj"
+    },
     "TouchTypingGo.Infra.CrossCutting.IoC/1.0.0": {
       "type": "project",
       "path": "../TouchTypingGo.Infra.CrossCutting.IoC/TouchTypingGo.Infra.CrossCutting.IoC.csproj",
@@ -13348,6 +13369,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.2",
       "TouchTypingGo.Application >= 1.0.0",
       "TouchTypingGo.Infra.CrossCutting.Bus >= 1.0.0",
+      "TouchTypingGo.Infra.CrossCutting.Identity >= 1.0.0",
       "TouchTypingGo.Infra.CrossCutting.IoC >= 1.0.0"
     ]
   },
@@ -13386,6 +13408,9 @@
           "projectReferences": {
             "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.Bus\\TouchTypingGo.Infra.CrossCutting.Bus.csproj": {
               "projectPath": "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.Bus\\TouchTypingGo.Infra.CrossCutting.Bus.csproj"
+            },
+            "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.Identity\\TouchTypingGo.Infra.CrossCutting.Identity.csproj": {
+              "projectPath": "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.Identity\\TouchTypingGo.Infra.CrossCutting.Identity.csproj"
             },
             "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.IoC\\TouchTypingGo.Infra.CrossCutting.IoC.csproj": {
               "projectPath": "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.IoC\\TouchTypingGo.Infra.CrossCutting.IoC.csproj"

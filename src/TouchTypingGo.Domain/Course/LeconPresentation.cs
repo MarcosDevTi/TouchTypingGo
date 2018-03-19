@@ -7,6 +7,19 @@ namespace TouchTypingGo.Domain.Course
 {
     public class LeconPresentation : Entity<LeconPresentation>
     {
+        public LeconPresentation(string text, string category, int speedReference, int timeReference, int precisionReference, int fontSize)
+        {
+            Id = Guid.NewGuid();
+            Text = text;
+            Category = category;
+            SpeedReference = speedReference;
+            TimeReference = timeReference;
+            PrecisionReference = precisionReference;
+            FontSize = fontSize;
+        }
+
+        protected LeconPresentation(){}
+
         public string Text { get; private set; }
         public string Category { get; private set; }
         public int SpeedReference { get; private set; }
@@ -20,6 +33,22 @@ namespace TouchTypingGo.Domain.Course
         public override bool IsValid()
         {
             return true;
+        }
+
+        public static class LeconPresentationFactory
+        {
+            public static LeconPresentation NewLeconPresentationFactory(string text, string category, int speedReference, int timeReference, int precisionReference, int fontSize)
+            {
+                return new LeconPresentation
+                {   
+                    Text = text,
+                    Category = category,
+                    SpeedReference = speedReference,
+                    TimeReference = timeReference,
+                    PrecisionReference = precisionReference,
+                    FontSize = fontSize
+                };
+            }
         }
     }
 }

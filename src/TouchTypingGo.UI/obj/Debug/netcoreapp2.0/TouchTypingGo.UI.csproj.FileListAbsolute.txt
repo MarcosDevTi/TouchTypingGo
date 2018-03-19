@@ -4,12 +4,14 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\Touc
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.UI.runtimeconfig.dev.json
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.UI.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.UI.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Application.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.Data.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Application.pdb
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.Data.pdb
-C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\TouchTypingGo.UI.csprojResolveAssemblyReference.cache
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\TouchTypingGo.UI.csproj.CoreCompileInputs.cache
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
@@ -17,5 +19,3 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\Touc
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\TouchTypingGo.UI.AssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\TouchTypingGo.UI.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\obj\Debug\netcoreapp2.0\TouchTypingGo.UI.pdb
-C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Application.dll
-C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.UI\bin\Debug\netcoreapp2.0\TouchTypingGo.Application.pdb

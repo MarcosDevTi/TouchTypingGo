@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using TouchTypingGo.Application.ViewModels;
 
 namespace TouchTypingGo.Application.Interfaces
@@ -13,5 +14,7 @@ namespace TouchTypingGo.Application.Interfaces
         CourseViewModel GetById(Guid id);
         void Update(CourseViewModel courseViewModel);
         void Delete(Guid id);
+        IEnumerable<TeacherViewModel> GetAllTeachers();
+        SelectList Teachers();
     }
 }

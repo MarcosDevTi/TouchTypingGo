@@ -5,6 +5,8 @@
     ViewData["Title"] = "Edit";
 }
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+
 <h2>Edit</h2>
 
 <h4>Course</h4>
@@ -25,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="LimitDate" class="control-label"></label>
-                <input asp-for="LimitDate" class="form-control" />
+                <input asp-for="LimitDate" class="form-control" type="text" asp-format="{0:dd/MM/yyyy}" />
                 <span asp-validation-for="LimitDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -51,4 +53,28 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.pt-BR.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.pt.min.js"> </script>
+
+<script>
+
+    ValidationsCourse();
+
+
+
+    function ValidationsCourse() {
+        $('#LimitDate').datepicker({
+            format: "dd/mm/yyyy",
+            startDate: "tomorrow",
+            language: "pt-BR",
+            orientation: "bottom right",
+            autoclose: true
+        });
+        console.log("Teste se está passando aqui");
+    }
+
+
+</script>
 

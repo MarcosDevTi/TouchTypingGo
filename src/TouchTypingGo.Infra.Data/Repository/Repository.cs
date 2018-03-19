@@ -27,7 +27,7 @@ namespace TouchTypingGo.Infra.Data.Repository
 
         public virtual TEntity GetById(Guid id)
         {
-            return DbSet.AsNoTracking().FirstOrDefault(t => t.Id == id);
+            return DbSet.FirstOrDefault(t => t.Id == id);
         }
 
         public virtual IEnumerable<TEntity> GetAll()
@@ -40,7 +40,7 @@ namespace TouchTypingGo.Infra.Data.Repository
             DbSet.Update(obj);
         }
 
-        public virtual void Remove(Guid id)
+        public virtual void Delete(Guid id)
         {
             DbSet.Remove(DbSet.Find(id));
         }

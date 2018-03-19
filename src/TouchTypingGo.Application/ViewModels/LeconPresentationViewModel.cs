@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-using TouchTypingGo.Application.AutoMapper;
+using AutoMapper;
+using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Course;
+using TouchTypingGo.Domain.Course.Commands.LeconPresentation;
 
 namespace TouchTypingGo.Application.ViewModels
 {
-    public class LeconPresentationViewModel : IMapTo<LeconPresentation>, IMapFrom<LeconPresentation>
+    public class LeconPresentationViewModel : IMapTo<LeconPresentation>, IMapFrom<LeconPresentation>, IHaveCustomMappings
     {
         public Guid Id { get; set; }
         [Required(ErrorMessage = "O código é obrigatório")]
@@ -25,5 +27,13 @@ namespace TouchTypingGo.Application.ViewModels
         public int FontSize { get; set; }
         public virtual ICollection<CourseViewModel> Courses { get; private set; }
         public virtual ICollection<LeconResultViewModel> LeconResults { get; private set; }
+
+        public void CreateMappings(IMapperConfigurationExpression configuration)
+        {
+            configuration.CreateMap<LeconPresentationViewModel, LeconPresentationAddCommand>()
+                .ConstructUsing(x => new LeconPresentationAddCommand(x.Text, x.Category, x.SpeedReference,
+                    x.TimeReference, x.PrecisionReference, x.FontSize));
+            
+        }
     }
 }

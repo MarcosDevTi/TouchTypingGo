@@ -4124,6 +4124,7 @@
       },
       "TouchTypingGo.Domain.Core/1.0.0": {
         "dependencies": {
+          "AutoMapper": "6.2.2",
           "FluentValidation": "7.5.0"
         },
         "runtime": {

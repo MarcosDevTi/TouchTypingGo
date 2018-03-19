@@ -9,13 +9,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TouchTypingGo.Application.AutoMapper;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.Services;
 using TouchTypingGo.Infra.CrossCutting.Bus;
-using TouchTypingGo.Site.Data;
-using TouchTypingGo.Site.Models;
-using TouchTypingGo.Site.Services;
+using TouchTypingGo.Infra.CrossCutting.Identity.Data;
+using TouchTypingGo.Infra.CrossCutting.Identity.Models;
 using TouchTypingGo.Infra.CrossCutting.IoC;
 
 namespace TouchTypingGo.Site
@@ -29,11 +27,8 @@ namespace TouchTypingGo.Site
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            AutoMapperConfig.Configure();
-
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -41,22 +36,16 @@ namespace TouchTypingGo.Site
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
-
             services.AddMvc();
-            //services.AddAutoMapper();
 
             RegisterServices(services);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, 
             IHostingEnvironment env, 
             IHttpContextAccessor accessor)
         {
             
-
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
@@ -69,8 +58,9 @@ namespace TouchTypingGo.Site
             }
 
             app.UseStaticFiles();
+            app.UseIdentity();
 
-            app.UseAuthentication();
+           app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
@@ -78,9 +68,7 @@ namespace TouchTypingGo.Site
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
             InMemoryBus.ContainerAcessor = () => accessor.HttpContext.RequestServices;
-
         }
 
         private static void RegisterServices(IServiceCollection services)

@@ -2,153 +2,90 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
-using TouchTypingGo.Site.Data;
+using TouchTypingGo.Domain.Core.Notifications;
+using TouchTypingGo.Domain.Interfaces;
 
 namespace TouchTypingGo.Site.Controllers
 {
-    public class TeacherController : Controller
+    public class TeacherController : BaseController
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ITeacherAppService _teacherAppService;
 
-        public TeacherController(ApplicationDbContext context)
+        public TeacherController(ITeacherAppService teacherAppService,
+            IDomainNotificationHandler<DomainDotification> notifications,
+            IUser user) : base(notifications, user)
         {
-            _context = context;
+            _teacherAppService = teacherAppService;
         }
 
-        // GET: TeacherViewModels
-        public async Task<IActionResult> Index()
+        public ActionResult Index()
         {
-            return View(await _context.TeacherViewModel.ToListAsync());
+            return View(_teacherAppService.GetAll());
         }
 
-        // GET: TeacherViewModels/Details/5
-        public async Task<IActionResult> Details(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var teacherViewModel = await _context.TeacherViewModel
-                .SingleOrDefaultAsync(m => m.Id == id);
-            if (teacherViewModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(teacherViewModel);
-        }
-
-        // GET: TeacherViewModels/Create
-        public IActionResult Create()
+        public ActionResult Details(int id)
         {
             return View();
         }
 
-        // POST: TeacherViewModels/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        public ActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Email,CourseId")] TeacherViewModel teacherViewModel)
+        public ActionResult Create(TeacherViewModel teacherViewModel)
         {
-            if (ModelState.IsValid)
-            {
-                teacherViewModel.Id = Guid.NewGuid();
-                _context.Add(teacherViewModel);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+            if (!ModelState.IsValid) return View(teacherViewModel);
+            _teacherAppService.Add(teacherViewModel);
+
+            ViewBag.SuccessCreated = ValidOperation() ? "success,Professor criado com sucesso!" : "error,O professor não foi refistrado, verifique as mensagens";
             return View(teacherViewModel);
         }
 
-        // GET: TeacherViewModels/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, IFormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
-            var teacherViewModel = await _context.TeacherViewModel.SingleOrDefaultAsync(m => m.Id == id);
-            if (teacherViewModel == null)
-            {
-                return NotFound();
-            }
+            var teacherViewModel = _teacherAppService.GetById(id.Value);
+           
             return View(teacherViewModel);
         }
 
-        // POST: TeacherViewModels/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Email,CourseId")] TeacherViewModel teacherViewModel)
-        {
-            if (id != teacherViewModel.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(teacherViewModel);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TeacherViewModelExists(teacherViewModel.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(teacherViewModel);
-        }
-
-        // GET: TeacherViewModels/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var teacherViewModel = await _context.TeacherViewModel
-                .SingleOrDefaultAsync(m => m.Id == id);
-            if (teacherViewModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(teacherViewModel);
-        }
-
-        // POST: TeacherViewModels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public ActionResult DeleteConfirmed(Guid id)
         {
-            var teacherViewModel = await _context.TeacherViewModel.SingleOrDefaultAsync(m => m.Id == id);
-            _context.TeacherViewModel.Remove(teacherViewModel);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool TeacherViewModelExists(Guid id)
-        {
-            return _context.TeacherViewModel.Any(e => e.Id == id);
+           _teacherAppService.Delete(id);
+            return RedirectToAction("Index");
         }
     }
 }

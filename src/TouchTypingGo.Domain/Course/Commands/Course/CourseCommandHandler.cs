@@ -28,16 +28,14 @@ namespace TouchTypingGo.Domain.Course.Commands.Course
         }
         public void Handle(CourseAddCommand message)
         {
-           
             var course = Domain.Course.Course.CourseFactory.NewCourseFactory(message.Code, message.Name, message.LimitDate, message.TeacherId);
            // if (!CouseValid(course)) return;
-            // Validações de negócio
+            //var teacher = _teacherRepository.GetById(message.TeacherId);
+            //// Validações de negócio
             course.SetTeacher(_teacherRepository.GetById(message.TeacherId));
-            //Persistência
             _courseRepository.Add(course);
 
             if (!Commit()) return;
-            Console.WriteLine("Curso registrado com sucesso");
             _bus.RaiseEvent(new CourseAddEvent(course.Name, course.LimitDate));
         }
 
@@ -60,11 +58,9 @@ namespace TouchTypingGo.Domain.Course.Commands.Course
         {
             if (ExistingCourse(message.Id, message.MessageType)) return;
 
-            _courseRepository.Remove(message.Id);
-            if (Commit())
-            {
-                _bus.RaiseEvent(new CourseDeleteEvent(message.Id));
-            }
+            _courseRepository.Delete(message.Id);
+            if (!Commit()) return;
+            _bus.RaiseEvent(new CourseDeleteEvent(message.Id));
         }
 
         private bool CouseValid(Domain.Course.Course course)

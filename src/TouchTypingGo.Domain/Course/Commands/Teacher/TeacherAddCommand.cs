@@ -4,7 +4,13 @@ using System.Text;
 
 namespace TouchTypingGo.Domain.Course.Commands.Teacher
 {
-    class TeacherAddCommand
+    public class TeacherAddCommand : TeacherCommand
     {
+        public TeacherAddCommand(Guid id, string email, string name)
+        {
+            Id = id;
+            Email = email;
+            Name = name;
+        }
     }
 }

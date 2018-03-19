@@ -7,7 +7,7 @@ namespace TouchTypingGo.Domain.Core.Commands
 {
     public class Command : Message
     {
-        public DateTime TimeStamp { get; private set; }
+        public DateTime TimeStamp { get; protected set; }
 
         public Command()
         {

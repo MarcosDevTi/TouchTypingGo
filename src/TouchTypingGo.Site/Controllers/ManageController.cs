@@ -10,10 +10,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using TouchTypingGo.Site.Extensions;
-using TouchTypingGo.Site.Models;
-using TouchTypingGo.Site.Models.ManageViewModels;
-using TouchTypingGo.Site.Services;
+using TouchTypingGo.Infra.CrossCutting.Identity.Extensions;
+using TouchTypingGo.Infra.CrossCutting.Identity.Models;
+using TouchTypingGo.Infra.CrossCutting.Identity.Models.ManageViewModels;
+using TouchTypingGo.Infra.CrossCutting.Identity.Services;
+using TouchTypingGo.Site.Controllers.Extentions;
+
 
 namespace TouchTypingGo.Site.Controllers
 {

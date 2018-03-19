@@ -10,7 +10,8 @@
         "dependencies": {
           "AutoMapper": "6.2.2",
           "TouchTypingGo.Domain": "1.0.0",
-          "TouchTypingGo.Domain.Core": "1.0.0"
+          "TouchTypingGo.Domain.Core": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.0.2.0"
         },
         "runtime": {
           "TouchTypingGo.Application.dll": {}
@@ -375,10 +376,16 @@
       },
       "TouchTypingGo.Domain.Core/1.0.0": {
         "dependencies": {
+          "AutoMapper": "6.2.2",
           "FluentValidation": "7.5.0"
         },
         "runtime": {
           "TouchTypingGo.Domain.Core.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.ViewFeatures/2.0.2.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Mvc.ViewFeatures.dll": {}
         }
       }
     }
@@ -669,6 +676,11 @@
     },
     "TouchTypingGo.Domain.Core/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Mvc.ViewFeatures/2.0.2.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

@@ -13,7 +13,7 @@
       "launchBrowser": true,
       "launchUrl": "https://localhost:44357/",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Developpent"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "TouchTypingGo.Site": {

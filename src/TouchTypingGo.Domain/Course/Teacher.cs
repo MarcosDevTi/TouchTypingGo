@@ -10,8 +10,9 @@ namespace TouchTypingGo.Domain.Course
     {
         protected Teacher(){}
 
-        public Teacher(string name, string email)
+        public Teacher(Guid id, string name, string email)
         {
+            Id = id;
             Name = name;
             Email = email;
         }
@@ -25,7 +26,7 @@ namespace TouchTypingGo.Domain.Course
             return true;
             //RuleFor(c => c.Name)
             //    .NotEmpty().WithMessage("The Name is required!")
-            //    .Length(2, 100).WithMessage("O Nome deve conter entre 2 e 100 caracteres");
+            //    .Length(2, 100).WithMessage("O Name deve conter entre 2 e 100 caracteres");
             //RuleFor(c => c.Email)
             //    .NotEmpty().WithMessage("The Email is required!")
             //    .EmailAddress();

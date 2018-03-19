@@ -16,7 +16,7 @@ namespace TouchTypingGo.Application.ViewModels
         [Required(ErrorMessage = "O nome é obrigatório")]
         [MinLength(2, ErrorMessage = "O tamanho mínimo é {1}")]
         [MaxLength(150, ErrorMessage = "O tamanho máximo é {1}")]
-        [Display(Name = "Nome do Curso")]
+        [Display(Name = "Name do Curso")]
         public string Name { get; set; }
     }
 }

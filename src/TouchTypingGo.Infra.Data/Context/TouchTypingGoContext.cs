@@ -21,6 +21,7 @@ namespace TouchTypingGo.Infra.Data.Context
         public DbSet<LeconResult> LeconResults { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Keyboard> Keyboards { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,7 +30,7 @@ namespace TouchTypingGo.Infra.Data.Context
             modelBuilder.AddConfiguration(new LeconResultMapping());
             modelBuilder.AddConfiguration(new StudentMapping());
             modelBuilder.AddConfiguration(new TeacherMapping());
-
+            modelBuilder.AddConfiguration(new KeyboardMapping());
 
             base.OnModelCreating(modelBuilder);
         }
