@@ -10,19 +10,14 @@
 @*<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet" />*@
 
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="">
+    <div>
         <form asp-action="Create">
             @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
             <h4>Preencha todos os dados Corretamente</h4>
             <hr />
             <vc:summary />
 
-            <div class="form-group">
-                <label asp-for="Code" class="control-label"></label>
-                <input asp-for="Code" class="form-control" />
-                <span asp-validation-for="Code" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -33,19 +28,50 @@
                 <input asp-for="LimitDate" class="form-control" />
                 <span asp-validation-for="LimitDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Teacher" class="control-label"></label>
-                <div class="col-md-10">
-                   @Html.Partial("_Professores")
-                </div>
-                <span asp-validation-for="Name" class="text-danger"></span>
+
+            <div id="leconsList" class="container"></div>
+            <div class="container">
+                @foreach (var item in (List<LessonPresentationViewModel>)ViewBag.UserLessons)
+                {
+                    <div id="@item.Id" class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            @item.Text
+                        </label>
+                    </div>
+                }
             </div>
-            <div class="form-group">
+            
+            @*<div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+            </div>*@
+
+            @*<div class="pull-left">
+                    <a asp-action="AddLesson"  class="btn btn-primary" data-modal="">
+                        <span title="Adicionar Exercício" class="glyphicon glyphicon-plus-sign"> Adicionar Exercício</span>
+                    </a>
+                </div>*@
         </form>
     </div>
 </div>
+
+@*<div id="LeconForm">
+        <div id="LeconTarget">
+
+        </div>
+    </div>
+
+    <div id="myModal" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="myModalContent"></div>
+            </div>
+        </div>
+    </div>*@
+
+
+
+
 
 <div>
     <a asp-action="Index">Back to List</a>
@@ -54,37 +80,38 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
-@*<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"> </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.pt-BR.min.js"> </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.pt.min.js"> </script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"> </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.pt-BR.min.js"> </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.pt.min.js"> </script>
 
 
-<script>
+        <script>
 
-    ValidationsCourse();
+            ValidationsCourse();
 
-    
 
-    function ValidationsCourse() {
-        $('#LimitDate').datepicker({
-            format: "dd/mm/yyyy",
-            startDate: "tomorrow",
-            language: "pt-BR",
-            orientation: "bottom right",
-            autoclose: true
-        });
-        console.log("Teste se está passando aqui");      
-    }
 
-   
-</script>*@
+            function ValidationsCourse() {
+                $('#LimitDate').datepicker({
+                    format: "dd/mm/yyyy",
+                    startDate: "tomorrow",
+                    language: "pt-BR",
+                    orientation: "bottom right",
+                    autoclose: true
+                });
+                console.log("Teste se está passando aqui");
+            }
+
+
+        </script>*@
 
 
     @{
-        if (ViewBag.SuccessCreated != null) {
+        if (ViewBag.SuccessCreated != null)
+        {
 
             var notification = ViewBag.SuccessCreated.ToString().Split(',');
-           
+
             <script>
 
                 toastr.options = {
@@ -107,10 +134,10 @@
 
                 toastr["@notification[0]"]("@notification[1]");
 
-
+                //AjaxModal();
             </script>
 
         }
     }
-   
+
 }

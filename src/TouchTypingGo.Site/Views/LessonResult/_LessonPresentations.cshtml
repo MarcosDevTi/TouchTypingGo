@@ -1,0 +1,7 @@
+﻿@using TouchTypingGo.Application.ViewModels
+@model TouchTypingGo.Application.ViewModels.LessonResultViewModel
+
+@{
+    var lessonPresentations = (IEnumerable<SelectListItem>) ViewBag.lessonPresentations;
+}
+<select asp-for="LessonPresentationId" asp-items="@lessonPresentations" class="form-control"></select>

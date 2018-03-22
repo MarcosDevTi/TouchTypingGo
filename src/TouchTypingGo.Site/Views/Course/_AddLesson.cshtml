@@ -1,0 +1,29 @@
+﻿@model TouchTypingGo.Application.ViewModels.CourseViewModel
+
+@{
+    ViewData["Title"] = "Add Lesson";
+}
+
+<div class="modal-header">
+    <button type="button", class="close" data-dismiss="modal">
+        <span aria-hidden="true">x</span><span class="sr-only">Close</span>
+    </button>
+    <h4 class="modal-title">@ViewData["Title"]</h4>
+</div>
+
+<form asp-action="AddLesson">
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <vc:summary />
+            
+            @Html.Partial("_Lesson")
+            
+            <div class="modal-footer">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Add Lesson" class="btn btn-success" />
+                    <input type="button" class="btn btn-info" value="Close" data-dismiss="modal"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

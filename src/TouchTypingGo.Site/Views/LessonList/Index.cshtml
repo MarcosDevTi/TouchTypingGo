@@ -1,0 +1,74 @@
+﻿@model Dictionary<string, List <TouchTypingGo.Application.ViewModels.PreviewLessonViewModel>>
+
+@{
+        ViewData["Title"] = "Index";
+    }
+
+<h2>Index</h2>
+
+@foreach (var prvw in Model)
+{
+    <h2>@prvw.Key</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    PreviewText
+                </th>
+                <th>
+                    Wpm
+                </th>
+                <th>
+                   Time
+                </th>
+                <th>
+                    Errors
+                </th>
+                <th>
+                    Started
+                </th>
+                <th>
+                    CoutResolute
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in prvw.Value)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PreviewText)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Wpm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Errors)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Started)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CoutResolute)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Ir para o Exercício", "Lesson", new { id = item.Id}) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

@@ -69,7 +69,7 @@ namespace TouchTypingGo.Infra.Data.Migrations
                     b.ToTable("Keyboard");
                 });
 
-            modelBuilder.Entity("TouchTypingGo.Domain.Course.LeconPresentation", b =>
+            modelBuilder.Entity("TouchTypingGo.Domain.Course.LessonPresentation", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
@@ -90,10 +90,10 @@ namespace TouchTypingGo.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("LeconPresentation");
+                    b.ToTable("LessonPresentation");
                 });
 
-            modelBuilder.Entity("TouchTypingGo.Domain.Course.LeconResult", b =>
+            modelBuilder.Entity("TouchTypingGo.Domain.Course.LessonResult", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
@@ -108,7 +108,7 @@ namespace TouchTypingGo.Infra.Data.Migrations
 
                     b.Property<int>("Errors");
 
-                    b.Property<Guid>("LeconPresentationId");
+                    b.Property<Guid>("lessonPresentationId");
 
                     b.Property<int>("Time");
 
@@ -118,9 +118,9 @@ namespace TouchTypingGo.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LeconPresentationId");
+                    b.HasIndex("lessonPresentationId");
 
-                    b.ToTable("LeconResult");
+                    b.ToTable("LessonResult");
                 });
 
             modelBuilder.Entity("TouchTypingGo.Domain.Course.Student", b =>
@@ -167,11 +167,11 @@ namespace TouchTypingGo.Infra.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("TouchTypingGo.Domain.Course.LeconResult", b =>
+            modelBuilder.Entity("TouchTypingGo.Domain.Course.LessonResult", b =>
                 {
-                    b.HasOne("TouchTypingGo.Domain.Course.LeconPresentation", "LeconPresentation")
-                        .WithMany("LeconResults")
-                        .HasForeignKey("LeconPresentationId")
+                    b.HasOne("TouchTypingGo.Domain.Course.LessonPresentation", "LessonPresentation")
+                        .WithMany("LessonResults")
+                        .HasForeignKey("lessonPresentationId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

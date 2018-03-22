@@ -2204,7 +2204,7 @@ function elementMatcher( matchers ) {
 		matchers[0];
 }
 
-function multipleContexts( selector, contexts, results ) {
+function multiplessontexts( selector, contexts, results ) {
 	var i = 0,
 		len = contexts.length;
 	for ( ; i < len; i++ ) {
@@ -2248,7 +2248,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 			preexisting = results.length,
 
 			// Get initial elements from seed or context
-			elems = seed || multipleContexts( selector || "*", context.nodeType ? [ context ] : context, [] ),
+			elems = seed || multiplessontexts( selector || "*", context.nodeType ? [ context ] : context, [] ),
 
 			// Prefilter to get matcher input, preserving a map for seed-results synchronization
 			matcherIn = preFilter && ( seed || !selector ) ?

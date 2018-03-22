@@ -12,7 +12,7 @@ namespace TouchTypingGo.Domain.Course.Repository
         IEnumerable<TEntity> GetAll();
         void Update(TEntity obj);
         void Delete(Guid id);
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> prediate);
+        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
         int SaveChanges();
     }
 }

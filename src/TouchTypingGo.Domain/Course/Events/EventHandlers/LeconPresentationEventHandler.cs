@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 using TouchTypingGo.Domain.Core.Events;
-using TouchTypingGo.Domain.Course.Commands.LeconPresentation;
-using TouchTypingGo.Domain.Course.Events.LeconPresentation;
+using TouchTypingGo.Domain.Course.Events.LessonPresentation;
 
 namespace TouchTypingGo.Domain.Course.Events.EventHandlers
 {
-    public class LeconPresentationEventHandler:
-        IHandler<LeconPresentationAddEvent>,
-        IHandler<LeconPresentationDeleteEvent>
+    public class lessonPresentationEventHandler:
+        IHandler<LessonPresentationAddEvent>,
+        IHandler<LessonPresentationDeleteEvent>
     {  
-        public void Handle(LeconPresentationAddEvent message)
+        public void Handle(LessonPresentationAddEvent message)
         {
             // Enviar um e-mail
         }
 
-        public void Handle(LeconPresentationDeleteEvent message)
+        public void Handle(LessonPresentationDeleteEvent message)
         {
             // Enviar um e-mail
         }

@@ -12,18 +12,23 @@
             <h4>Create a new account.</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
+           
             <div class="form-group">
-                <label asp-for="Teacher"></label>
-                <input asp-for="Teacher" class="form-control" />
-                <span asp-validation-for="Teacher" class="text-danger"></span>
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Teacher" /> @Html.DisplayNameFor(model => model.Teacher)
+                    </label>
+                </div>
             </div>
             
             <div class="form-group">
-                <label asp-for="Student"></label>
-                <input asp-for="Student" class="form-control" />
-                <span asp-validation-for="Student" class="text-danger"></span>
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Student" /> @Html.DisplayNameFor(model => model.Student)
+                    </label>
+                </div>
             </div>
-            
+
             <div class="form-group">
                 <label asp-for="Name"></label>
                 <input asp-for="Name" class="form-control" />

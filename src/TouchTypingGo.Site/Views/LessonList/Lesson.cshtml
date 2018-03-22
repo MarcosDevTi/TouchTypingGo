@@ -1,0 +1,60 @@
+﻿@model TouchTypingGo.Application.ViewModels.AppViewModel
+
+@{
+    ViewData["Title"] = "Lesson";
+}
+
+<h2>Lesson</h2>
+
+<div>
+    <h4>PreviewLessonViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MinTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MinErrors)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinErrors)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Started)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Started)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

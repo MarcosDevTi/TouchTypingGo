@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace TouchTypingGo.Domain.Course.Events
+namespace TouchTypingGo.Domain.Course.Events.Course
 {
     public class CourseUpdateEvent : CourseEvent
     {

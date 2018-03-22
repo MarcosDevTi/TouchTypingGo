@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
+using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Core.Notifications;
-using TouchTypingGo.Domain.Interfaces;
 
 namespace TouchTypingGo.Site.Controllers
 {

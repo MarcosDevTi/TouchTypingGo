@@ -13,11 +13,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
+using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models.AccountViewModels;
 using TouchTypingGo.Infra.CrossCutting.Identity.Services;
 using TouchTypingGo.Domain.Core.Notifications;
-using TouchTypingGo.Domain.Interfaces;
 using TouchTypingGo.Infra.CrossCutting.Identity.Extensions;
 using TouchTypingGo.Site.Controllers.Extentions;
 

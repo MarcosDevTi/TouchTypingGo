@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.Infra.CrossCu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.Infra.CrossCutting.Bus", "src\TouchTypingGo.Infra.CrossCutting.Bus\TouchTypingGo.Infra.CrossCutting.Bus.csproj", "{E87A2757-84BC-431C-A6A9-502115FA79C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.Infra.CrossCutting.Identity", "src\TouchTypingGo.Infra.CrossCutting.Identity\TouchTypingGo.Infra.CrossCutting.Identity.csproj", "{194C1A05-1860-41D3-8D3E-E2364EAFCE54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.Infra.CrossCutting.Identity", "src\TouchTypingGo.Infra.CrossCutting.Identity\TouchTypingGo.Infra.CrossCutting.Identity.csproj", "{194C1A05-1860-41D3-8D3E-E2364EAFCE54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

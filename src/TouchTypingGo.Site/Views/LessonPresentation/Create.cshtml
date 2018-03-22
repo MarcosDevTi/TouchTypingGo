@@ -1,0 +1,98 @@
+﻿@model TouchTypingGo.Application.ViewModels.LessonPresentationViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>lessonPresentationViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+            
+            <vc:summary />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <textarea rows="10"  asp-for="Text" class="form-control"></textarea>
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpeedReference" class="control-label"></label>
+                <input asp-for="SpeedReference" class="form-control" />
+                <span asp-validation-for="SpeedReference" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeReference" class="control-label"></label>
+                <input asp-for="TimeReference" class="form-control" />
+                <span asp-validation-for="TimeReference" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecisionReference" class="control-label"></label>
+                <input asp-for="PrecisionReference" class="form-control" />
+                <span asp-validation-for="PrecisionReference" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FontSize" class="control-label"></label>
+                <input asp-for="FontSize" class="form-control" />
+                <span asp-validation-for="FontSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    @{
+        if (ViewBag.SuccessCreated != null)
+        {
+
+            var notification = ViewBag.SuccessCreated.ToString().Split(',');
+
+            <script>
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "2000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+
+                toastr["@notification[0]"]("@notification[1]");
+
+
+            </script>
+
+        }
+    }
+}

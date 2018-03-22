@@ -15,14 +15,22 @@ using TouchTypingGo.Infra.CrossCutting.Bus;
 using TouchTypingGo.Infra.CrossCutting.Identity.Data;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models;
 using TouchTypingGo.Infra.CrossCutting.IoC;
+using Microsoft.AspNetCore.Hosting.Internal;
 
 namespace TouchTypingGo.Site
 {
     public class Startup
     {
+        private HostingEnvironment env;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+        }
+
+        public Startup(HostingEnvironment env)
+        {
+            this.env = env;
         }
 
         public IConfiguration Configuration { get; }

@@ -13,6 +13,6 @@ namespace TouchTypingGo.Application.ViewModels
         public string Name { get; set; }
         public string Email { get; set; }
         //public virtual ICollection<CourseViewModel> Course { get; private set; }
-        //public virtual ICollection<LeconResultViewModel> LeconResults { get; private set; }
+        //public virtual ICollection<LessonResultViewModel> LessonResults { get; private set; }
     }
 }

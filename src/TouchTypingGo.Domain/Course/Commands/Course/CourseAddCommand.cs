@@ -5,15 +5,13 @@ namespace TouchTypingGo.Domain.Course.Commands.Course
     public class CourseAddCommand : CourseCommand
     {
         public CourseAddCommand(
-            string code, 
             string name, 
             DateTime? limitDate,
-            Guid teacherId)
+            string code)
         {
-            Code = code;
             Name = name;
             LimitDate = limitDate;
-            TeacherId = teacherId;
+            Code = code;
         }
     }
 }

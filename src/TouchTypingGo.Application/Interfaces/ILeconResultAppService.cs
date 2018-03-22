@@ -6,12 +6,13 @@ using TouchTypingGo.Application.ViewModels;
 
 namespace TouchTypingGo.Application.Interfaces
 {
-    public interface ILeconResultAppService : IDisposable
+    public interface IlessonResultAppService : IDisposable
     {
-        void Add(LeconResultViewModel leconResultViewModel);
-        IEnumerable<LeconResultViewModel> GetAll();
-        LeconResultViewModel GetById(Guid id);
+        void Add(LessonResultViewModel lessonResultViewModel);
+        IEnumerable<LessonResultViewModel> GetAll();
+        IEnumerable<LessonResultViewModel> GetByUserAuthenticated();
+        LessonResultViewModel GetById(Guid id);
         void Delete(Guid id);
-        SelectList LeconsPresentationsSelect();
+        SelectList lessonsPresentationsSelect();
     }
 }

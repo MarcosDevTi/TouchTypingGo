@@ -9,7 +9,7 @@ namespace TouchTypingGo.Infra.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "LeconPresentation",
+                name: "LessonPresentation",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -22,7 +22,7 @@ namespace TouchTypingGo.Infra.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LeconPresentation", x => x.Id);
+                    table.PrimaryKey("PK_lessonPresentation", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -53,7 +53,7 @@ namespace TouchTypingGo.Infra.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "LeconResult",
+                name: "LessonResult",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -62,18 +62,18 @@ namespace TouchTypingGo.Infra.Data.Migrations
                     EhAuthenticated = table.Column<bool>(nullable: false),
                     ErrorKey = table.Column<string>(type: "varchar(2)", nullable: false),
                     Errors = table.Column<int>(nullable: false),
-                    LeconPresentationId = table.Column<Guid>(nullable: false),
+                    lessonPresentationId = table.Column<Guid>(nullable: false),
                     Time = table.Column<int>(nullable: false),
                     Try = table.Column<int>(nullable: false),
                     Wpm = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LeconResult", x => x.Id);
+                    table.PrimaryKey("PK_lessonResult", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_LeconResult_LeconPresentation_LeconPresentationId",
-                        column: x => x.LeconPresentationId,
-                        principalTable: "LeconPresentation",
+                        name: "FK_lessonResult_lessonPresentation_lessonPresentationId",
+                        column: x => x.lessonPresentationId,
+                        principalTable: "LessonPresentation",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -106,9 +106,9 @@ namespace TouchTypingGo.Infra.Data.Migrations
                 column: "TeacherId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LeconResult_LeconPresentationId",
-                table: "LeconResult",
-                column: "LeconPresentationId");
+                name: "IX_lessonResult_lessonPresentationId",
+                table: "LessonResult",
+                column: "lessonPresentationId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -117,7 +117,7 @@ namespace TouchTypingGo.Infra.Data.Migrations
                 name: "Courses");
 
             migrationBuilder.DropTable(
-                name: "LeconResult");
+                name: "LessonResult");
 
             migrationBuilder.DropTable(
                 name: "Student");
@@ -126,7 +126,7 @@ namespace TouchTypingGo.Infra.Data.Migrations
                 name: "Teacher");
 
             migrationBuilder.DropTable(
-                name: "LeconPresentation");
+                name: "LessonPresentation");
         }
     }
 }

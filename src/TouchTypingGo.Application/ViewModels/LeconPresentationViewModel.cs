@@ -5,17 +5,21 @@ using System.Text;
 using AutoMapper;
 using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Course;
-using TouchTypingGo.Domain.Course.Commands.LeconPresentation;
+using TouchTypingGo.Domain.Course.Commands.LessonPresentation;
 
 namespace TouchTypingGo.Application.ViewModels
 {
-    public class LeconPresentationViewModel : IMapTo<LeconPresentation>, IMapFrom<LeconPresentation>, IHaveCustomMappings
+    public class LessonPresentationViewModel : IHaveCustomMappings
     {
         public Guid Id { get; set; }
-        [Required(ErrorMessage = "O código é obrigatório")]
+        [Required(ErrorMessage = "O Nome é obrigatório")]
+        [Display(Name = "Nome do Exercício")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "O texto é obrigatório")]
         [Display(Name = "Texto do Exercício")]
         public string Text { get; set; }
-        [Required(ErrorMessage = "O código é obrigatório")]
+        [Required(ErrorMessage = "A categoria é obrigatória")]
         [MinLength(2, ErrorMessage = "O tamanho mínimo é {1}")]
         [MaxLength(20, ErrorMessage = "O tamanho máximo é {1}")]
         [Display(Name = "Categoria")]
@@ -25,14 +29,23 @@ namespace TouchTypingGo.Application.ViewModels
         public int PrecisionReference { get; set; }
         [Display(Name = "Tabanho da fonte")]
         public int FontSize { get; set; }
+        public Guid? UserId { get; set; }
         public virtual ICollection<CourseViewModel> Courses { get; private set; }
-        public virtual ICollection<LeconResultViewModel> LeconResults { get; private set; }
+        public virtual ICollection<LessonResultViewModel> LessonResults { get; private set; }
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
-            configuration.CreateMap<LeconPresentationViewModel, LeconPresentationAddCommand>()
-                .ConstructUsing(x => new LeconPresentationAddCommand(x.Text, x.Category, x.SpeedReference,
-                    x.TimeReference, x.PrecisionReference, x.FontSize));
+            configuration.CreateMap<LessonPresentation, LessonPresentationViewModel>()
+                .ForMember(x => x.Courses, opt => opt.Ignore());
+
+            configuration.CreateMap<LessonPresentationViewModel, LessonPresentation>()
+                .ForMember(x => x.CourseLessonPresentations, opt => opt.Ignore())
+                .ForMember(x => x.LessonResults, opt => opt.Ignore());
+
+
+            configuration.CreateMap<LessonPresentationViewModel, LessonPresentationAddCommand>()
+                .ConstructUsing(x => new LessonPresentationAddCommand(x.Name, x.Text, x.Category, x.SpeedReference,
+                    x.TimeReference, x.PrecisionReference, x.FontSize, Guid.NewGuid()));
             
         }
     }

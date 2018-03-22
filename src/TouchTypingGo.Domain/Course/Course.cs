@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using FluentValidation;
 using FluentValidation.Results;
 using TouchTypingGo.Domain.Core.Entities;
@@ -24,13 +25,13 @@ namespace TouchTypingGo.Domain.Course
         }
 
         protected Course(){}
-        public string Code { get; private set; }
         public string Name { get; private set; }
-
+        public string Code { get; private set; }
         public DateTime? LimitDate { get; private set; }
         [NotMapped]
-        public virtual ICollection<LeconPresentation> Lecons { get; private set; }
-        [NotMapped]
+        //public virtual ICollection<LessonPresentation> LessonPresentations { get; private set; }
+        public virtual ICollection<CourseLessonPresentation> CourseLessonPresentations { get; set; }
+        [NotMapped] 
         public virtual ICollection<Student> Students { get; private set; }
         public Guid TeacherId { get; private set; }
         public virtual Teacher Teacher { get;private set; }
@@ -42,6 +43,11 @@ namespace TouchTypingGo.Domain.Course
 
             Teacher = teacher;
 
+        }
+
+        public void SetLessonPresentations(ICollection<CourseLessonPresentation> lessonPresentations)
+        {
+            CourseLessonPresentations = lessonPresentations;
         }
 
         public void DeleteCourse()
@@ -86,16 +92,20 @@ namespace TouchTypingGo.Domain.Course
 
         public static class CourseFactory
         {
-            public static Course NewCourseFactory(string code, string name, DateTime? limitDate, Guid teacherId)
+            public static Course NewCourseFactory(string name, DateTime? limitDate, string code)
             {
                 return new Course
                 {
-                    Code =  code,
+                    Code = code,
                     Name = name,
-                    LimitDate = limitDate,
-                    TeacherId = teacherId
+                    LimitDate = limitDate
                 };
             }
         }
+
+
+       
+
+        //cod  = RandomString(4);
     }
 }

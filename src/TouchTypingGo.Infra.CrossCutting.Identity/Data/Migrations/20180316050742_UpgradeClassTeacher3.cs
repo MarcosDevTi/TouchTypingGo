@@ -1,8 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TouchTypingGo.Site.Data.Migrations
+namespace TouchTypingGo.Infra.CrossCutting.Identity.Data.Migrations
 {
     public partial class UpgradeClassTeacher3 : Migration
     {

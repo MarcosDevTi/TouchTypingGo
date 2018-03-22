@@ -1,4 +1,5 @@
 ﻿using TouchTypingGo.Domain.Core.Events;
+using TouchTypingGo.Domain.Course.Events.Course;
 
 namespace TouchTypingGo.Domain.Course.Events.EventHandlers
 {

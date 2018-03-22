@@ -19,7 +19,7 @@ namespace TouchTypingGo.Domain.Course
         [NotMapped]
         public virtual ICollection<Course> Courses { get; private set; }
         [NotMapped]
-        public virtual ICollection<LeconResult> LeconResults { get; private set; }
+        public virtual ICollection<LessonResult> lessonResults { get; private set; }
 
         public static class StudentFactory
         {

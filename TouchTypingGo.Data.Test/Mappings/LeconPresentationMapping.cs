@@ -4,9 +4,9 @@ using TouchTypingGo.Data.Test.Extentions;
 
 namespace TouchTypingGo.Data.Test.Mappings
 {
-    public class LeconPresentationMapping : EntityTypeConfiguration<LeconPresentation>
+    public class lessonPresentationMapping : EntityTypeConfiguration<lessonPresentation>
     {
-        public override void Map(EntityTypeBuilder<LeconPresentation> builder)
+        public override void Map(EntityTypeBuilder<lessonPresentation> builder)
         {
             builder.Property(l => l.Category)
                 .HasColumnType("varchar(20)")

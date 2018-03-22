@@ -14,8 +14,8 @@ namespace TouchTypingGo.Data.Test.Context
             
         }
         public DbSet<Course> Courses { get; set; }
-        public DbSet<LeconPresentation> LeconPresentations { get; set; }
-        public DbSet<LeconResult> LeconResults { get; set; }
+        public DbSet<lessonPresentation> lessonPresentations { get; set; }
+        public DbSet<lessonResult> lessonResults { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
 

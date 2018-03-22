@@ -6,28 +6,30 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.Services;
+using TouchTypingGo.Application.Services.Helper;
 using TouchTypingGo.Domain.Core;
 using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Events;
+using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Core.Notifications;
 using TouchTypingGo.Domain.Course.Commands;
 using TouchTypingGo.Domain.Course.Commands.CommandHandlers;
 using TouchTypingGo.Domain.Course.Commands.Course;
 using TouchTypingGo.Domain.Course.Commands.Keyboard;
-using TouchTypingGo.Domain.Course.Commands.LeconPresentation;
-using TouchTypingGo.Domain.Course.Commands.LeconResult;
+using TouchTypingGo.Domain.Course.Commands.LessonPresentation;
+using TouchTypingGo.Domain.Course.Commands.LessonResult;
 using TouchTypingGo.Domain.Course.Commands.Student;
 using TouchTypingGo.Domain.Course.Commands.Teacher;
 using TouchTypingGo.Domain.Course.Events;
+using TouchTypingGo.Domain.Course.Events.Course;
 using TouchTypingGo.Domain.Course.Events.EventHandlers;
 using TouchTypingGo.Domain.Course.Events.Keyboard;
-using TouchTypingGo.Domain.Course.Events.LeconPresentation;
-using TouchTypingGo.Domain.Course.Events.LeconResult;
+using TouchTypingGo.Domain.Course.Events.LessonPresentation;
+using TouchTypingGo.Domain.Course.Events.LessonResult;
 using TouchTypingGo.Domain.Course.Events.Student;
 using TouchTypingGo.Domain.Course.Events.Teacher;
 using TouchTypingGo.Domain.Course.Repository;
-using TouchTypingGo.Domain.Interfaces;
 using TouchTypingGo.Infra.CrossCutting.Bus;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models;
 using TouchTypingGo.Infra.CrossCutting.Identity.Services;
@@ -51,10 +53,13 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             //AppService
             services.AddScoped<ICourseAppService, CourseAppService>();
             services.AddScoped<ITeacherAppService, TeacherAppService>();
-            services.AddScoped<ILeconPresentationAppService, LeconPresentationAppService>();
-            services.AddScoped<ILeconResultAppService, LeconResultAppService>();
+            services.AddScoped<IlessonPresentationAppService, LessonPresentationAppService>();
+            services.AddScoped<IlessonResultAppService, lessonResultAppService>();
             services.AddScoped<IStudentAppService, StudentAppService>();
             services.AddScoped<IKeyboardAppService, KeyboardAppService>();
+            services.AddScoped<ILessonListAppService, LessonListAppService>();
+
+            services.AddScoped<IHelperService, HelperService>();
 
             //Domain - Commands
             //Course
@@ -67,13 +72,13 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<TeacherAddCommand>, TeacherCommandHandler>();
             services.AddScoped<IHandler<TeacherDeleteCommand>, TeacherCommandHandler>();
 
-            //LeconPresentation
-            services.AddScoped<IHandler<LeconPresentationAddCommand>, LeconPresentationCommandHandler>();
-            services.AddScoped<IHandler<LeconPresentationDeleteCommand>, LeconPresentationCommandHandler>();
+            //LessonPresentation
+            services.AddScoped<IHandler<LessonPresentationAddCommand>, LessonPresentationCommandHandler>();
+            services.AddScoped<IHandler<LessonPresentationDeleteCommand>, LessonPresentationCommandHandler>();
 
-            //LeconResult
-            services.AddScoped<IHandler<AddLeconResultCommand>, LeconResultCommandHandler>();
-            services.AddScoped<IHandler<DeleteLeconResultCommand>, LeconResultCommandHandler>();
+            //LessonResult
+            services.AddScoped<IHandler<AddLessonResultCommand>, LessonResultCommandHandler>();
+            services.AddScoped<IHandler<DeleteLessonResultCommand>, LessonResultCommandHandler>();
 
             //Student
             services.AddScoped<IHandler<AddStudentCommand>, StudentCommandHandler>();
@@ -95,13 +100,13 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<TeacherAddEvent>, TeacherEventHandler>();
             services.AddScoped<IHandler<TeacherDeleteEvent>, TeacherEventHandler>();
 
-            //Lecon Presentation
-            services.AddScoped<IHandler<LeconPresentationAddEvent>, LeconPresentationEventHandler>();
-            services.AddScoped<IHandler<LeconPresentationDeleteEvent>, LeconPresentationEventHandler>();
+            //lesson Presentation
+            services.AddScoped<IHandler<LessonPresentationAddEvent>, lessonPresentationEventHandler>();
+            services.AddScoped<IHandler<LessonPresentationDeleteEvent>, lessonPresentationEventHandler>();
 
             //Lesson Result
-            services.AddScoped<IHandler<LeconResultAddEvent>, LeconResultEventHandler>();
-            services.AddScoped<IHandler<LeconResultDeleteEvent>, LeconResultEventHandler>();
+            services.AddScoped<IHandler<LessonResultAddEvent>, lessonResultEventHandler>();
+            services.AddScoped<IHandler<LessonResultDeleteEvent>, lessonResultEventHandler>();
 
             //Student
             services.AddScoped<IHandler<AddStudentEvent>, StudentEventHandler>();
@@ -114,8 +119,8 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             //Infra - Data
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<ITeacherRepository, TeacherRepository>();
-            services.AddScoped<ILeconPresentationRepository, LeconPresentationRepository>();
-            services.AddScoped<ILeconResultRepository, LeconResultRepository>();
+            services.AddScoped<ILessonPresentationRepository, lessonPresentationRepository>();
+            services.AddScoped<ILessonResultRepository, lessonResultRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IKeyboardRepository, KeyboardRepository>();
 

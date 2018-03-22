@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Linq;
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Events;
+using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Core.Notifications;
 using TouchTypingGo.Domain.Course.Commands.CommandHandlers;
 using TouchTypingGo.Domain.Course.Events;
+using TouchTypingGo.Domain.Course.Events.Course;
 using TouchTypingGo.Domain.Course.Repository;
 
 namespace TouchTypingGo.Domain.Course.Commands.Course
@@ -16,34 +19,47 @@ namespace TouchTypingGo.Domain.Course.Commands.Course
         private readonly ICourseRepository _courseRepository;
         private readonly ITeacherRepository _teacherRepository;
         private readonly IBus _bus;
+        private readonly IUser _user;
         public CourseCommandHandler(
             ICourseRepository courseRepository,
             ITeacherRepository teacherRepository,
             IUnitOfWork uow,
-            IBus bus, IDomainNotificationHandler<DomainDotification> notification) : base(uow, bus, notification)
+            IBus bus, IDomainNotificationHandler<DomainDotification> notification, IUser user) : base(uow, bus, notification)
         {
             _courseRepository = courseRepository;
             _teacherRepository = teacherRepository;
             _bus = bus;
+            _user = user;
         }
+
+        
+
         public void Handle(CourseAddCommand message)
         {
-            var course = Domain.Course.Course.CourseFactory.NewCourseFactory(message.Code, message.Name, message.LimitDate, message.TeacherId);
+            var course = Domain.Course.Course.CourseFactory.NewCourseFactory(message.Name, message.LimitDate, message.Code);
            // if (!CouseValid(course)) return;
             //var teacher = _teacherRepository.GetById(message.TeacherId);
             //// Validações de negócio
-            course.SetTeacher(_teacherRepository.GetById(message.TeacherId));
-            _courseRepository.Add(course);
+            if (_teacherRepository.Find(t => t.Id == _user.GetUderId()).Any())
+            {
+                course.SetTeacher(_teacherRepository.GetById(_user.GetUderId()));
+                _courseRepository.Add(course);
 
-            if (!Commit()) return;
-            _bus.RaiseEvent(new CourseAddEvent(course.Name, course.LimitDate));
+                if (!Commit()) return;
+                _bus.RaiseEvent(new CourseAddEvent(course.Name, course.LimitDate));
+            }
+            else
+            {
+                _bus.RaiseEvent(new DomainDotification(message.MessageType, "É possível inserir curso somente sendo professor!"));
+            }
+           
         }
 
         public void Handle(CourseUpdateCommand message)
         {
             if (ExistingCourse(message.Id, message.MessageType)) return;
 
-            var course = Domain.Course.Course.CourseFactory.NewCourseFactory(message.Code, message.Name, message.LimitDate, message.TeacherId);
+            var course = Domain.Course.Course.CourseFactory.NewCourseFactory(message.Name, message.LimitDate, null);
 
             if (!CouseValid(course)) return;
 

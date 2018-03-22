@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Dapper;
 using Microsoft.EntityFrameworkCore;
+using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Course.Repository;
 using TouchTypingGo.Infra.Data.Context;
@@ -12,7 +13,7 @@ namespace TouchTypingGo.Infra.Data.Repository
 {
     public class TeacherRepository : Repository<Teacher>, ITeacherRepository
     {
-        public TeacherRepository(TouchTypingGoContext db) : base(db)
+        public TeacherRepository(TouchTypingGoContext db, IUser user) : base(db, user)
         {
         }
 

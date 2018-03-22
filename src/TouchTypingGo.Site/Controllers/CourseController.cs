@@ -2,20 +2,22 @@
 using Microsoft.AspNetCore.Mvc;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
+using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Core.Notifications;
-using TouchTypingGo.Domain.Interfaces;
 
 namespace TouchTypingGo.Site.Controllers
 {
     public class CourseController : BaseController
     {
         private readonly ICourseAppService _courseAppService;
+        private readonly IlessonPresentationAppService _lessonPresentationAppService;
 
         public CourseController(ICourseAppService courseAppService,
             IDomainNotificationHandler<DomainDotification> notifications,
-            IUser user) : base(notifications, user)
+            IUser user, IlessonPresentationAppService lessonPresentationAppService) : base(notifications, user)
         {
             _courseAppService = courseAppService;
+            _lessonPresentationAppService = lessonPresentationAppService;
         }
 
         public IActionResult Index()
@@ -35,7 +37,7 @@ namespace TouchTypingGo.Site.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.TeachersSelect = _courseAppService.Teachers();
+            ViewBag.UserLessons = _lessonPresentationAppService.GetAll();
             return View();
         }
 
@@ -45,9 +47,9 @@ namespace TouchTypingGo.Site.Controllers
         {
            
             if (!ModelState.IsValid) return View(courseViewModel);
-           _courseAppService.Add(courseViewModel);
+           var code = _courseAppService.Add(courseViewModel);
 
-            ViewBag.SuccessCreated = ValidOperation() ? "success,Curso criado com sucesso!" : "error,O curso não foi refistrado, verifique as mensagens";
+            ViewBag.SuccessCreated = ValidOperation() ? $"success,Curso criado com sucesso. O código gerado é: {code}" : "error,O curso não foi refistrado, verifique as mensagens";
             return View(courseViewModel);
         }
 
@@ -55,6 +57,17 @@ namespace TouchTypingGo.Site.Controllers
         {
             var course = _courseAppService.GetById(id);
             return View(course);
+        }
+
+        public IActionResult AddLesson(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var courseViewModel = _courseAppService.GetById(id.Value);
+
+            return PartialView("_AddLesson", courseViewModel);
         }
 
         [HttpPost]

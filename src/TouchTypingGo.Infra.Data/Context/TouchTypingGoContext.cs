@@ -17,20 +17,22 @@ namespace TouchTypingGo.Infra.Data.Context
             
         //}
         public DbSet<Course> Courses { get; set; }
-        public DbSet<LeconPresentation> LeconPresentations { get; set; }
-        public DbSet<LeconResult> LeconResults { get; set; }
+        public DbSet<LessonPresentation> LessonPresentations { get; set; }
+        public DbSet<LessonResult> LessonResults { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Keyboard> Keyboards { get; set; }
+        public DbSet<CourseLessonPresentation> CourseLessonPresentations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.AddConfiguration(new CourseMapping());
-            modelBuilder.AddConfiguration(new LeconPresentationMapping());
-            modelBuilder.AddConfiguration(new LeconResultMapping());
+            modelBuilder.AddConfiguration(new LessonPresentationMapping());
+            modelBuilder.AddConfiguration(new LessonResultMapping());
             modelBuilder.AddConfiguration(new StudentMapping());
             modelBuilder.AddConfiguration(new TeacherMapping());
             modelBuilder.AddConfiguration(new KeyboardMapping());
+            modelBuilder.AddConfiguration(new CourseLessonPresentationMapping());
 
             base.OnModelCreating(modelBuilder);
         }

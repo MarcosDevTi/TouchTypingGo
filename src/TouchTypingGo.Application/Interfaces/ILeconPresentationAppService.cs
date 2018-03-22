@@ -6,11 +6,12 @@ using TouchTypingGo.Domain.Course;
 
 namespace TouchTypingGo.Application.Interfaces
 {
-    public interface ILeconPresentationAppService : IDisposable
+    public interface IlessonPresentationAppService : IDisposable
     {
-        void Add(LeconPresentationViewModel leconPresentationViewModel);
-        IEnumerable<LeconPresentationViewModel> GetAll();
-        LeconPresentationViewModel GetById(Guid id);
+        void Add(LessonPresentationViewModel lessonPresentationViewModel);
+        IEnumerable<LessonPresentationViewModel> GetAll();
+        IEnumerable<LessonPresentationViewModel> GetByUserAuthenticated();
+        LessonPresentationViewModel GetById(Guid id);
         void Delete(Guid id);
     }
 }

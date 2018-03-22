@@ -1,7 +1,0 @@
-﻿@using TouchTypingGo.Application.ViewModels
-@model TouchTypingGo.Application.ViewModels.LeconResultViewModel
-
-@{
-    var leconPresentations = (IEnumerable<SelectListItem>) ViewBag.LeconPresentations;
-}
-<select asp-for="LeconPresentationId" asp-items="@leconPresentations" class="form-control"></select>
