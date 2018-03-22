@@ -1,0 +1,14 @@
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\appsettings.json
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.deps.json
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\TouchTypingGo.Domain.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\TouchTypingGo.Domain.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.csprojResolveAssemblyReference.cache
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.csproj.CoreCompileInputs.cache
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.AssemblyInfoInputs.cache
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.AssemblyInfo.cs
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.pdb

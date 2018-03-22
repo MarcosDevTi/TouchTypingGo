@@ -13,6 +13,6 @@ namespace TouchTypingGo.Domain.Course.Commands.LessonPresentation
         public int TimeReference { get; protected set; }
         public int PrecisionReference { get; protected set; }
         public int FontSize { get; protected set; }
-        public Guid UserId { get; protected set; }
+        public Guid? UserId { get; protected set; }
     }
 }

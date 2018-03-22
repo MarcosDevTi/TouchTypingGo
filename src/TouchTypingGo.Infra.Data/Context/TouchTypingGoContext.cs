@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Infra.Data.Extentions;
 using TouchTypingGo.Infra.Data.Mappings;
+using TouchTypingGo.Domain.Institution;
 
 namespace TouchTypingGo.Infra.Data.Context
 {
@@ -23,6 +24,8 @@ namespace TouchTypingGo.Infra.Data.Context
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Keyboard> Keyboards { get; set; }
         public DbSet<CourseLessonPresentation> CourseLessonPresentations { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Institution> Institutions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,6 +36,8 @@ namespace TouchTypingGo.Infra.Data.Context
             modelBuilder.AddConfiguration(new TeacherMapping());
             modelBuilder.AddConfiguration(new KeyboardMapping());
             modelBuilder.AddConfiguration(new CourseLessonPresentationMapping());
+            modelBuilder.AddConfiguration(new AddressMapping());
+            modelBuilder.AddConfiguration(new InstitutionMapping());
 
             base.OnModelCreating(modelBuilder);
         }

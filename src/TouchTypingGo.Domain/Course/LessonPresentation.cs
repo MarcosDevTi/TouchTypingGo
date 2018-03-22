@@ -39,7 +39,7 @@ namespace TouchTypingGo.Domain.Course
 
         public static class LessonPresentationFactory
         {
-            public static LessonPresentation NewlessonPresentationFactory(string name, string text, string category, int speedReference, int timeReference, int precisionReference, int fontSize, Guid userId)
+            public static LessonPresentation NewlessonPresentationFactory(string name, string text, string category, int speedReference, int timeReference, int precisionReference, int fontSize, Guid? userId)
             {
                 return new LessonPresentation
                 {   Name = name,

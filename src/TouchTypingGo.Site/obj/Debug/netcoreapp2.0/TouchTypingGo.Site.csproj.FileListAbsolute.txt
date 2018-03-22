@@ -20,8 +20,8 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.0\To
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.Data.pdb
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.csprojResolveAssemblyReference.cache
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.csproj.CoreCompileInputs.cache
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.AssemblyInfoInputs.cache
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.AssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.pdb
-C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

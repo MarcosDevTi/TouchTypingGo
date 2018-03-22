@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.Services;
 using TouchTypingGo.Application.Services.Helper;
+using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core;
 using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Core.Bus;

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AutoMapper;
 using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Course;
+using TouchTypingGo.Domain.Course.Commands.Keyboard;
 
 namespace TouchTypingGo.Application.ViewModels
 {
-    public class KeyboardViewModel : IMapFrom<Keyboard>
+    public class KeyboardViewModel : IHaveCustomMappings
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -14,5 +16,10 @@ namespace TouchTypingGo.Application.ViewModels
         public string ValHtml { get; set; }
         public string KeyboardContent { get; set; }
         public bool Active { get; set; }
+        public void CreateMappings(IMapperConfigurationExpression configuration)
+        {
+            configuration.CreateMap<KeyboardViewModel, AddKeyboardCommand>()
+                .ConstructUsing(x => new AddKeyboardCommand(x.Name, x.Lcid, x.ValHtml, x.KeyboardContent, x.Active));
+        }
     }
 }

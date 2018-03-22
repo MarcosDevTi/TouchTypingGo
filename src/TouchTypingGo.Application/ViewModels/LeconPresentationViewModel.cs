@@ -35,18 +35,21 @@ namespace TouchTypingGo.Application.ViewModels
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
-            configuration.CreateMap<LessonPresentation, LessonPresentationViewModel>()
-                .ForMember(x => x.Courses, opt => opt.Ignore());
+            //configuration.CreateMap<LessonPresentation, LessonPresentationViewModel>()
+            //    .ForMember(x => x.Courses, opt => opt.Ignore());
 
-            configuration.CreateMap<LessonPresentationViewModel, LessonPresentation>()
-                .ForMember(x => x.CourseLessonPresentations, opt => opt.Ignore())
-                .ForMember(x => x.LessonResults, opt => opt.Ignore());
+            //configuration.CreateMap<LessonPresentationViewModel, LessonPresentation>()
+            //    .ForMember(x => x.CourseLessonPresentations, opt => opt.Ignore())
+            //    .ForMember(x => x.LessonResults, opt => opt.Ignore());
 
 
             configuration.CreateMap<LessonPresentationViewModel, LessonPresentationAddCommand>()
-                .ConstructUsing(x => new LessonPresentationAddCommand(x.Name, x.Text, x.Category, x.SpeedReference,
-                    x.TimeReference, x.PrecisionReference, x.FontSize, Guid.NewGuid()));
-            
+                //.ForMember(x => x.AggregateId, opt => opt.MapFrom(x => x.Id))
+                //.ForMember(x => x.MessageType, opt => opt.MapFrom(string.Empty))
+                //.ForMember(x => x.TimeStamp, opt => opt.MapFrom(string.Empty))
+                    .ConstructUsing(x => new LessonPresentationAddCommand(x.Name, x.Text, x.Category, x.SpeedReference,
+                    x.TimeReference, x.PrecisionReference, x.FontSize, null));
+
         }
     }
 }

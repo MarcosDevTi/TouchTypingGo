@@ -8,4 +8,10 @@
     <ProjectReference Include="..\TouchTypingGo.Domain.Core\TouchTypingGo.Domain.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Institution\Commands\CommandHandlers\" />
+    <Folder Include="Institution\Events\CommandHandlers\" />
+    <Folder Include="Institution\Events\Institution\" />
+  </ItemGroup>
+
 </Project>

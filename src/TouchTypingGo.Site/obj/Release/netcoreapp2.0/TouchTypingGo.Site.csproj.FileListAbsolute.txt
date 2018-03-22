@@ -23,3 +23,5 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Release\netcoreapp2.0\
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Release\netcoreapp2.0\TouchTypingGo.Site.AssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Release\netcoreapp2.0\TouchTypingGo.Site.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Release\netcoreapp2.0\TouchTypingGo.Site.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.pdb

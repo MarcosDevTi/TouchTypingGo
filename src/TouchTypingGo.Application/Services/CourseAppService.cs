@@ -33,19 +33,7 @@ namespace TouchTypingGo.Application.Services
         public IEnumerable<CourseViewModel> GetAll()
         {
             return GetCoursesWithLessons();
-            //return _mapper.Map<IEnumerable<CourseViewModel>>(_courseRepository.GetAll());
         }
-
-        
-
-        //public void Add(CourseViewModel courseViewModel)
-        //{
-            
-        //    //_bus.SendCommand( 
-        //    //    new CourseAddCommand(courseViewModel.Name, courseViewModel.LimitDate));
-        //}
-
-        //
 
         public string Add(CourseViewModel courseViewModel)
         {
