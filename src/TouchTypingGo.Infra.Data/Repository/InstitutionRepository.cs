@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Course.Repository;
 using TouchTypingGo.Domain.Institution;
@@ -11,8 +14,19 @@ namespace TouchTypingGo.Infra.Data.Repository
 {
     public class InstitutionRepository : Repository<Institution>, IInstitutionRepository
     {
+        private readonly TouchTypingGoContext _db;
         public InstitutionRepository(TouchTypingGoContext db, IUser user) : base(db, user)
         {
+            _db = db;
+        }
+
+        public Institution GetByIdWithAddress(Guid id)
+        {
+            return _db.Institutions
+
+                .Include(x => x.Address)
+                
+                .FirstOrDefault(x => x.Id == id);
         }
     }
 }

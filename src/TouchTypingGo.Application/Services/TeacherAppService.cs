@@ -1,7 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Bus;
@@ -51,7 +50,7 @@ namespace TouchTypingGo.Application.Services
 
         public void Delete(Guid id)
         {
-           _bus.SendCommand(new TeacherDeleteCommand(id));
+            _bus.SendCommand(new TeacherDeleteCommand(id));
         }
 
         public void Dispose()

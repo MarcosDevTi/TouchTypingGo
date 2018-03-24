@@ -1,9 +1,8 @@
-﻿using System;
+﻿using FluentValidation;
+using FluentValidation.Results;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using FluentValidation;
-using FluentValidation.Results;
 using TouchTypingGo.Domain.Core.Entities;
 
 namespace TouchTypingGo.Domain.Course
@@ -21,25 +20,22 @@ namespace TouchTypingGo.Domain.Course
             Name = name;
             LimitDate = limitDate;
             TeacherId = teacherId;
-            //DateCreated = new DateTime();
         }
 
-        protected Course(){}
+        protected Course() { }
         public string Name { get; private set; }
         public string Code { get; private set; }
         public DateTime? LimitDate { get; private set; }
-        [NotMapped]
-        //public virtual ICollection<LessonPresentation> LessonPresentations { get; private set; }
         public virtual ICollection<CourseLessonPresentation> CourseLessonPresentations { get; set; }
-        [NotMapped] 
+        [NotMapped]
         public virtual ICollection<Student> Students { get; private set; }
         public Guid TeacherId { get; private set; }
-        public virtual Teacher Teacher { get;private set; }
+        public virtual Teacher Teacher { get; private set; }
         public bool Deleted { get; private set; }
 
         public void SetTeacher(Teacher teacher)
         {
-           // if (!teacher.IsValid()) return;
+            // if (!teacher.IsValid()) return;
 
             Teacher = teacher;
 
@@ -104,7 +100,7 @@ namespace TouchTypingGo.Domain.Course
         }
 
 
-       
+
 
         //cod  = RandomString(4);
     }

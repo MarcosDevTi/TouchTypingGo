@@ -1,39 +1,14 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Course.Commands.Teacher;
 
 namespace TouchTypingGo.Application.ViewModels
 {
-    public class TeacherViewModel: IMapTo<Teacher>, IMapFrom<Teacher>, IHaveCustomMappings
+    public class TeacherViewModel : IMapFrom<Teacher>, IMapTo<Teacher>, IHaveCustomMappings
     {
-       
-        private List<TeacherViewModel> TeacherList()
-        {
-            return new List<TeacherViewModel>
-            {
-                new TeacherViewModel
-                {
-                    Id = new Guid("a36a78e8-0df9-4371-af33-3364fe406ef9"),
-                    Name = "Marcos Professor1"
-                },
-                new TeacherViewModel
-                {
-                    Id = new Guid("8e9c98eb-64b0-4f3b-8ece-02634722e6b0"),
-                    Name = "Vera Professor2"
-                },
-                new TeacherViewModel
-                {
-                    Id = new Guid("f5000d5b-d5f2-47ab-9582-130b88ab68c8"),
-                    Name = "Helena Professor3"
-                }
-            };
-        }
-
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

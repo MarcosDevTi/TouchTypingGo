@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.IO;
 using TouchTypingGo.Domain.Course;
+using TouchTypingGo.Domain.Institution;
 using TouchTypingGo.Infra.Data.Extentions;
 using TouchTypingGo.Infra.Data.Mappings;
-using TouchTypingGo.Domain.Institution;
 
 namespace TouchTypingGo.Infra.Data.Context
 {
     public class TouchTypingGoContext : DbContext
     {
-        //public TouchTypingGoContext(DbContextOptions<TouchTypingGoContext> options) : base(options)
-        //{
-            
-        //}
         public DbSet<Course> Courses { get; set; }
         public DbSet<LessonPresentation> LessonPresentations { get; set; }
         public DbSet<LessonResult> LessonResults { get; set; }

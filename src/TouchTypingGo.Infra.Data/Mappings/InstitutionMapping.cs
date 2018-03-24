@@ -22,7 +22,11 @@ namespace TouchTypingGo.Infra.Data.Mappings
             builder.Property(c => c.Phone)
                 .HasColumnType("varchar(40)")
                 .IsRequired();
-            
+            builder.HasOne(x => x.Address)
+                .WithOne(x => x.Institution)
+                .HasForeignKey<Institution>(a=>a.AddressId)
+                .OnDelete(DeleteBehavior.Cascade);
+
                 builder.Ignore(c => c.ValidationResult);
 
             builder.Ignore(c => c.CascadeMode);

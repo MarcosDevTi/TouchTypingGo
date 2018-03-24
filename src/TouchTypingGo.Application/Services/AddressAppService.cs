@@ -29,7 +29,7 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<AddressViewModel> GetAll()
         {
-            return _mapper.Map< IEnumerable<AddressViewModel>>(_addressRepository.GetAll());
+            return _mapper.Map<IEnumerable<AddressViewModel>>(_addressRepository.GetAll());
         }
 
         public AddressViewModel GetById(Guid id)

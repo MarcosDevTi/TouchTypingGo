@@ -12754,6 +12754,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "AutoMapper >= 6.2.2",
       "Microsoft.NETCore.App >= 2.0.0",
       "TouchTypingGo.Application >= 1.0.0",
       "TouchTypingGo.Domain >= 1.0.0",
@@ -12827,6 +12828,10 @@
             "target": "Package",
             "version": "2.0",
             "autoReferenced": true
+          },
+          "AutoMapper": {
+            "target": "Package",
+            "version": "6.2.2"
           }
         },
         "imports": [

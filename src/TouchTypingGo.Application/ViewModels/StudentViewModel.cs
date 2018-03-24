@@ -1,13 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Course;
 
 namespace TouchTypingGo.Application.ViewModels
 {
-    public class StudentViewModel : IMapTo<Student>, IMapFrom<Student>
+    public class StudentViewModel : IMapFrom<Student>, IMapTo<Student>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

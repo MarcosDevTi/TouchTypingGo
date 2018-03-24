@@ -20,7 +20,7 @@ namespace TouchTypingGo.Infra.Data.Repository
             _context = context;
         }
 
-        public override Course GetById(Guid id)
+        public override Course GetById(Guid? id)
         {
             var teste = _context.Courses
                 .Include(c => c.CourseLessonPresentations)

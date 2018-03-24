@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TouchTypingGo.Application\TouchTypingGo.Application.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Domain\TouchTypingGo.Domain.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.Bus\TouchTypingGo.Infra.CrossCutting.Bus.csproj" />

@@ -1,20 +1,14 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Runtime.Serialization;
-using System.Text;
-using AutoMapper;
 using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Course;
-using TouchTypingGo.Domain.Course.Commands;
-using TouchTypingGo.Domain.Course.Commands.Course;
 
 namespace TouchTypingGo.Application.ViewModels
 {
-    public class CourseViewModel
+    public class CourseViewModel : IHaveCustomMappings
     {
         public CourseViewModel()
         {
@@ -40,6 +34,12 @@ namespace TouchTypingGo.Application.ViewModels
 
         public bool Deleted { get; set; }
 
-        
+
+        public void CreateMappings(IMapperConfigurationExpression configuration)
+        {
+            configuration.CreateMap<Course, CourseViewModel>()
+                .ForMember(dest => dest.Lessons, opt => opt.MapFrom(
+                    src => src.CourseLessonPresentations.Select(l => l.LessonPresentation)));
+        }
     }
 }

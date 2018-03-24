@@ -6,7 +6,7 @@ using TouchTypingGo.Domain.Course;
 
 namespace TouchTypingGo.Application.Interfaces
 {
-    public interface IlessonPresentationAppService : IDisposable
+    public interface ILessonPresentationAppService : IDisposable
     {
         void Add(LessonPresentationViewModel lessonPresentationViewModel);
         IEnumerable<LessonPresentationViewModel> GetAll();

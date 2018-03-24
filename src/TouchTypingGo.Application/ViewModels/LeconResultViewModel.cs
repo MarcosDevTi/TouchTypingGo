@@ -1,14 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
-using TouchTypingGo.Domain.Core.AutoMapper;
-using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Course.Commands.LessonResult;
 
 namespace TouchTypingGo.Application.ViewModels
 {
-    public class LessonResultViewModel : IMapTo<LessonResult>, IMapFrom<LessonResult>, IHaveCustomMappings
+    public class LessonResultViewModel
     {
         public int Try { get; set; }
         public int Wpm { get; set; }

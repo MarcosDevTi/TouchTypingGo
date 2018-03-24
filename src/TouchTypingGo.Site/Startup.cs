@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -45,6 +46,7 @@ namespace TouchTypingGo.Site
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
+            //services.AddAutoMapper();
 
             RegisterServices(services);
         }
@@ -66,7 +68,7 @@ namespace TouchTypingGo.Site
             }
 
             app.UseStaticFiles();
-            app.UseIdentity();
+            //app.UseIdentity();
 
            app.UseAuthentication();
 

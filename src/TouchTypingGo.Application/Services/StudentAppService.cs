@@ -1,12 +1,10 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Course.Commands.Student;
-using TouchTypingGo.Domain.Course.Events.Student;
 using TouchTypingGo.Domain.Course.Repository;
 
 namespace TouchTypingGo.Application.Services

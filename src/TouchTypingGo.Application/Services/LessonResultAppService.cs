@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
+using System.Collections.Generic;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Bus;
@@ -22,9 +21,9 @@ namespace TouchTypingGo.Application.Services
         private readonly IUser _user;
 
         public lessonResultAppService(
-            IBus bus, 
-            IMapper mapper, 
-            ILessonResultRepository lessonResultRepository, 
+            IBus bus,
+            IMapper mapper,
+            ILessonResultRepository lessonResultRepository,
             ILessonPresentationRepository lessonPresentationRepository, IUser user)
         {
             _bus = bus;
@@ -35,7 +34,7 @@ namespace TouchTypingGo.Application.Services
         }
         public void Add(LessonResultViewModel lessonResultViewModel)
         {
-           
+
             _bus.SendCommand(new AddLessonResultCommand(
                 lessonResultViewModel.Try,
                 lessonResultViewModel.Wpm,

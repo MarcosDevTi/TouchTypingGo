@@ -8,7 +8,7 @@ namespace TouchTypingGo.Domain.Course.Repository
     public interface IRepository<TEntity> : IDisposable where TEntity : Entity<TEntity>
     {
         void Add(TEntity obj);
-        TEntity GetById(Guid id);
+        TEntity GetById(Guid? id);
         IEnumerable<TEntity> GetAll();
         void Update(TEntity obj);
         void Delete(Guid id);

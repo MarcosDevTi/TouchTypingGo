@@ -13,9 +13,9 @@ namespace TouchTypingGo.Site.Controllers
 {
     public class LessonPresentationController : BaseController
     {
-        private readonly IlessonPresentationAppService _lessonPresentationAppService;
+        private readonly ILessonPresentationAppService _lessonPresentationAppService;
 
-        public LessonPresentationController(IlessonPresentationAppService lessonPresentationAppService,
+        public LessonPresentationController(ILessonPresentationAppService lessonPresentationAppService,
             IDomainNotificationHandler<DomainDotification> notification,
             IUser user) : base(notification, user)
         {

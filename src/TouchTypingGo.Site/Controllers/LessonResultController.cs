@@ -14,10 +14,10 @@ namespace TouchTypingGo.Site.Controllers
     public class LessonResultController : BaseController
     {
         private readonly IlessonResultAppService _lessonResultAppService;
-        private readonly IlessonPresentationAppService _lessonPresentationAppService;
+        private readonly ILessonPresentationAppService _lessonPresentationAppService;
         public LessonResultController(
             IlessonResultAppService lessonResultAppService,
-            IlessonPresentationAppService lessonPresentationAppService,
+            ILessonPresentationAppService lessonPresentationAppService,
             IDomainNotificationHandler<DomainDotification> notification,
             IUser user) : base(notification, user)
         {

@@ -23,6 +23,10 @@ namespace TouchTypingGo.Infra.Data.Mappings
             builder.Property(c => c.ZipCode)
                 .HasColumnType("varchar(20)");
 
+            //builder.HasOne(x => x.Institution)
+            //    .WithOne(x => x.Address)
+            //    .HasForeignKey<Institution>(i => i.AddressId);
+
             builder.Ignore(c => c.ValidationResult);
 
             builder.Ignore(c => c.CascadeMode);

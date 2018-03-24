@@ -55,3 +55,20 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    @{
+        if (ViewBag.SuccessCreated != null)
+        {
+
+            var notification = ViewBag.SuccessCreated.ToString().Split(',');
+
+            <script>
+                toastr["@notification[0]"]("@notification[1]");
+                //AjaxModal();
+            </script>
+
+        }
+    }
+}

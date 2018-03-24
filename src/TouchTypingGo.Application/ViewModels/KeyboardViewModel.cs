@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
+﻿using AutoMapper;
+using System;
 using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Course.Commands.Keyboard;
 
 namespace TouchTypingGo.Application.ViewModels
 {
-    public class KeyboardViewModel : IHaveCustomMappings
+    public class KeyboardViewModel : IMapFrom<Keyboard>, IMapTo<Keyboard>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

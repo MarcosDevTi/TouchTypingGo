@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
+using System.Collections.Generic;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Bus;
-using TouchTypingGo.Domain.Course.Commands;
 using TouchTypingGo.Domain.Course.Commands.Course;
 using TouchTypingGo.Domain.Course.Repository;
 
@@ -59,7 +56,6 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<CourseViewModel> GetCoursesWithLessons()
         {
-            //var testea = _mapper.Map<CourseViewModel>(_courseRepository.GetCoursesWithLessons());
             var cursos = new HashSet<CourseViewModel>();
             var lista = _courseRepository.GetCoursesWithLessons();
             var listaLp = new HashSet<LessonPresentationViewModel>();
@@ -72,7 +68,7 @@ namespace TouchTypingGo.Application.Services
 
                 var courseVwModel = _mapper.Map<CourseViewModel>(lpw);
                 courseVwModel.Lessons = listaLp;
-                
+
                 cursos.Add(courseVwModel);
                 listaLp = new HashSet<LessonPresentationViewModel>();
             }
@@ -106,12 +102,12 @@ namespace TouchTypingGo.Application.Services
             return course;
         }
 
-       
+
         public void Dispose()
         {
             _courseRepository.Dispose();
         }
 
-       
+
     }
 }

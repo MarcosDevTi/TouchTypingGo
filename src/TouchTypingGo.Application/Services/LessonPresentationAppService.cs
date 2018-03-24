@@ -12,7 +12,7 @@ using TouchTypingGo.Domain.Course.Repository;
 
 namespace TouchTypingGo.Application.Services
 {
-    public class LessonPresentationAppService : IlessonPresentationAppService
+    public class LessonPresentationAppService : ILessonPresentationAppService
     {
         private readonly IBus _bus;
         private readonly IMapper _mapper;
@@ -38,6 +38,7 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<LessonPresentationViewModel> GetAll()
         {
+            var teste = _lessonPresentationRepository.GetAll();
             return _mapper.Map<IEnumerable<LessonPresentationViewModel>>(_lessonPresentationRepository.GetAll());
         }
 

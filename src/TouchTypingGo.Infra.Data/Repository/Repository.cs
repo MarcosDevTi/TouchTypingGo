@@ -30,7 +30,7 @@ namespace TouchTypingGo.Infra.Data.Repository
             DbSet.Add(obj);
         }
 
-        public virtual TEntity GetById(Guid id)
+        public virtual TEntity GetById(Guid? id)
         {
             return DbSet.FirstOrDefault(t => t.Id == id);
         }

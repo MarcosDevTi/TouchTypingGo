@@ -1,0 +1,75 @@
+﻿@model TouchTypingGo.Application.ViewModels.InstitutionViewModel
+
+<div class="panel panel-default">
+    <div class="page-header">
+        <strong>Endereço da Instituição</strong>
+    </div>
+    @if (Model.Address != null)
+    {
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address.County)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address.Street)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address.Number)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address.ZipCode)
+                </th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Address.County)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Address.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Address.Street)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Address.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Address.ZipCode)
+                </td>
+                <td>
+                    <div>
+                        <!-- Button trigger modal -->
+                        
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <a asp-action="AddAddress" asp-route-id="@Model.Id" data-toggle="modal" @*data-target="#myModal"*@ class="btn btn-info">
+            <span title="Edit"></span> Edit Address
+        </a>
+    }
+    else
+    {
+        <table class="table">
+            <tr>
+                <th>
+                    @*<a asp-action="AddAddress" asp-route-id="@Model.Id" data-model="" class="btn btn-info">
+                        <span title="Add Address"></span> Add Address
+                    </a>*@
+                   
+                </th>
+            </tr>
+        </table>
+        <button type="button" asp-action="AddAddress" asp-route-id="@Model.Id" data-toggle="modal" class="btn btn-info">
+            <span title="Edit"></span> Edit Address
+        </button>
+    }
+</div>
+

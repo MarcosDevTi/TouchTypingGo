@@ -4,21 +4,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TouchTypingGo.Application.Interfaces;
+using TouchTypingGo.Application.ViewModels;
+using TouchTypingGo.Domain.Core.Interfaces;
+using TouchTypingGo.Domain.Core.Notifications;
 
 namespace TouchTypingGo.Site.Controllers
 {
-    public class InstitutionController : Controller
+    public class InstitutionController : BaseController
     {
+        private readonly IInstitutionAppService _institutionAppService;
+
+        public InstitutionController(
+            IInstitutionAppService institutionAppService,
+            IDomainNotificationHandler<DomainDotification> notification,
+            IUser user) : base(notification, user)
+        {
+            _institutionAppService = institutionAppService;
+        }
         // GET: Institution
         public ActionResult Index()
         {
-            return View();
-        }
-
-        // GET: Institution/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
+            return View(_institutionAppService.GetAll());
         }
 
         // GET: Institution/Create
@@ -30,41 +37,32 @@ namespace TouchTypingGo.Site.Controllers
         // POST: Institution/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(InstitutionViewModel institution)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            if (!ModelState.IsValid) return View(institution);
+            _institutionAppService.Add(institution);
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            ViewBag.SuccessCreated = ValidOperation() ? "success,Instituição criada com sucesso!" : "error,A Instituição não foi refistrado, verifique as mensagens";
+            return View(institution);
         }
 
         // GET: Institution/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
-            return View();
+            var institution = _institutionAppService.GetByIdWithAddress(id);
+            return View(institution);
         }
 
         // POST: Institution/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(InstitutionViewModel institution)
         {
-            try
-            {
-                // TODO: Add update logic here
+            if (!ModelState.IsValid) return View(institution);
+            _institutionAppService.Update(institution);
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return View(institution);
+
         }
 
         // GET: Institution/Delete/5
@@ -88,6 +86,33 @@ namespace TouchTypingGo.Site.Controllers
             {
                 return View();
             }
+        }
+
+        public IActionResult AddAddress(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var addressViewModel = _institutionAppService.GetByIdWithAddress(id.Value);
+            return PartialView("_AddAddress", addressViewModel);
+        }
+
+        public ActionResult UpdateAddress(AddressViewModel addressViewModel)
+        {
+            return View();
+        }
+
+        public IActionResult Details(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var institution = _institutionAppService.GetById(id.Value);
+
+            return PartialView(institution);
         }
     }
 }

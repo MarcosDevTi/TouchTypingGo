@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v2.0": {
       "TouchTypingGo.Infra.CrossCutting.IoC/1.0.0": {
         "dependencies": {
+          "AutoMapper": "6.2.2",
           "TouchTypingGo.Application": "1.0.0",
           "TouchTypingGo.Domain": "1.0.0",
           "TouchTypingGo.Infra.CrossCutting.Bus": "1.0.0",

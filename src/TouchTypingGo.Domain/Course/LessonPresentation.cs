@@ -18,7 +18,7 @@ namespace TouchTypingGo.Domain.Course
             FontSize = fontSize;
         }
 
-        protected LessonPresentation(){}
+        protected LessonPresentation() { }
 
         public string Name { get; private set; }
         public string Text { get; private set; }
@@ -28,7 +28,6 @@ namespace TouchTypingGo.Domain.Course
         public int PrecisionReference { get; private set; }
         public int FontSize { get; private set; }
         [NotMapped]
-        public virtual ICollection<Course> Courses { get; private set; }
         public virtual ICollection<CourseLessonPresentation> CourseLessonPresentations { get; set; }
         [NotMapped]
         public virtual ICollection<LessonResult> LessonResults { get; private set; }
@@ -42,7 +41,8 @@ namespace TouchTypingGo.Domain.Course
             public static LessonPresentation NewlessonPresentationFactory(string name, string text, string category, int speedReference, int timeReference, int precisionReference, int fontSize, Guid? userId)
             {
                 return new LessonPresentation
-                {   Name = name,
+                {
+                    Name = name,
                     Text = text,
                     Category = category,
                     SpeedReference = speedReference,

@@ -55,7 +55,7 @@ namespace TouchTypingGo.Application.Services
                     Errors = last?.Errors,
                     CoutResolute = lessonResults.Count(x => x.LessonPresentationId == lessonPresentation.Id),
                     Started = lessonResults.Any(x => x.LessonPresentationId == lessonPresentation.Id),
-                    PreviewText = lessonPresentation.Text.Substring(0, 20),
+                    PreviewText = lessonPresentation.Text.Length > 20 ? lessonPresentation.Text.Substring(0, 20) : lessonPresentation.Text,
                     Category = lessonPresentation.Category
                 });
             }

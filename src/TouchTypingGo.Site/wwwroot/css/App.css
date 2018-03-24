@@ -1,0 +1,334 @@
+﻿
+/* Keyboard */
+
+#d1, #d2, #d3, #d4, #d5 {
+    display: block;
+    margin-top: -251px;
+    opacity: 0.4;
+}
+
+#e1, #e2, #e3, #e4, #e5 {
+    display: block;
+    margin-top: -251px;
+    opacity: 0.4;
+}
+
+#mE, #mD {
+    opacity: 0.4;
+    filter: drop-shadow(2px 1px 1px #222);
+}
+
+
+.tcl1 {
+    width: 100%;
+}
+
+div.kb {
+    overflow: auto;
+    float: left;
+    padding: 0;
+    font-size: 162%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    div.kb div.key {
+        box-shadow: 1px 1px 1px rgb(0, 138, 255);
+        border-radius: 5px;
+        position: relative;
+        background-color: rgb(255, 255, 255);
+        line-height: 30px;
+        border: 1px solid rgba(133, 68, 64, 0.22);
+        margin: 0.1%;
+        color: #030D31;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        outline: none;
+        float: left;
+        width: 6.6%;
+        height: 40px;
+    }
+
+    div.kb div.key_two {
+        line-height: 14px;
+        font-size: 70%;
+    }
+
+        div.kb div.key_two div.key_top {
+            margin-top: 3px;
+            padding-left: 4px;
+            text-align: left;
+        }
+
+        div.kb div.key_two div.key_bottom {
+            padding-right: 4px;
+            text-align: right;
+        }
+
+    div.kb div.key_back {
+        width: 11%;
+    }
+
+    div.kb div.key_tab {
+        width: 11%;
+    }
+
+
+    div.kb div.key_enter_down {
+        border-bottom-right-radius: 0;
+        width: 50px;
+    }
+
+    div.kb div.key_enter_down_middle {
+        display: none;
+    }
+
+    div.kb div.key_enter_down_bottom {
+        border-radius: 0 0 5px 5px;
+        position: absolute;
+        top: 30px;
+        left: 11px;
+        width: 38px;
+        height: 34px;
+        border: 1px solid #777;
+        border-top: 0;
+        background-color: #fff;
+    }
+
+    div.kb div.key_enter_up {
+        border-radius: 5px 5px 0 0;
+        width: 50px;
+    }
+
+    div.kb div.key_enter_up_middle {
+        position: absolute;
+        top: 30px;
+        left: -1px;
+        width: 50px;
+        height: 4px;
+        border-left: 1px solid #777;
+        border-right: 1px solid #777;
+        background-color: #fff;
+    }
+
+    div.kb div.key_enter_up_bottom {
+        border-radius: 5px 0 5px 5px;
+        position: absolute;
+        top: 33px;
+        left: -23px;
+        width: 72px;
+        height: 30px;
+        border: 1px solid #777;
+        background-color: #fff;
+    }
+
+    div.kb div.key_caps {
+        width: 13.5%;
+    }
+
+    div.kb div.key_enter {
+        width: 11%;
+    }
+
+    div.kb div.key_shift_lft {
+        width: 42px;
+        clear: left;
+    }
+
+    div.kb div.key_shift_lft_long {
+        width: 16%;
+        clear: left;
+    }
+
+    div.kb div.key_shift_rgt {
+        width: 15.4%;
+    }
+
+    div.kb div.key_ctrl_lft {
+        width: 12%;
+    }
+
+    div.kb div.key_alt_lft {
+        width: 8.2%;
+        margin-left: 6.5%;
+    }
+
+    div.kb div.key_space {
+        width: 41.5%;
+    }
+
+    div.kb div.key_alt_rgt {
+        width: 12%;
+    }
+
+    div.kb div.key_ctrl_rgt {
+        width: 12%;
+        margin-left: 6.8%;
+    }
+
+
+
+#TecladoContainer {
+    display: flex;
+    margin: auto;
+    padding-left: 10%; /*Change responsive*/
+}
+
+
+.pgn {
+    background: #fbbaba;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.79);
+    margin: 0px auto 0;
+    position: relative;
+    width: 80%;
+    z-index: 1;
+}
+
+
+.pgn:before, .pgn:after {
+    content: "";
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.pgn:before {
+    background: #c6e3f3;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.58);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-0.4deg);
+}
+
+.pgn:after {
+    background: #fffdea;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.18);
+    right: -3px;
+    top: 1px;
+    transform: rotate(0.7deg);
+}
+
+#textoApp3_4 {
+    font-size: 2.8vw !important;
+    font-family: monospace !important; 
+}
+
+.text_type {
+    font-family: "Consolas", Courier, monospace;
+}
+
+/*Signalizations*/
+.dir_rtl {
+    direction: rtl;
+}
+
+.dir_ltr {
+    direction: ltr;
+}
+
+.text_type {
+    font-family: "Consolas", Courier, monospace;
+}
+
+.text_hint {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.done_ok {
+    color: #999;
+}
+
+.done_bad {
+    color: #FF5454;
+    border-bottom: 2px solid #FF5454;
+}
+
+.current {
+    color: #00f;
+    border-bottom: 2px solid #00f;
+}
+
+.done_txt_ok {
+    color: #777;
+}
+
+.done_txt_bad {
+    color: #a1f;
+}
+
+.current_txt {
+    color: #000;
+}
+
+.next_txt {
+    color: #000;
+}
+
+/*Panel Results*/
+#appView {
+    margin: auto;
+}
+
+#panelResults {
+    width: 100%;
+    border: 1px solid green;
+    height: 120px;
+    margin-bottom: 7px;
+}
+
+#results1 {
+    background-color: #808080;
+    width: 10%;
+    float: left;
+    height: 118px;
+}
+
+    #results1 hr {
+
+        margin: 0.2px;
+    }
+
+    #results1 .btn-block {
+        width: 94%;
+        margin-left: 2%;
+    }
+#results2 {
+    background-color: #fff;
+    width: 20%;
+    float: left;
+    height: 118px;
+}
+    #results2 #lessonName {
+        font-size: 1.8vw
+    }
+#results2 p {
+    margin-left: 2%;
+    margin-bottom: 0rem;
+}
+    #results2 .dropdown {
+        margin-left: 2%;
+    } 
+#results2 #learnedsKeys {
+    font-size: 1.2vw
+}
+
+#results3 {
+    background-color: aqua;
+    width: 30%;
+    float: left;
+    height: 118px;
+}
+#results4 {
+    background-color: burlywood;
+    width: 20%;
+    float: left;
+    height: 118px;
+}
+
+#results5 {
+    background-color: cornflowerblue;
+    width: 20%;
+    float: left;
+    height: 118px;
+}
