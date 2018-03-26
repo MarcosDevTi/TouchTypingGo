@@ -788,9 +788,9 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\touchtypinggo\\TouchTypingGo\\TouchTypingGo.Infra.CrossCutting.CookieManager\\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj",
-      "projectName": "TouchTypingGo.Infra.CrossCutting.CookieManager",
-      "projectPath": "C:\\touchtypinggo\\TouchTypingGo\\TouchTypingGo.Infra.CrossCutting.CookieManager\\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj",
+      "projectUniqueName": "C:\\touchtypinggo\\TouchTypingGo\\TouchTypingGo.Infra.CrossCutting.CookieManager\\TouchTypingGo.Infra.CrossCutting.Cooanager.csproj",
+      "projectName": "TouchTypingGo.Infra.CrossCutting.Cooanager",
+      "projectPath": "C:\\touchtypinggo\\TouchTypingGo\\TouchTypingGo.Infra.CrossCutting.CookieManager\\TouchTypingGo.Infra.CrossCutting.Cooanager.csproj",
       "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
       "outputPath": "C:\\touchtypinggo\\TouchTypingGo\\TouchTypingGo.Infra.CrossCutting.CookieManager\\obj\\",
       "projectStyle": "PackageReference",

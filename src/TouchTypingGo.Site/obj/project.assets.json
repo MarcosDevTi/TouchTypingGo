@@ -787,14 +787,14 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Html.Abstractions.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Http/2.0.1": {
+      "Microsoft.AspNetCore.Http/2.0.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Http.Abstractions": "2.0.1",
-          "Microsoft.AspNetCore.WebUtilities": "2.0.1",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.2",
+          "Microsoft.AspNetCore.WebUtilities": "2.0.2",
           "Microsoft.Extensions.ObjectPool": "2.0.0",
-          "Microsoft.Extensions.Options": "2.0.0",
-          "Microsoft.Net.Http.Headers": "2.0.1"
+          "Microsoft.Extensions.Options": "2.0.1",
+          "Microsoft.Net.Http.Headers": "2.0.2"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Http.dll": {}
@@ -803,10 +803,10 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Http.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Http.Abstractions/2.0.1": {
+      "Microsoft.AspNetCore.Http.Abstractions/2.0.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Http.Features": "2.0.1",
+          "Microsoft.AspNetCore.Http.Features": "2.0.2",
           "System.Text.Encodings.Web": "4.4.0"
         },
         "compile": {
@@ -1478,10 +1478,10 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.WebSockets.dll": {}
         }
       },
-      "Microsoft.AspNetCore.WebUtilities/2.0.1": {
+      "Microsoft.AspNetCore.WebUtilities/2.0.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Net.Http.Headers": "2.0.1",
+          "Microsoft.Net.Http.Headers": "2.0.2",
           "System.Text.Encodings.Web": "4.4.0"
         },
         "compile": {
@@ -2345,7 +2345,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll": {}
         }
       },
-      "Microsoft.Extensions.Options/2.0.0": {
+      "Microsoft.Extensions.Options/2.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
@@ -2496,7 +2496,7 @@
           "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Net.Http.Headers/2.0.1": {
+      "Microsoft.Net.Http.Headers/2.0.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Primitives": "2.0.0",
@@ -5117,7 +5117,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Http.Features": "2.0.2",
+          "Microsoft.AspNetCore.Http": "2.0.2",
           "Newtonsoft.Json": "11.0.2"
         },
         "compile": {
@@ -5745,25 +5745,25 @@
         "microsoft.aspnetcore.html.abstractions.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Http/2.0.1": {
-      "sha512": "mTXDCNF83pV6qe+IzJ166p1re2or25Xj0vjdqj5JDakz9ClNZHncSkyAk63vSpBZbgFXGHiz+PuVyYcfurs5ew==",
+    "Microsoft.AspNetCore.Http/2.0.2": {
+      "sha512": "oVmQJvA1dHr96VcJVyUYEPcQH+FHSJSEu52Fq6aB7rmpjtyxlcFzyvRNumD4J1QJjlhE/V8jF10lY2hH0J6h4w==",
       "type": "package",
-      "path": "microsoft.aspnetcore.http/2.0.1",
+      "path": "microsoft.aspnetcore.http/2.0.2",
       "files": [
         "lib/netstandard2.0/Microsoft.AspNetCore.Http.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Http.xml",
-        "microsoft.aspnetcore.http.2.0.1.nupkg.sha512",
+        "microsoft.aspnetcore.http.2.0.2.nupkg.sha512",
         "microsoft.aspnetcore.http.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Http.Abstractions/2.0.1": {
-      "sha512": "i3mGpHEGnMq/x9eDxdWVP4e+VdPD8DuhdVYR4sH0wxWiM6oa0tNAhwDGoOrDop548PSwLM8Qs7DGPvrZqIqjmQ==",
+    "Microsoft.AspNetCore.Http.Abstractions/2.0.2": {
+      "sha512": "yQM9JzPAExsxTqvJBBr3yC+6XyOETi2T/eOOBjrOOnYgQOO+7M7J8VvAW0wQID9zh7QqWO6kh3BGCT/aqvydtg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.http.abstractions/2.0.1",
+      "path": "microsoft.aspnetcore.http.abstractions/2.0.2",
       "files": [
         "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.xml",
-        "microsoft.aspnetcore.http.abstractions.2.0.1.nupkg.sha512",
+        "microsoft.aspnetcore.http.abstractions.2.0.2.nupkg.sha512",
         "microsoft.aspnetcore.http.abstractions.nuspec"
       ]
     },
@@ -6282,14 +6282,14 @@
         "microsoft.aspnetcore.websockets.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.WebUtilities/2.0.1": {
-      "sha512": "shzRZs574ir2Im5hJBSKnLlNbf8SKA2d5Mkcto5fv6LUcYqu0ravmVHfuRAqnAeo2Z0GpcpFW2DKmNbFjvzWRg==",
+    "Microsoft.AspNetCore.WebUtilities/2.0.2": {
+      "sha512": "dvn80+p1AIQKOfJ+VrOhVMUktWRvJs7Zb+UapZGBNSyrCzTsYiXbb9C7Mzw+nGj5UevnLNFcWWc7BUlLMD2qpw==",
       "type": "package",
-      "path": "microsoft.aspnetcore.webutilities/2.0.1",
+      "path": "microsoft.aspnetcore.webutilities/2.0.2",
       "files": [
         "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.xml",
-        "microsoft.aspnetcore.webutilities.2.0.1.nupkg.sha512",
+        "microsoft.aspnetcore.webutilities.2.0.2.nupkg.sha512",
         "microsoft.aspnetcore.webutilities.nuspec"
       ]
     },
@@ -7149,14 +7149,14 @@
         "microsoft.extensions.objectpool.nuspec"
       ]
     },
-    "Microsoft.Extensions.Options/2.0.0": {
-      "sha512": "sAKBgjl2gWsECBLLR9K54T7/uZaP2n9GhMYHay/oOLfvpvX0+iNAlQ2NJgVE352C9Fs5CDV3VbNTK8T2aNKQFA==",
+    "Microsoft.Extensions.Options/2.0.1": {
+      "sha512": "gxo2Bgg4D6+uyQz1Wdj1FAcBD3870+t37YjplyQXmjLzPWaoU89AIg3AXBXw4fR9CCdWLputZBLm3YaBx+oDFQ==",
       "type": "package",
-      "path": "microsoft.extensions.options/2.0.0",
+      "path": "microsoft.extensions.options/2.0.1",
       "files": [
         "lib/netstandard2.0/Microsoft.Extensions.Options.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
-        "microsoft.extensions.options.2.0.0.nupkg.sha512",
+        "microsoft.extensions.options.2.0.1.nupkg.sha512",
         "microsoft.extensions.options.nuspec"
       ]
     },
@@ -7492,14 +7492,14 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.Net.Http.Headers/2.0.1": {
-      "sha512": "A61ddihPbPy9764AtCysy73oj/PA/9hsv21mXLX5QJYp9lkeyygTufTSGUmh9hz/SiZKy5GBreSlgD2Tm2ab9w==",
+    "Microsoft.Net.Http.Headers/2.0.2": {
+      "sha512": "hNhJU+Sd7Ws/yrBnakUWKWMyGiDUJE5lTkJfWe5xPL8YGTiL6Es07H9CcTyaYYwVlgW06uDVN0YhhH+t4EjdCw==",
       "type": "package",
-      "path": "microsoft.net.http.headers/2.0.1",
+      "path": "microsoft.net.http.headers/2.0.2",
       "files": [
         "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll",
         "lib/netstandard2.0/Microsoft.Net.Http.Headers.xml",
-        "microsoft.net.http.headers.2.0.1.nupkg.sha512",
+        "microsoft.net.http.headers.2.0.2.nupkg.sha512",
         "microsoft.net.http.headers.nuspec"
       ]
     },
@@ -13416,8 +13416,8 @@
     },
     "TouchTypingGo.Infra.CrossCutting.CookieManager/1.0.0": {
       "type": "project",
-      "path": "../../TouchTypingGo.Infra.CrossCutting.CookieManager/TouchTypingGo.Infra.CrossCutting.CookieManager.csproj",
-      "msbuildProject": "../../TouchTypingGo.Infra.CrossCutting.CookieManager/TouchTypingGo.Infra.CrossCutting.CookieManager.csproj"
+      "path": "../TouchTypingGo.Infra.CrossCutting.CookieManager/TouchTypingGo.Infra.CrossCutting.CookieManager.csproj",
+      "msbuildProject": "../TouchTypingGo.Infra.CrossCutting.CookieManager/TouchTypingGo.Infra.CrossCutting.CookieManager.csproj"
     },
     "TouchTypingGo.Infra.CrossCutting.Identity/1.0.0": {
       "type": "project",
@@ -13487,8 +13487,8 @@
             "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.Bus\\TouchTypingGo.Infra.CrossCutting.Bus.csproj": {
               "projectPath": "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.Bus\\TouchTypingGo.Infra.CrossCutting.Bus.csproj"
             },
-            "C:\\touchtypinggo\\TouchTypingGo\\TouchTypingGo.Infra.CrossCutting.CookieManager\\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj": {
-              "projectPath": "C:\\touchtypinggo\\TouchTypingGo\\TouchTypingGo.Infra.CrossCutting.CookieManager\\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj"
+            "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.CookieManager\\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj": {
+              "projectPath": "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.CookieManager\\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj"
             },
             "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.Identity\\TouchTypingGo.Infra.CrossCutting.Identity.csproj": {
               "projectPath": "C:\\touchtypinggo\\TouchTypingGo\\src\\TouchTypingGo.Infra.CrossCutting.Identity\\TouchTypingGo.Infra.CrossCutting.Identity.csproj"
