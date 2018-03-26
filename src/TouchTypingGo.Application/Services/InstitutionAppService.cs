@@ -55,7 +55,7 @@ namespace TouchTypingGo.Application.Services
             {
                 Id = institution.Id,
                 Name = institution.Name,
-                Address = new AddressViewModel
+                Address = institution.Address != null ? new AddressViewModel
                 {
                     Id = institution.Address.Id,
                     City = institution.Address.City,
@@ -63,7 +63,7 @@ namespace TouchTypingGo.Application.Services
                     Number = institution.Address.Number,
                     Street = institution.Address.Street,
                     ZipCode = institution.Address.ZipCode
-                },
+                } : null,
                 Email = institution.Email,
                 AddressId = institution.AddressId,
                 Phone = institution.Phone

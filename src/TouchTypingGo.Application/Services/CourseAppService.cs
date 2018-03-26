@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Bus;
+using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Course.Commands.Course;
 using TouchTypingGo.Domain.Course.Repository;
 
@@ -57,31 +59,17 @@ namespace TouchTypingGo.Application.Services
         public IEnumerable<CourseViewModel> GetCoursesWithLessons()
         {
             var cursos = new HashSet<CourseViewModel>();
-            var lista = _courseRepository.GetCoursesWithLessons();
-            var listaLp = new HashSet<LessonPresentationViewModel>();
-            foreach (var lpw in lista)
-            {
-                foreach (var lp in lpw.CourseLessonPresentations)
-                {
-                    listaLp.Add(_mapper.Map<LessonPresentationViewModel>(lp.LessonPresentation));
-                }
 
-                var courseVwModel = _mapper.Map<CourseViewModel>(lpw);
-                courseVwModel.Lessons = listaLp;
-
-                cursos.Add(courseVwModel);
-                listaLp = new HashSet<LessonPresentationViewModel>();
-            }
+            _courseRepository.GetCoursesWithLessons().ToList()
+                .ForEach(c => cursos.Add(CourseViewModelMap(c)));
 
             return cursos;
         }
 
         public IEnumerable<TeacherViewModel> GetAllTeachers()
         {
-
             return _mapper.Map<IEnumerable<TeacherViewModel>>(_teacherRepository.GetAll());
         }
-
 
         public IEnumerable<CourseViewModel> GetCourseByTeacher(Guid teacherId)
         {
@@ -90,24 +78,26 @@ namespace TouchTypingGo.Application.Services
 
         public CourseViewModel GetById(Guid id)
         {
-            var listaLp = new HashSet<LessonPresentationViewModel>();
-            var courseRepository = _courseRepository.GetById(id);
-            foreach (var lecon in courseRepository.CourseLessonPresentations)
-            {
-                listaLp.Add(_mapper.Map<LessonPresentationViewModel>(lecon.LessonPresentation));
-            }
-            var course = _mapper.Map<CourseViewModel>(_courseRepository.GetById(id));
-            course.Lessons = listaLp;
-
-            return course;
+            return CourseViewModelMap(_courseRepository.GetById(id));
         }
 
+        private CourseViewModel CourseViewModelMap(Course course)
+        {
+            return new CourseViewModel
+            {
+                Id = course.Id,
+                Name = course.Name,
+                Code = course.Code,
+                LimitDate = course.LimitDate,
+                TeacherId = course.TeacherId,
+                Lessons = course.CourseLessonPresentations.Select(
+                    x => _mapper.Map<LessonPresentationViewModel>(x.LessonPresentation)).ToList()
+            };
+        }
 
         public void Dispose()
         {
             _courseRepository.Dispose();
         }
-
-
     }
 }

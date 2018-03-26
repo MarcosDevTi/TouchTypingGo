@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-<table class="table">
+<table class="table table-striped ">
     <thead>
         <tr>
 
@@ -40,7 +40,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+            <tr class="table-success">
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -66,38 +66,38 @@
                 </td>
 
             </tr>
-            
 
-              @if (item.Lessons.Any())
-               {
-                   <tr>
-                       <th>
-                           Nome
-                       </th>
-                       <th>
-                           Texto
-                       </th>
-                       <th>
-                           Id
-                       </th> 
-                   </tr> 
-               }
 
-                @foreach(var lesson in item.Lessons)
-                {
-                    <tr>
-                        <td>
-                            @lesson.Name
-                        </td>
-                        <td>
-                            @lesson.Text
-                        </td>
-                        <td>
-                            @lesson.Id
-                        </td> 
-                    </tr> 
-                }
-           
+            @if (item.Lessons.Any())
+            {
+                <tr class="table-primary">
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Texto
+                    </th>
+                    <th>
+                        Id
+                    </th>
+                </tr>
+            }
+
+            @foreach (var lesson in item.Lessons)
+            {
+                <tr class="table-light">
+                    <td>
+                        @lesson.Name
+                    </td>
+                    <td>
+                        @lesson.Text
+                    </td>
+                    <td>
+                        @lesson.Id
+                    </td>
+                </tr>
+            }
+
 
         }
     </tbody>
