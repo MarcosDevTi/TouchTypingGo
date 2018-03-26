@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using AutoMapper.QueryableExtensions;
 using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Institution;
 using TouchTypingGo.Domain.Institution.Repository;

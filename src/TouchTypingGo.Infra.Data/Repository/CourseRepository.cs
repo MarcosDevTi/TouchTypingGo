@@ -25,11 +25,11 @@ namespace TouchTypingGo.Infra.Data.Repository
                 .FirstOrDefault(c => c.Id == id);
         }
 
-        public override IEnumerable<Course> GetAll()
+        public override IReadOnlyList<Course> GetAll()
         {
             return _context.Courses
                 .Include(c => c.CourseLessonPresentations)
-                .ThenInclude(x => x.LessonPresentation);
+                .ThenInclude(x => x.LessonPresentation).ToList();
         }
 
         public IEnumerable<Course> GetCoursesWithLessons()

@@ -21,11 +21,9 @@ namespace TouchTypingGo.Infra.Data.Mappings
                 .IsRequired();
             builder.HasOne(x => x.Address)
                 .WithOne(x => x.Institution)
-                .HasForeignKey<Institution>(a => a.AddressId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey<Institution>(a => a.AddressId);
 
             builder.Ignore(c => c.ValidationResult);
-
             builder.Ignore(c => c.CascadeMode);
 
             builder.ToTable("Institutions");

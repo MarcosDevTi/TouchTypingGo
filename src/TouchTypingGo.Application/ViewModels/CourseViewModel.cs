@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using TouchTypingGo.Domain.Core.AutoMapper;
+using TouchTypingGo.Application.AutoMapper;
 using TouchTypingGo.Domain.Course;
 
 namespace TouchTypingGo.Application.ViewModels
 {
     [DisplayName("Course")]
-    public class CourseViewModel : ICustomMappings
+    public class CourseViewModel : ICustomMappings, IMapFrom<Course>
     {
         public CourseViewModel()
         {
@@ -35,8 +35,10 @@ namespace TouchTypingGo.Application.ViewModels
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
             configuration.CreateMap<Course, CourseViewModel>()
-                .ForMember(dest => dest.Lessons, opt => opt.MapFrom(
-                    src => src.CourseLessonPresentations.Select(l => l.LessonPresentation)));
+                .ForMember(dest => dest.Lessons, opt=>opt.MapFrom(
+                    src => Mapper.Map<IEnumerable<LessonPresentationViewModel>>(
+                        src.CourseLessonPresentations.Select(x=>x.LessonPresentation))
+                    ));
         }
     }
 }

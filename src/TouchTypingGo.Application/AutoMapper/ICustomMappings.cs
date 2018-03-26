@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace TouchTypingGo.Domain.Core.AutoMapper
+namespace TouchTypingGo.Application.AutoMapper
 {
     public interface ICustomMappings
     {

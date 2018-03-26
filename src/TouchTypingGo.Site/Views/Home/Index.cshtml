@@ -22,17 +22,18 @@
     @Html.Partial("~/Views/Home/_itens.cshtml")
 
 
-    <div class="col-md-12">
-        <div class="container">
-            <hr class="tall" />
-            <div class="row push-top">
-                <a href="@localizer["LkInicianteLista"]" class="col-md-4 push-top" data-appear-animation="fadeInLeft">
+    <div class="container">
+        <div>
+            <hr class="" />
+            <div class="row">
+                <a href="@localizer["LkInicianteLista"]" class="col-4" data-appear-animation="fadeInLeft">
                     <i class="fa fa-keyboard-o imgTxt1"></i>
                 </a>
-                <div class="col-md-8" data-appear-animation="fadeInRight">
+                <div class="col-1"></div>
+                <div class="col-7" data-appear-animation="fadeInRight">
                     <div id="textoHome1">
-                        <h2 class="push-top"><strong>@localizer["Digitacao"]</strong> @localizer["com_tecninca_usando_os_10_dedos"]</h2>
-                        <p class="lead">
+                        <h2><strong>@localizer["Digitacao"]</strong> @localizer["com_tecninca_usando_os_10_dedos"]</h2>
+                        <p>
                             @localizer["O_Curso_de_digitacao_gratuito_online_dispoe_de_um_metodo_evolutivo"]
                         </p>
                         <p>
@@ -41,11 +42,11 @@
                     </div>
                 </div>
             </div>
-            <hr class="tall" />
+            <hr />
             <div class="row">
-                <div class="col-md-7" data-appear-animation="fadeInLeft">
+                <div class="col-7" data-appear-animation="fadeInLeft">
                     <div id="textoHome2">
-                        <h2 class="push-top">@localizer["Estude_com_seus"] <strong>@localizer["Proprios_textos!"]</strong></h2>
+                        <h2>@localizer["Estude_com_seus"] <strong>@localizer["Proprios_textos"]</strong></h2>
                         <p class="lead">
                             @localizer["Crie_licoes_utilizando_seus_proprios_textos"]
                         </p>
@@ -54,21 +55,21 @@
                         </p>
                     </div>
                 </div>
-                <a href="@localizer["lkCriarLicaoMeuProprioTexto"]" class="col-md-4 col-md-offset-1 push-top" data-appear-animation="fadeInRight">
+                <div class="col-1"></div>
+                <a href="@localizer["lkCriarLicaoMeuProprioTexto"]" class="col-4" data-appear-animation="fadeInRight">
                     <i class="fa fa-font imgTxt2"></i>
-                    @*<img class="img-responsive" src="~/img/text.png" alt="style switcher" data-appear-animation="fadeInRight">*@
                 </a>
             </div>
 
-            <hr class="tall" />
-            <div class="row push-top">
-                <div class="col-md-4 push-top" data-appear-animation="fadeInLeft">
+            <hr />
+            <div class="row">
+                <div class="col-4" data-appear-animation="fadeInLeft">
                     <i class="fa fa-bar-chart imgTxt3"></i>
-                    @*<img class="img-responsive" src="~/img/keyboard-dedos.jpg" alt="layout styles" data-appear-animation="fadeInLeft">*@
                 </div>
-                <div class="col-md-8" data-appear-animation="fadeInRight">
+                <div class="col-2"></div>
+                <div class="col-6" data-appear-animation="fadeInRight">
                     <div id="textoHome3">
-                        <h2 class="push-top"><strong>@localizer["Medidores_em_tempo_real"]</strong></h2>
+                        <h2><strong>@localizer["Medidores_em_tempo_real"]</strong></h2>
                         <p class="lead">
                             @localizer["Os_medidores_instantaneos_trazem_resultados"]
                         </p>
@@ -78,9 +79,9 @@
                     </div>
                 </div>
             </div>
-            <hr class="tall" />
+            <hr />
             <div class="row">
-                <div class="col-md-8" data-appear-animation="fadeInLeft">
+                <div class="col-7" data-appear-animation="fadeInLeft">
                     <div id="textoHome4">
                         <h2 class="push-top">@localizer["Estude_com_licoes"] <strong>@localizer["EmIngles"]</strong></h2>
                         <p class="lead">
@@ -91,11 +92,12 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4 push-top" data-appear-animation="fadeInRight">
+                <div class="col-1"></div>
+                <div class="col-4" data-appear-animation="fadeInRight">
                     <i class="fa fa-globe imgTxt4"></i>
                 </div>
             </div>
-            <hr class="tall" />
+            <hr />
             <span class="button-container text-left">
                 <a href="@localizer["LkInicianteLista"]" data-appear-animation="fadeInLeft" data-track-link="true" data-track-cta="View" data-track-type="how_it_works" data-track-id="21333" class="btn btn-lg btn-primary btn-min-width btnInicie2">
                     @localizer["IniciarAgoraMesmo"]

@@ -1,10 +1,10 @@
-﻿using AutoMapper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using AutoMapper;
 
-namespace TouchTypingGo.Domain.Core.AutoMapper
+namespace TouchTypingGo.Application.AutoMapper
 {
     public static class AutoMapperConfigurator
     {

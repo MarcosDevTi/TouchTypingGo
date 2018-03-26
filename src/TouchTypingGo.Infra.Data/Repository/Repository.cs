@@ -34,7 +34,7 @@ namespace TouchTypingGo.Infra.Data.Repository
             return DbSet.FirstOrDefault(t => t.Id == id);
         }
 
-        public virtual IEnumerable<TEntity> GetAll()
+        public virtual IReadOnlyList<TEntity> GetAll()
         {
             return DbSet.Where(x => x.UserId == User.GetUderId()).ToList();
         }

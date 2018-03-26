@@ -13,13 +13,11 @@ namespace TouchTypingGo.Application.Services
     public class AddressAppService : IAddressAppService
     {
         private readonly IBus _bus;
-        private readonly IMapper _mapper;
         private readonly IAddressRepository _addressRepository;
 
-        public AddressAppService(IBus bus, IMapper mapper, IAddressRepository addressRepository)
+        public AddressAppService(IBus bus, IAddressRepository addressRepository)
         {
             _bus = bus;
-            _mapper = mapper;
             _addressRepository = addressRepository;
         }
         public void Add(AddressViewModel address)
@@ -29,12 +27,12 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<AddressViewModel> GetAll()
         {
-            return _mapper.Map<IEnumerable<AddressViewModel>>(_addressRepository.GetAll());
+            return Mapper.Map<IEnumerable<AddressViewModel>>(_addressRepository.GetAll());
         }
 
         public AddressViewModel GetById(Guid id)
         {
-            return _mapper.Map<AddressViewModel>(_addressRepository.GetById(id));
+            return Mapper.Map<AddressViewModel>(_addressRepository.GetById(id));
         }
 
         public void Delete(Guid id)

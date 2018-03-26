@@ -13,8 +13,6 @@ namespace TouchTypingGo.Application.Interfaces
         CourseViewModel GetById(Guid id);
         void Update(CourseViewModel courseViewModel);
         void Delete(Guid id);
-        IEnumerable<TeacherViewModel> GetAllTeachers();
         SelectList Teachers();
-        IEnumerable<CourseViewModel> GetCoursesWithLessons();
     }
 }

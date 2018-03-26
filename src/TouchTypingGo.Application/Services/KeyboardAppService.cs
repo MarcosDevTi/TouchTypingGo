@@ -12,13 +12,11 @@ namespace TouchTypingGo.Application.Services
     public class KeyboardAppService : IKeyboardAppService
     {
         private readonly IBus _bus;
-        private readonly IMapper _mapper;
         private readonly IKeyboardRepository _keyboardRepository;
 
-        public KeyboardAppService(IBus bus, IMapper mapper, IKeyboardRepository keyboardRepository)
+        public KeyboardAppService(IBus bus, IKeyboardRepository keyboardRepository)
         {
             _bus = bus;
-            _mapper = mapper;
             _keyboardRepository = keyboardRepository;
         }
         public void Add(KeyboardViewModel keyboard)
@@ -39,12 +37,12 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<KeyboardViewModel> GetAll()
         {
-            return _mapper.Map<IEnumerable<KeyboardViewModel>>(_keyboardRepository.GetAll());
+            return Mapper.Map<IEnumerable<KeyboardViewModel>>(_keyboardRepository.GetAll());
         }
 
         public KeyboardViewModel GetById(Guid id)
         {
-            return _mapper.Map<KeyboardViewModel>(_keyboardRepository.GetById(id));
+            return Mapper.Map<KeyboardViewModel>(_keyboardRepository.GetById(id));
         }
     }
 }

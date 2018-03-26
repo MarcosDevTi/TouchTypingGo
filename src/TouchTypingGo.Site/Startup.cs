@@ -27,7 +27,7 @@ namespace TouchTypingGo.Site
 
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
-            IConfigurationBuilder builder = new ConfigurationBuilder()
+            var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath);
             Configuration = builder.Build();
 

@@ -1,7 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
-using AutoMapper;
-using FluentValidation;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Bus;
@@ -13,13 +12,11 @@ namespace TouchTypingGo.Application.Services
     public class InstitutionAppService : IInstitutionAppService
     {
         private readonly IBus _bus;
-        private readonly IMapper _mapper;
         private readonly IInstitutionRepository _institutionRepository;
 
-        public InstitutionAppService(IBus bus, IMapper mapper, IInstitutionRepository institutionRepository)
+        public InstitutionAppService(IBus bus, IInstitutionRepository institutionRepository)
         {
             _bus = bus;
-            _mapper = mapper;
             _institutionRepository = institutionRepository;
         }
         public void Add(InstitutionViewModel institution)
@@ -29,7 +26,7 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<InstitutionViewModel> GetAll()
         {
-            return _mapper.Map<IEnumerable<InstitutionViewModel>>(_institutionRepository.GetAll());
+            return Mapper.Map<IEnumerable<InstitutionViewModel>>(_institutionRepository.GetAll());
         }
 
         public void Update(InstitutionViewModel institution)
@@ -39,16 +36,14 @@ namespace TouchTypingGo.Application.Services
 
         public InstitutionViewModel GetById(Guid id)
         {
-            var institution = _institutionRepository.GetById(id);
-            var institutionViewModel = _mapper.Map<InstitutionViewModel>(institution);
-            institutionViewModel.Address = _mapper.Map<AddressViewModel>(institution.Address);
+            var institutionViewModel = Mapper.Map<InstitutionViewModel>(_institutionRepository.GetById(id));
 
             return institutionViewModel;
         }
 
         public InstitutionViewModel GetByIdWithAddress(Guid id)
         {
-            
+
             var institution = _institutionRepository.GetByIdWithAddress(id);
 
             var institutionViewModel = new InstitutionViewModel

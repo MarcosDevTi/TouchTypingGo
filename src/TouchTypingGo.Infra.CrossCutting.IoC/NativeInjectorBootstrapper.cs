@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using TouchTypingGo.Application.AutoMapper;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.Services;
 using TouchTypingGo.Application.Services.Helper;
 using TouchTypingGo.Application.ViewModels;
-using TouchTypingGo.Domain.Core.AutoMapper;
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Events;
 using TouchTypingGo.Domain.Core.Interfaces;
@@ -45,10 +45,10 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             AutoMapperConfig.Configure();
 
             //Application
-            services.AddSingleton(Mapper.Configuration);
-            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
+            //services.AddSingleton(Mapper.Configuration);
+            //services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
 
-            services.AddScoped<ICustomMappings, CourseViewModel>();
+            
 
             //AppService
             services.AddScoped<ICourseAppService, CourseAppService>();

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using TouchTypingGo.Domain.Core.AutoMapper;
+using TouchTypingGo.Application.AutoMapper;
 using TouchTypingGo.Domain.Course;
 
 namespace TouchTypingGo.Application.ViewModels

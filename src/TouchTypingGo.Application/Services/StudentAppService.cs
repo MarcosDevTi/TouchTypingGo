@@ -11,13 +11,12 @@ namespace TouchTypingGo.Application.Services
 {
     public class StudentAppService : IStudentAppService
     {
-        private readonly IMapper _mapper;
         private readonly IStudentRepository _studentRepository;
         private readonly IBus _bus;
 
-        public StudentAppService(IMapper mapper, IStudentRepository studentRepository, IBus bus)
+        public StudentAppService(IStudentRepository studentRepository, IBus bus)
         {
-            _mapper = mapper;
+           
             _studentRepository = studentRepository;
             _bus = bus;
         }
@@ -28,12 +27,12 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<StudentViewModel> GetAll()
         {
-            return _mapper.Map<IEnumerable<StudentViewModel>>(_studentRepository.GetAll());
+            return Mapper.Map<IEnumerable<StudentViewModel>>(_studentRepository.GetAll());
         }
 
         public StudentViewModel GetById(Guid id)
         {
-            return _mapper.Map<StudentViewModel>(_studentRepository.GetById(id));
+            return Mapper.Map<StudentViewModel>(_studentRepository.GetById(id));
         }
 
         public void Updade(StudentViewModel student)

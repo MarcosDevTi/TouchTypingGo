@@ -13,14 +13,12 @@ namespace TouchTypingGo.Application.Services
     public class LessonPresentationAppService : ILessonPresentationAppService
     {
         private readonly IBus _bus;
-        private readonly IMapper _mapper;
         private readonly ILessonPresentationRepository _lessonPresentationRepository;
         private readonly IUser _user;
 
-        public LessonPresentationAppService(IBus bus, IMapper mapper, ILessonPresentationRepository lessonPresentationRepository, IUser user)
+        public LessonPresentationAppService(IBus bus, ILessonPresentationRepository lessonPresentationRepository, IUser user)
         {
             _bus = bus;
-            _mapper = mapper;
             _lessonPresentationRepository = lessonPresentationRepository;
             _user = user;
         }
@@ -36,19 +34,18 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<LessonPresentationViewModel> GetAll()
         {
-            var teste = _lessonPresentationRepository.GetAll();
-            return _mapper.Map<IEnumerable<LessonPresentationViewModel>>(_lessonPresentationRepository.GetAll());
+            return Mapper.Map<IEnumerable<LessonPresentationViewModel>>(_lessonPresentationRepository.GetAll());
         }
 
         public IEnumerable<LessonPresentationViewModel> GetByUserAuthenticated()
         {
-            return _mapper.Map<IEnumerable<LessonPresentationViewModel>>(_lessonPresentationRepository.Find(
+            return Mapper.Map<IEnumerable<LessonPresentationViewModel>>(_lessonPresentationRepository.Find(
                 l => l.UserId == _user.GetUderId()));
         }
 
         public LessonPresentationViewModel GetById(Guid id)
         {
-            return _mapper.Map<LessonPresentationViewModel>(_lessonPresentationRepository.GetById(id));
+            return Mapper.Map<LessonPresentationViewModel>(_lessonPresentationRepository.GetById(id));
         }
 
         public void Dispose()

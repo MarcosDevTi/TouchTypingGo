@@ -12,13 +12,11 @@ namespace TouchTypingGo.Application.Services
     public class TeacherAppService : ITeacherAppService
     {
         private readonly IBus _bus;
-        private readonly IMapper _mapper;
         private readonly ITeacherRepository _teacherRepository;
 
-        public TeacherAppService(IBus bus, IMapper mapper, ITeacherRepository teacherRepository)
+        public TeacherAppService(IBus bus, ITeacherRepository teacherRepository)
         {
             _bus = bus;
-            _mapper = mapper;
             _teacherRepository = teacherRepository;
         }
 
@@ -30,7 +28,7 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<TeacherViewModel> GetAll()
         {
-            return _mapper.Map<IEnumerable<TeacherViewModel>>(_teacherRepository.GetAll());
+            return Mapper.Map<IEnumerable<TeacherViewModel>>(_teacherRepository.GetAll());
         }
 
         public IEnumerable<TeacherViewModel> GetCourseByTeacher(Guid teacherId)
@@ -40,7 +38,7 @@ namespace TouchTypingGo.Application.Services
 
         public TeacherViewModel GetById(Guid id)
         {
-            return _mapper.Map<TeacherViewModel>(_teacherRepository.GetById(id));
+            return Mapper.Map<TeacherViewModel>(_teacherRepository.GetById(id));
         }
 
         public void Update(TeacherViewModel teacherViewModel)

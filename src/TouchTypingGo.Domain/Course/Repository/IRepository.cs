@@ -9,7 +9,7 @@ namespace TouchTypingGo.Domain.Course.Repository
     {
         void Add(TEntity obj);
         TEntity GetById(Guid? id);
-        IEnumerable<TEntity> GetAll();
+        IReadOnlyList<TEntity> GetAll();
         void Update(TEntity obj);
         void Delete(Guid id);
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
