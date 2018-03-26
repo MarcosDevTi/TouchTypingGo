@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TouchTypingGo.Domain.Core.Commands;
+﻿using TouchTypingGo.Domain.Core.Commands;
 using TouchTypingGo.Domain.Course.Repository;
 using TouchTypingGo.Infra.Data.Context;
 
@@ -26,7 +23,5 @@ namespace TouchTypingGo.Infra.Data.UoW
         {
             _context.Dispose();
         }
-
-
     }
 }

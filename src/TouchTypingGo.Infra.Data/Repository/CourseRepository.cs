@@ -1,10 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using Dapper;
-using Microsoft.EntityFrameworkCore;
 using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Course.Repository;
@@ -22,31 +19,17 @@ namespace TouchTypingGo.Infra.Data.Repository
 
         public override Course GetById(Guid? id)
         {
-            var teste = _context.Courses
-                .Include(c => c.CourseLessonPresentations)
-                .ThenInclude(x => x.LessonPresentation).FirstOrDefault(x=>x.Id == id);
-
             return _context.Courses
                 .Include(c => c.CourseLessonPresentations)
-                .ThenInclude(x=>x.LessonPresentation)
+                .ThenInclude(x => x.LessonPresentation)
                 .FirstOrDefault(c => c.Id == id);
         }
 
-
         public override IEnumerable<Course> GetAll()
         {
-            var teste = _context.Courses
+            return _context.Courses
                 .Include(c => c.CourseLessonPresentations)
                 .ThenInclude(x => x.LessonPresentation);
-
-            return teste;
-            //    .FirstOrDefault()?.CourseLessonPresentations
-            //    .GroupBy(x=>x.Course,
-            //    x=>x, (key, value) => new {Course  = key, lp = value.Select(x=>x.LessonPresentation).ToList()});
-
-            //return _context.Courses
-            //    .Include(c => c.CourseLessonPresentations)
-            //    .ThenInclude(x => x.LessonPresentation);
         }
 
         public IEnumerable<Course> GetCoursesWithLessons()
@@ -54,14 +37,10 @@ namespace TouchTypingGo.Infra.Data.Repository
             return _context.Courses
                 .Include(c => c.CourseLessonPresentations)
                 .ThenInclude(x => x.LessonPresentation);
-
-            //_context.Courses
-            //    .Include(c => c.CourseLessonPresentations)
-            //    .ThenInclude(x => x.LessonPresentation)
-            //    .FirstOrDefault()?.CourseLessonPresentations
-            //    .GroupBy(clp => clp.Course,
-            //        clp => clp, (key, value) => new { Course = key, lp = value.Select(clp => clp.LessonPresentation).ToList()}).ToDictionary(x=>x.Course, x=>x.lp);
         }
+
+        #region MyRegion
+
         //public override void Add(Course course)
         //{
         //    //var teacher = _context.Teachers.FirstOrDefault(x => x.Id == course.TeacherId);
@@ -94,6 +73,8 @@ namespace TouchTypingGo.Infra.Data.Repository
 
         //    return course.FirstOrDefault();
         //}
+
+        #endregion Dapper
 
         public IEnumerable<Course> GetByTeacher(Guid teacherId)
         {

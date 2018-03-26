@@ -2,7 +2,7 @@
 
 namespace TouchTypingGo.Domain.Course.Events.LessonResult
 {
-    public class lessonResultEventHandler:
+    public class LessonResultEventHandler :
         IHandler<LessonResultAddEvent>,
         IHandler<LessonResultDeleteEvent>
     {

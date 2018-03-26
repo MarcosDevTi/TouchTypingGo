@@ -22,6 +22,7 @@ namespace TouchTypingGo.Site.Controllers
             _lessonPresentationAppService = lessonPresentationAppService;
         }
 
+
         public IActionResult Index()
         {
             return View(_courseAppService.GetAll());

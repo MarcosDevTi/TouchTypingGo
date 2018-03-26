@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TouchTypingGo.Domain.Course.Events.Keyboard
+﻿namespace TouchTypingGo.Domain.Course.Events.Keyboard
 {
     public class AddKeyboardEvent : KeyboardEvent
     {

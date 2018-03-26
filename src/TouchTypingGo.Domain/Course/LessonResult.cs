@@ -27,19 +27,13 @@ namespace TouchTypingGo.Domain.Course
         public int Wpm { get; private set; }
         public int? Time { get; private set; }
         public int? Errors { get; private set; }
-        //public User User { get; set; }
         public bool EhAuthenticated { get; private set; }
         public string ErrorKey { get; private set; }
-        //public Guid CourseId { get; private set; }
-        //public Course Course { get; private set; }
-        //public EnumLingua LinguaExercicio { get; set; }
         public bool Active { get; private set; }
         public Guid LessonPresentationId { get; private set; }
         public virtual LessonPresentation LessonPresentation { get; private set; }
         [NotMapped]
         public virtual ICollection<Student> Students { get; private set; }
-        //[NotMapped]
-        //public virtual ICollection<Course> Courses { get; private set; }
 
         public void SetlessonPresentation(LessonPresentation lessonPresentation)
         {

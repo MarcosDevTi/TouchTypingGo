@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Dapper;
-using Microsoft.EntityFrameworkCore;
-using TouchTypingGo.Domain.Core.Interfaces;
+﻿using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Course.Repository;
 using TouchTypingGo.Infra.Data.Context;

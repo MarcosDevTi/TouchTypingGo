@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TouchTypingGo.Domain.Core.Bus;
+﻿using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Events;
 using TouchTypingGo.Domain.Core.Notifications;
 using TouchTypingGo.Domain.Course.Commands.CommandHandlers;
@@ -28,9 +25,9 @@ namespace TouchTypingGo.Domain.Institution.Commands.Institution
         public void Handle(AddInstitutionCommand message)
         {
             var institution = new Domain.Institution.Institution(
-                message.Name, 
-                message.Email, 
-                message.Phone, 
+                message.Name,
+                message.Email,
+                message.Phone,
                 _addressRepository.GetById(message.AddressId));
 
             _institutionRepository.Add(institution);

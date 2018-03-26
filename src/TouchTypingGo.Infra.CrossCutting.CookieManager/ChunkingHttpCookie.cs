@@ -72,7 +72,6 @@ namespace TouchTypingGo.Infra.CrossCutting.CookieManager
             return string.Join(string.Empty, chunks);
         }
 
-
         public void AppendResponseCookie(HttpContext context, string key, string value, CookieOptions options)
         {
             if (context == null)

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TouchTypingGo.Domain.Institution;
 using TouchTypingGo.Infra.Data.Extentions;
@@ -24,10 +21,10 @@ namespace TouchTypingGo.Infra.Data.Mappings
                 .IsRequired();
             builder.HasOne(x => x.Address)
                 .WithOne(x => x.Institution)
-                .HasForeignKey<Institution>(a=>a.AddressId)
+                .HasForeignKey<Institution>(a => a.AddressId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-                builder.Ignore(c => c.ValidationResult);
+            builder.Ignore(c => c.ValidationResult);
 
             builder.Ignore(c => c.CascadeMode);
 

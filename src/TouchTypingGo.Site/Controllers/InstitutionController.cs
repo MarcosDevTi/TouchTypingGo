@@ -23,6 +23,7 @@ namespace TouchTypingGo.Site.Controllers
             _localizer = localizer;
         }
 
+
         public IActionResult Index()
         {
             return View(_institutionAppService.GetAll());

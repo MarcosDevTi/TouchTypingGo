@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Events;
 using TouchTypingGo.Domain.Core.Notifications;
@@ -17,9 +15,9 @@ namespace TouchTypingGo.Domain.Course.Commands.Teacher
         private readonly ITeacherRepository _teacherRepository;
         private readonly IBus _bus;
 
-        public TeacherCommandHandler(IUnitOfWork uow, 
+        public TeacherCommandHandler(IUnitOfWork uow,
             IBus bus,
-            IDomainNotificationHandler<DomainDotification> notifications, 
+            IDomainNotificationHandler<DomainDotification> notifications,
             ITeacherRepository teacherRepository) : base(uow, bus, notifications)
         {
             _teacherRepository = teacherRepository;

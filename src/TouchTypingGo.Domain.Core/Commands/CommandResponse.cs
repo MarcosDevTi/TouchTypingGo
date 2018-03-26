@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TouchTypingGo.Domain.Core.Commands
+﻿namespace TouchTypingGo.Domain.Core.Commands
 {
     public class CommandResponse
     {

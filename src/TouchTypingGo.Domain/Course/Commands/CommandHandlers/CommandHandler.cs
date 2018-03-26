@@ -1,5 +1,5 @@
-﻿using System;
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
+using System;
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Notifications;
 using TouchTypingGo.Domain.Course.Repository;
@@ -18,7 +18,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
             _bus = bus;
             _notifications = notifications;
         }
- 
+
         protected void ValidationsErrorNotification(ValidationResult validationResult)
         {
             foreach (var error in validationResult.Errors)
@@ -33,7 +33,7 @@ namespace TouchTypingGo.Domain.Course.Commands.CommandHandlers
             if (_notifications.HasNotifications()) return false;
             var commandResponse = _uow.Commit();
             if (commandResponse.Success) return true;
-
+            //TODO: Translate the texts for all languages
             Console.WriteLine("Ocorreu um erro ao salvar os dados no banco");
             _bus.RaiseEvent(new DomainDotification("Commit", "Ocorreu um erro ao salvar os dados no banco"));
             return false;

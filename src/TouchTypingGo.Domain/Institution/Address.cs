@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using TouchTypingGo.Domain.Core.Entities;
 
 namespace TouchTypingGo.Domain.Institution
@@ -9,7 +7,7 @@ namespace TouchTypingGo.Domain.Institution
     {
         protected Address()
         {
-            
+
         }
         public Address(string county, string city, string street, string number, string zipCode)
         {
@@ -24,7 +22,6 @@ namespace TouchTypingGo.Domain.Institution
         public string Street { get; private set; }
         public string Number { get; private set; }
         public string ZipCode { get; private set; }
-        //public Guid? InstitutionId { get; private set; }
         public Institution Institution { get; private set; }
         public override bool IsValid()
         {

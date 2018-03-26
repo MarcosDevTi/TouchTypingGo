@@ -9,10 +9,10 @@ namespace TouchTypingGo.Site.Controllers
 {
     public class LessonResultController : BaseController
     {
-        private readonly IlessonResultAppService _lessonResultAppService;
+        private readonly ILessonResultAppService _lessonResultAppService;
 
         public LessonResultController(
-            IlessonResultAppService lessonResultAppService,
+            ILessonResultAppService lessonResultAppService,
             IDomainNotificationHandler<DomainDotification> notification,
             IUser user,
             IStringLocalizer<BaseController> localizer) : base(notification, user, localizer)
@@ -27,7 +27,7 @@ namespace TouchTypingGo.Site.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.lessonPresentations = _lessonResultAppService.lessonsPresentationsSelect();
+            ViewBag.lessonPresentations = _lessonResultAppService.LessonsPresentationsSelect();
             return View();
         }
 

@@ -1,7 +1,7 @@
-﻿using System.IO;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.IO;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models;
 
 
@@ -23,10 +23,9 @@ namespace TouchTypingGo.Infra.CrossCutting.Identity.Data
 
             builder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
 
-
             base.OnConfiguring(builder);
         }
-       
+
 
     }
 }

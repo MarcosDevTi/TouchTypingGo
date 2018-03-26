@@ -12,7 +12,7 @@ using TouchTypingGo.Domain.Course.Repository;
 
 namespace TouchTypingGo.Application.Services
 {
-    public class lessonResultAppService : IlessonResultAppService
+    public class LessonResultAppService : ILessonResultAppService
     {
         private readonly IBus _bus;
         private readonly IMapper _mapper;
@@ -20,7 +20,7 @@ namespace TouchTypingGo.Application.Services
         private readonly ILessonPresentationRepository _lessonPresentationRepository;
         private readonly IUser _user;
 
-        public lessonResultAppService(
+        public LessonResultAppService(
             IBus bus,
             IMapper mapper,
             ILessonResultRepository lessonResultRepository,
@@ -49,13 +49,11 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<LessonResultViewModel> GetAll()
         {
-            var teste = _lessonResultRepository.GetAll();
             return _mapper.Map<IEnumerable<LessonResultViewModel>>(_lessonResultRepository.GetAll());
         }
 
         public IEnumerable<LessonResultViewModel> GetByUserAuthenticated()
         {
-            var rep = _mapper.Map<IEnumerable<LessonResultViewModel>>(_lessonResultRepository.GetAll());
             return _mapper.Map<IEnumerable<LessonResultViewModel>>(_lessonResultRepository.GetAll());
         }
 
@@ -69,7 +67,7 @@ namespace TouchTypingGo.Application.Services
             _bus.SendCommand(new DeleteLessonResultCommand(id));
         }
 
-        public SelectList lessonsPresentationsSelect()
+        public SelectList LessonsPresentationsSelect()
         {
             return new SelectList(GetAlllessonsPresentations(), "Id", "Name");
         }

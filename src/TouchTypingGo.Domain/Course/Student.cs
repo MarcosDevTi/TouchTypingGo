@@ -13,7 +13,7 @@ namespace TouchTypingGo.Domain.Course
             Email = email;
         }
 
-        protected Student(){ }
+        protected Student() { }
         public string Name { get; private set; }
         public string Email { get; private set; }
         [NotMapped]
@@ -35,7 +35,7 @@ namespace TouchTypingGo.Domain.Course
 
             public static void Go()
             {
-                
+
             }
         }
 
@@ -43,7 +43,5 @@ namespace TouchTypingGo.Domain.Course
         {
             return true;
         }
-
-        
     }
 }

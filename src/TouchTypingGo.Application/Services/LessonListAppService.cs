@@ -1,26 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using AutoMapper;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
-using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Course.Repository;
 
 namespace TouchTypingGo.Application.Services
 {
     public class LessonListAppService : ILessonListAppService
     {
-        private readonly IBus _bus;
-        private readonly IMapper _mapper;
         private readonly ILessonResultRepository _lessonResultRepository;
         private readonly ILessonPresentationRepository _lessonPresentationRepository;
 
-        public LessonListAppService(IBus bus, IMapper mapper, ILessonResultRepository lessonResultRepository, ILessonPresentationRepository lessonPresentationRepository)
+        public LessonListAppService(ILessonResultRepository lessonResultRepository, ILessonPresentationRepository lessonPresentationRepository)
         {
-            _bus = bus;
-            _mapper = mapper;
             _lessonResultRepository = lessonResultRepository;
             _lessonPresentationRepository = lessonPresentationRepository;
         }
@@ -40,25 +33,23 @@ namespace TouchTypingGo.Application.Services
             var lessonPresentations = _lessonPresentationRepository.GetAll();
             var lessonResults = _lessonResultRepository.GetAll();
 
-            var lessonPrw = new List<PreviewLessonViewModel>();
-
-            foreach (var lessonPresentation in lessonPresentations)
-            {
-                var last = lessonResults.Where(
-                    x => x.LessonPresentationId == lessonPresentation.Id)?.OrderByDescending(x => x.DateCreated).LastOrDefault();
-                lessonPrw.Add(new PreviewLessonViewModel()
-                {
-                    Id = lessonPresentation.Id,
-                    Name = lessonPresentation.Name,
-                    Time = last?.Time,
-                    Wpm = last?.Wpm,
-                    Errors = last?.Errors,
-                    CoutResolute = lessonResults.Count(x => x.LessonPresentationId == lessonPresentation.Id),
-                    Started = lessonResults.Any(x => x.LessonPresentationId == lessonPresentation.Id),
-                    PreviewText = lessonPresentation.Text.Length > 20 ? lessonPresentation.Text.Substring(0, 20) : lessonPresentation.Text,
-                    Category = lessonPresentation.Category
-                });
-            }
+            var lessonPrw = (from lessonPresentation in lessonPresentations
+                             let last = lessonResults.Where(
+                                 x => x.LessonPresentationId == lessonPresentation.Id).OrderByDescending(
+                                     x => x.DateCreated).LastOrDefault()
+                             select new PreviewLessonViewModel
+                             {
+                                 Id = lessonPresentation.Id,
+                                 Name = lessonPresentation.Name,
+                                 Time = last?.Time,
+                                 Wpm = last?.Wpm,
+                                 Errors = last?.Errors,
+                                 CoutResolute = lessonResults.Count(x => x.LessonPresentationId == lessonPresentation.Id),
+                                 Started = lessonResults.Any(x => x.LessonPresentationId == lessonPresentation.Id),
+                                 PreviewText = lessonPresentation.Text.Length > 20
+                                    ? lessonPresentation.Text.Substring(0, 20) : lessonPresentation.Text,
+                                 Category = lessonPresentation.Category
+                             }).ToList();
 
             return GroupByCategory(lessonPrw);
         }

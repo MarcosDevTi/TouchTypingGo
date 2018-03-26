@@ -1,14 +1,13 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using AutoMapper;
 
 namespace TouchTypingGo.Domain.Core.AutoMapper
 {
     public static class AutoMapperConfigurator
     {
-        //Call this method at a application start
         public static void LoadMapsFromAssemblyContainingTypeAndReferencedAssemblies<TType>(Func<AssemblyName, bool> assemblyFilter = null)
         {
             var target = typeof(TType).Assembly;
@@ -44,10 +43,7 @@ namespace TouchTypingGo.Domain.Core.AutoMapper
         public static void LoadMapsFromAssemblies(params Assembly[] assemblies)
         {
             var types = assemblies.SelectMany(a => a.GetExportedTypes()).ToArray();
-
-#pragma warning disable 618
             Mapper.Initialize(cfg => Load(cfg, types));
-#pragma warning restore 618
         }
 
         private static void Load(IMapperConfigurationExpression cfg, Type[] types)

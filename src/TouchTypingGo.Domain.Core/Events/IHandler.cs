@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TouchTypingGo.Domain.Core.Events
+﻿namespace TouchTypingGo.Domain.Core.Events
 {
     public interface IHandler<in T>
     {

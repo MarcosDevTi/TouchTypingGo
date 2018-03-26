@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TouchTypingGo.Domain.Institution.Events.Address
+﻿namespace TouchTypingGo.Domain.Institution.Events.Address
 {
     public class AddAddressEvent : AddressEvent
     {

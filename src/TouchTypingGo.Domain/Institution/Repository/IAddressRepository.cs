@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TouchTypingGo.Domain.Course.Repository;
+﻿using TouchTypingGo.Domain.Course.Repository;
 
 namespace TouchTypingGo.Domain.Institution.Repository
 {

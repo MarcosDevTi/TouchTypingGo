@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TouchTypingGo.Domain.Institution.Commands.Address
+﻿namespace TouchTypingGo.Domain.Institution.Commands.Address
 {
     public class AddAddressCommand : AddressCommand
     {

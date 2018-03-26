@@ -1,9 +1,5 @@
-﻿
-
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using TouchTypingGo.Domain.Course;
 
 namespace TouchTypingGo.Domain.Course.Repository
 {

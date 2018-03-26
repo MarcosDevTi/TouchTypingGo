@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TouchTypingGo.Domain.Core.Bus;
+﻿using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Events;
 using TouchTypingGo.Domain.Core.Notifications;
 using TouchTypingGo.Domain.Course.Commands.CommandHandlers;
@@ -25,9 +22,9 @@ namespace TouchTypingGo.Domain.Institution.Commands.Address
         public void Handle(AddAddressCommand message)
         {
             var address = new Domain.Institution.Address(
-                message.County, 
-                message.City, 
-                message.Street, 
+                message.County,
+                message.City,
+                message.Street,
                 message.Number,
                 message.ZipCode);
 

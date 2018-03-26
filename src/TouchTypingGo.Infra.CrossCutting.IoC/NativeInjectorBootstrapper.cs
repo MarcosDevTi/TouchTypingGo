@@ -54,7 +54,7 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             services.AddScoped<ICourseAppService, CourseAppService>();
             services.AddScoped<ITeacherAppService, TeacherAppService>();
             services.AddScoped<ILessonPresentationAppService, LessonPresentationAppService>();
-            services.AddScoped<IlessonResultAppService, lessonResultAppService>();
+            services.AddScoped<ILessonResultAppService, LessonResultAppService>();
             services.AddScoped<IStudentAppService, StudentAppService>();
             services.AddScoped<IKeyboardAppService, KeyboardAppService>();
             services.AddScoped<ILessonListAppService, LessonListAppService>();
@@ -108,12 +108,12 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<TeacherDeleteEvent>, TeacherEventHandler>();
 
             //lesson Presentation
-            services.AddScoped<IHandler<LessonPresentationAddEvent>, lessonPresentationEventHandler>();
-            services.AddScoped<IHandler<LessonPresentationDeleteEvent>, lessonPresentationEventHandler>();
+            services.AddScoped<IHandler<LessonPresentationAddEvent>, LessonPresentationEventHandler>();
+            services.AddScoped<IHandler<LessonPresentationDeleteEvent>, LessonPresentationEventHandler>();
 
             //Lesson Result
-            services.AddScoped<IHandler<LessonResultAddEvent>, lessonResultEventHandler>();
-            services.AddScoped<IHandler<LessonResultDeleteEvent>, lessonResultEventHandler>();
+            services.AddScoped<IHandler<LessonResultAddEvent>, LessonResultEventHandler>();
+            services.AddScoped<IHandler<LessonResultDeleteEvent>, LessonResultEventHandler>();
 
             //Student
             services.AddScoped<IHandler<AddStudentEvent>, StudentEventHandler>();
@@ -132,8 +132,8 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             //Infra - Data
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<ITeacherRepository, TeacherRepository>();
-            services.AddScoped<ILessonPresentationRepository, lessonPresentationRepository>();
-            services.AddScoped<ILessonResultRepository, lessonResultRepository>();
+            services.AddScoped<ILessonPresentationRepository, LessonPresentationRepository>();
+            services.AddScoped<ILessonResultRepository, LessonResultRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IKeyboardRepository, KeyboardRepository>();
             services.AddScoped<IInstitutionRepository, InstitutionRepository>();

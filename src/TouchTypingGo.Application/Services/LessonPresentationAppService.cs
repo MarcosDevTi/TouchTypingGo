@@ -1,12 +1,10 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Interfaces;
-using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Course.Commands.LessonPresentation;
 using TouchTypingGo.Domain.Course.Repository;
 
@@ -27,13 +25,13 @@ namespace TouchTypingGo.Application.Services
             _user = user;
         }
 
-       
+
         public void Add(LessonPresentationViewModel lesson)
         {
-           _bus.SendCommand(new LessonPresentationAddCommand(
-              lesson.Name, lesson.Text, lesson.Category, lesson.SpeedReference, 
-              lesson.TimeReference, lesson.PrecisionReference, lesson.FontSize, 
-              _user.GetUderId()));
+            _bus.SendCommand(new LessonPresentationAddCommand(
+               lesson.Name, lesson.Text, lesson.Category, lesson.SpeedReference,
+               lesson.TimeReference, lesson.PrecisionReference, lesson.FontSize,
+               _user.GetUderId()));
         }
 
         public IEnumerable<LessonPresentationViewModel> GetAll()
@@ -45,7 +43,7 @@ namespace TouchTypingGo.Application.Services
         public IEnumerable<LessonPresentationViewModel> GetByUserAuthenticated()
         {
             return _mapper.Map<IEnumerable<LessonPresentationViewModel>>(_lessonPresentationRepository.Find(
-                l=>l.UserId == _user.GetUderId()));
+                l => l.UserId == _user.GetUderId()));
         }
 
         public LessonPresentationViewModel GetById(Guid id)

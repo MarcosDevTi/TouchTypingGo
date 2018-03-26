@@ -1,8 +1,6 @@
-﻿using System;
-using FluentValidation;
+﻿using FluentValidation;
 using FluentValidation.Results;
-using TouchTypingGo.Domain.Core.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace TouchTypingGo.Domain.Core.Entities
 {

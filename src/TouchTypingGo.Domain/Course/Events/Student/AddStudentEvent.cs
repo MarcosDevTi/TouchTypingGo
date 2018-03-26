@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TouchTypingGo.Domain.Course.Events.Student
+﻿namespace TouchTypingGo.Domain.Course.Events.Student
 {
     public class AddStudentEvent : StudentEventBase
     {

@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
 using TouchTypingGo.Domain.Core.Entities;
 using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Course.Repository;
@@ -37,8 +36,7 @@ namespace TouchTypingGo.Infra.Data.Repository
 
         public virtual IEnumerable<TEntity> GetAll()
         {
-            var tese = DbSet.Where(x => x.UserId == User.GetUderId()).ToList();
-            return DbSet.Where(x=>x.UserId == User.GetUderId()).ToList();
+            return DbSet.Where(x => x.UserId == User.GetUderId()).ToList();
         }
 
         public virtual void Update(TEntity obj)

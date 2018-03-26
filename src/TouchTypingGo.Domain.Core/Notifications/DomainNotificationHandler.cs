@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace TouchTypingGo.Domain.Core.Notifications
 {
@@ -15,7 +13,7 @@ namespace TouchTypingGo.Domain.Core.Notifications
         }
         public void Handle(DomainDotification message)
         {
-           _notifications.Add(message); 
+            _notifications.Add(message);
         }
 
         public bool HasNotifications()

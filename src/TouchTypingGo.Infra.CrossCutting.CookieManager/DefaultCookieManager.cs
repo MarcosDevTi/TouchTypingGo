@@ -14,7 +14,6 @@ namespace TouchTypingGo.Infra.CrossCutting.CookieManager
             _cookie = cookie;
         }
 
-
         public bool Contains(string key)
         {
             return _cookie.Contains(key);

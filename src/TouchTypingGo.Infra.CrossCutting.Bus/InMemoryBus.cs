@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Commands;
 using TouchTypingGo.Domain.Core.Events;
@@ -8,7 +6,7 @@ using TouchTypingGo.Domain.Core.Notifications;
 
 namespace TouchTypingGo.Infra.CrossCutting.Bus
 {
-    public sealed class InMemoryBus :IBus
+    public sealed class InMemoryBus : IBus
     {
         public static Func<IServiceProvider> ContainerAcessor { get; set; }
         private static IServiceProvider Container => ContainerAcessor();

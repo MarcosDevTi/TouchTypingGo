@@ -2,7 +2,7 @@
 
 namespace TouchTypingGo.Domain.Course.Events.Keyboard
 {
-    public class KeyboardEventHandler:
+    public class KeyboardEventHandler :
         IHandler<AddKeyboardEvent>,
         IHandler<DeleteKeyboardEvent>
     {

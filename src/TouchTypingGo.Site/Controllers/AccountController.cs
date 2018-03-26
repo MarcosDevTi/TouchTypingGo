@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Interfaces;
+using TouchTypingGo.Domain.Core.Notifications;
+using TouchTypingGo.Infra.CrossCutting.Identity.Extensions;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models.AccountViewModels;
 using TouchTypingGo.Infra.CrossCutting.Identity.Services;
-using TouchTypingGo.Domain.Core.Notifications;
-using TouchTypingGo.Infra.CrossCutting.Identity.Extensions;
 using TouchTypingGo.Site.Controllers.Extentions;
 
 namespace TouchTypingGo.Site.Controllers
@@ -40,8 +35,8 @@ namespace TouchTypingGo.Site.Controllers
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ILogger<AccountController> logger,
-            IDomainNotificationHandler<DomainDotification> notification, 
-            IStudentAppService studentAppService, 
+            IDomainNotificationHandler<DomainDotification> notification,
+            IStudentAppService studentAppService,
             ITeacherAppService teacherAppService,
             IUser user,
             IStringLocalizer<BaseController> localizer) : base(notification, user, localizer)
@@ -259,8 +254,8 @@ namespace TouchTypingGo.Site.Controllers
                         };
                         _teacherAppService.Add(teacher);
                     }
-                    
-                   
+
+
 
                     _logger.LogInformation("User created a new account with password.");
 
