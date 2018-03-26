@@ -1,0 +1,894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbrvLingua" xml:space="preserve">
+    <value>fr</value>
+  </data>
+  <data name="ACategoria" xml:space="preserve">
+    <value>La Catégorie</value>
+  </data>
+  <data name="AClassificacao" xml:space="preserve">
+    <value>Résultat</value>
+  </data>
+  <data name="AlterarConfUsuario" xml:space="preserve">
+    <value>Modifier les paramètres de votre compte</value>
+  </data>
+  <data name="AndamentoLetrasErradas" xml:space="preserve">
+    <value>Progression des erreurs de frappe</value>
+  </data>
+  <data name="AoClicarEmAluno" xml:space="preserve">
+    <value>En cliquant sur un étudiant, sera mis à la disposition de ses résultats en détail.</value>
+  </data>
+  <data name="Ao_trocar_a_lingua_do_sistema" xml:space="preserve">
+    <value>Lors du changement de la langue du système, la structure est modifiée automatiquement des exercices avec des textes écrits dans la langue sélectionnée.</value>
+  </data>
+  <data name="Aperfeicoamento" xml:space="preserve">
+    <value>Flexible</value>
+  </data>
+  <data name="ASenhaDeveTerNoMinimo" xml:space="preserve">
+    <value>Le mot de passe doit contenir au moins 4 caractères.</value>
+  </data>
+  <data name="ASenhaEAConfirmacaoNSIguais" xml:space="preserve">
+    <value>Le mot de passe et sa confirmation ne coïncident pas.</value>
+  </data>
+  <data name="AssociarSuaConta" xml:space="preserve">
+    <value>Associez votre compte</value>
+  </data>
+  <data name="As_licoes_dessa_categoria_contam_com_frases_pequenas" xml:space="preserve">
+    <value>Les leçons de cette catégorie ont des phrases courtes qui contribuent à l'indépendance lors de la saisie, votre frappe ici devient plus naturel et les phrases commencent à se former avec une plus grande souplesse et la facilité de la frappe.</value>
+  </data>
+  <data name="As_licoes_dessa_categoria_conta_com_palavras_soltas" xml:space="preserve">
+    <value>Les leçons de cette catégorie a des mots simples constitués d'un accès facile aux lettres de l'utilisateur avec moins d'intimité avec le clavier et la disposition des touches.</value>
+  </data>
+  <data name="As_licoes_dessa_categoria_sao_criados_dinamicamente" xml:space="preserve">
+    <value>Les leçons de cette catégorie sont créées dynamiquement pour travailler les faiblesses détectées dans les cours des catégories précédentes.</value>
+  </data>
+  <data name="Atencao" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="Avancado" xml:space="preserve">
+    <value>Avancé</value>
+  </data>
+  <data name="Basico" xml:space="preserve">
+    <value>Élémentaire</value>
+  </data>
+  <data name="BemVindo" xml:space="preserve">
+    <value>Bienvenue</value>
+  </data>
+  <data name="Brasil" xml:space="preserve">
+    <value>Brésil</value>
+  </data>
+  <data name="CadastreSECodigo" xml:space="preserve">
+    <value>S'inscrire à un cours, Entrez le code</value>
+  </data>
+  <data name="CadastreseEmCursoComCodigo" xml:space="preserve">
+    <value>Joignez-vous à un cours, Entrez le code</value>
+  </data>
+  <data name="CadastreSenhaNaoPrecisarLgnExterno" xml:space="preserve">
+    <value>Enregistrer un mot de passe pour éviter d'avoir à se connecter avec les réseaux sociaux pour Login!</value>
+  </data>
+  <data name="Categoria" xml:space="preserve">
+    <value>Catégorie</value>
+  </data>
+  <data name="Classificacao" xml:space="preserve">
+    <value>Résultat</value>
+  </data>
+  <data name="CliqueAquiLogar" xml:space="preserve">
+    <value> Identifiez-vous</value>
+  </data>
+  <data name="CliqueAquiSeLogar" xml:space="preserve">
+    <value> Identifiez-vous</value>
+  </data>
+  <data name="CliqueLinkNoEmailRecuperarSenha" xml:space="preserve">
+    <value>Cliquez sur le lien envoyé à votre email pour récupérer le mot de passe!</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="CodigoCurso" xml:space="preserve">
+    <value>Code pour le Cours</value>
+  </data>
+  <data name="CodigoVerificacao" xml:space="preserve">
+    <value>Code de vérification</value>
+  </data>
+  <data name="ColtarLista" xml:space="preserve">
+    <value>Retour à la liste des cours</value>
+  </data>
+  <data name="ComMaiorIncidenciaErros" xml:space="preserve">
+    <value>plus l'incidence d'erreur en laissant de plus en plus stable et précis votre frappe.</value>
+  </data>
+  <data name="com_tecninca_usando_os_10_dedos" xml:space="preserve">
+    <value>avec la technique en utilisant 10 doigts</value>
+  </data>
+  <data name="Concluido" xml:space="preserve">
+    <value>Conclu</value>
+  </data>
+  <data name="Configuracoes" xml:space="preserve">
+    <value>Réglages</value>
+  </data>
+  <data name="Configurar" xml:space="preserve">
+    <value>Gérer</value>
+  </data>
+  <data name="ConfigurarLoginExterno" xml:space="preserve">
+    <value>Gérer vos connexions externes</value>
+  </data>
+  <data name="ConfirmacaoRecuperacaoSenha" xml:space="preserve">
+    <value>Confirmation mot de passe</value>
+  </data>
+  <data name="ConfirmacaoSenha" xml:space="preserve">
+    <value>Confirmation mot de passe pour la récupération</value>
+  </data>
+  <data name="ConfirmeANovaSenha" xml:space="preserve">
+    <value>Confirmer le nouveau mot de passe</value>
+  </data>
+  <data name="ConfirmeASEnha" xml:space="preserve">
+    <value>Retapez votre mot de passe!</value>
+  </data>
+  <data name="ConfirmeNovaSenha" xml:space="preserve">
+    <value>Confirmer le nouveau mot de passe</value>
+  </data>
+  <data name="Contato" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Contatos" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="Continuar" xml:space="preserve">
+    <value>Continuer</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Droits d’auteur, ©Copyright 2017, www.mastertouchtyping.com</value>
+  </data>
+  <data name="Criar" xml:space="preserve">
+    <value>Créer</value>
+  </data>
+  <data name="CriarCurso" xml:space="preserve">
+    <value>Créer Course</value>
+  </data>
+  <data name="CriarExercCurso" xml:space="preserve">
+    <value>Créer des Exercices pour un Cours</value>
+  </data>
+  <data name="CriarExercicio" xml:space="preserve">
+    <value>Créer Exercice</value>
+  </data>
+  <data name="CriarExerciciosParaCurso" xml:space="preserve">
+    <value>Créer exercice Cours</value>
+  </data>
+  <data name="CriarSenha" xml:space="preserve">
+    <value>Créer  mot de passe</value>
+  </data>
+  <data name="CrieSeusPropriosExercicios" xml:space="preserve">
+    <value>Créer mes propres exercices</value>
+  </data>
+  <data name="Crie_licoes_utilizando_seus_proprios_textos" xml:space="preserve">
+    <value>Créer des leçons en utilisant vos propres textes, plus facilement avec des phrases élaborées par l'utilisateur. Faites-en plus avec un sujet qui est d'intérêt pour vous!</value>
+  </data>
+  <data name="CursoDigi" xml:space="preserve">
+    <value>Cours de Dactylographie, Dactylo, Typing course, typing more, typing fast, typing, typing, typing test, typing tutor, typing tutor, typing tutor, typing practice, typing games, typing games, typing practice, studying Typing, computation course, computer, Study computer, étudier l'informatique, cours d'informatique, Cours, ordinateur</value>
+  </data>
+  <data name="CursoDigiGratuito" xml:space="preserve">
+    <value>Cours de Dactylographie en ligne totalement gratuit</value>
+  </data>
+  <data name="CursoDigitacao" xml:space="preserve">
+    <value>cours de DACTYLO</value>
+  </data>
+  <data name="CursoDigitacaoOnLine" xml:space="preserve">
+    <value>Cours en ligne Dactylographie complètement gratuit</value>
+  </data>
+  <data name="CursoOnLineDigitacao" xml:space="preserve">
+    <value>Cours de Dactylographie en ligne</value>
+  </data>
+  <data name="CursoPadrao" xml:space="preserve">
+    <value>Cours Default</value>
+  </data>
+  <data name="Curso_de_digitacaoo_on_line_gratis" xml:space="preserve">
+    <value>Cours gratuit de dactylo en ligne </value>
+  </data>
+  <data name="DescricaoApp" xml:space="preserve">
+    <value>Description de l'application</value>
+  </data>
+  <data name="Desenvolvedor" xml:space="preserve">
+    <value>Développeurs</value>
+  </data>
+  <data name="DesenvolvedorDotNet" xml:space="preserve">
+    <value>Développeur .Net</value>
+  </data>
+  <data name="DetalhesExercicioNaoEncontrado" xml:space="preserve">
+    <value>Les détails de l'exercice introuvables</value>
+  </data>
+  <data name="Digitacao" xml:space="preserve">
+    <value>Dactylo</value>
+  </data>
+  <data name="Digitado" xml:space="preserve">
+    <value>Tapé</value>
+  </data>
+  <data name="DigiteMaisCom" xml:space="preserve">
+    <value>MasterTouchTyping.Com</value>
+  </data>
+  <data name="DigiteMaisComUpper" xml:space="preserve">
+    <value>MASTERTOUCHTYPING.COM</value>
+  </data>
+  <data name="DigiteMaisCursoDigitacao" xml:space="preserve">
+    <value>Master Touch Typing - Typing Course</value>
+  </data>
+  <data name="digitemaisGmailCom" xml:space="preserve">
+    <value>mastertouchtyping@gmail.com</value>
+  </data>
+  <data name="DigiteSeuEmail" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="DuvidasSugestoes" xml:space="preserve">
+    <value>Questions, suggestions et autres, s'il vous plaît contactez-nous par email ou envoyez-nous un message!</value>
+  </data>
+  <data name="EfetuarTroca" xml:space="preserve">
+    <value>Faire des changements</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EmBreve" xml:space="preserve">
+    <value>bientôt.</value>
+  </data>
+  <data name="EmConstrucao" xml:space="preserve">
+    <value>en Construction</value>
+  </data>
+  <data name="EmIngles" xml:space="preserve">
+    <value>En Anglais</value>
+  </data>
+  <data name="Enfase" xml:space="preserve">
+    <value>Accentuation</value>
+  </data>
+  <data name="EntendaMais" xml:space="preserve">
+    <value>Plus d'info</value>
+  </data>
+  <data name="Entrar" xml:space="preserve">
+    <value>Entrer</value>
+  </data>
+  <data name="EntrarEmCurso" xml:space="preserve">
+    <value>S'inscrire à un cours</value>
+  </data>
+  <data name="Enviar" xml:space="preserve">
+    <value>Envoyer</value>
+  </data>
+  <data name="ErroRemocaoLogin" xml:space="preserve">
+    <value>Il y avait une erreur de retirer le login externe.</value>
+  </data>
+  <data name="Erros" xml:space="preserve">
+    <value>Erreurs</value>
+  </data>
+  <data name="ErroTentarLogarApp" xml:space="preserve">
+    <value>Erreur lors de la tentative de se connecter à l'application</value>
+  </data>
+  <data name="Essa_categoria_e_consituida_de_textos_mais_longos" xml:space="preserve">
+    <value>Cette catégorie se compose de plus et des textes plus complexes. Ici, le dactylo vous pouvez taper rapidement et avec précision des textes. Capable de se soumettre à tous les défis.</value>
+  </data>
+  <data name="EstudeOndeEstiver" xml:space="preserve">
+    <value>Cette méthode vous permet d’acquérir une vitesse de frappe beaucoup plus élevée.</value>
+  </data>
+  <data name="EstudeOndeEstiverOSEuAndamento" xml:space="preserve">
+    <value>Étape par étape, vous apprenez les rudiments de la frappe au clavier en seulement quelques heures. Approfondissez votre technique à l’aide d’une centaine d’exercices et de textes de pratique.</value>
+  </data>
+  <data name="Estude_com_licoes" xml:space="preserve">
+    <value>Tapez avec le leçon</value>
+  </data>
+  <data name="Estude_com_seus" xml:space="preserve">
+    <value>Tapez avec vos</value>
+  </data>
+  <data name="EstudoOndeFor" xml:space="preserve">
+    <value>Testez votre performance dactylo!</value>
+  </data>
+  <data name="Excelente" xml:space="preserve">
+    <value>Excellent</value>
+  </data>
+  <data name="Exercicio" xml:space="preserve">
+    <value>Exercice</value>
+  </data>
+  <data name="Exercicios" xml:space="preserve">
+    <value>Exercices</value>
+  </data>
+  <data name="ExercicioSomenteInseridosCurso" xml:space="preserve">
+    <value>Exercices exclusivement pour l'insertion dans un cours</value>
+  </data>
+  <data name="ExerciciosParaSerInseridosCurso" xml:space="preserve">
+    <value>Exercices pour l'insertion dans un cours</value>
+  </data>
+  <data name="ExistemExerciciosReforco" xml:space="preserve">
+    <value>il y a des exercices de renforcement dans la catégorie</value>
+  </data>
+  <data name="FacaosExerciciosReforcoVolteAqui" xml:space="preserve">
+    <value>Il fault faire les exercices de renforcement! Cela rendra le nivellement de leurs difficultés</value>
+  </data>
+  <data name="FazerLogin" xml:space="preserve">
+    <value>Connectez-vous</value>
+  </data>
+  <data name="Ferramentas" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="FoiAutenticadoSucesso" xml:space="preserve">
+    <value>Il a été authentifié avec succès avec le</value>
+  </data>
+  <data name="GerenciamentoCurso" xml:space="preserve">
+    <value>Gestion des cours</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+  <data name="HouveramErrosExcessivos" xml:space="preserve">
+    <value>il y avait des erreurs excessives dans la touche</value>
+  </data>
+  <data name="HouveramErrosExcessivos2" xml:space="preserve">
+    <value>Il y a eu des erreurs excessives.</value>
+  </data>
+  <data name="IdTemporarioApp" xml:space="preserve">
+    <value>Id Temporaire App</value>
+  </data>
+  <data name="IndicesPrecisos" xml:space="preserve">
+    <value>Efficacité</value>
+  </data>
+  <data name="Iniciante" xml:space="preserve">
+    <value>Débutant</value>
+  </data>
+  <data name="IniciarAgoraMesmo" xml:space="preserve">
+    <value>Commencez dès maintenant!</value>
+  </data>
+  <data name="InscrevaSe" xml:space="preserve">
+    <value>Un outil convivial qui renforce la motivation des apprenants</value>
+  </data>
+  <data name="InscritosCurso" xml:space="preserve">
+    <value>Inscrits au cours</value>
+  </data>
+  <data name="InsiraAquiCodigo" xml:space="preserve">
+    <value>Insérez ici le Code</value>
+  </data>
+  <data name="InsiraSeuNome" xml:space="preserve">
+    <value>Insérez votre prénom!</value>
+  </data>
+  <data name="InsiraSeuSobrenome" xml:space="preserve">
+    <value>Insérez votre nom!</value>
+  </data>
+  <data name="Intermediario" xml:space="preserve">
+    <value>Intermédiaire</value>
+  </data>
+  <data name="IrParaExerciciosReforco" xml:space="preserve">
+    <value>Aller à l'exercice Intensification</value>
+  </data>
+  <data name="LembrarEsseBrowser" xml:space="preserve">
+    <value>Se souvenir de moi sur ce navigateur?</value>
+  </data>
+  <data name="LembreMe" xml:space="preserve">
+    <value>Maintenir la connexion?</value>
+  </data>
+  <data name="LembreSeUtilizarDedosCorretos" xml:space="preserve">
+    <value>Rappelez-vous d'utiliser les doigts corrects indiqués par l'application pour obtenir les meilleurs résultats.</value>
+  </data>
+  <data name="Lingua" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="lkAvancado" xml:space="preserve">
+    <value>curso-de-digitacao/avancado/francais</value>
+  </data>
+  <data name="LkAvancadoLista" xml:space="preserve">
+    <value>/cours-de-dactylographie/avance/francais</value>
+  </data>
+  <data name="LkBasicoLista" xml:space="preserve">
+    <value>/cours-de-dactylographie/elementaire/francais</value>
+  </data>
+  <data name="lkCriarLicaoMeuProprioTexto" xml:space="preserve">
+    <value>/cours-de-dactylographie/creer-lecon-avec-mon-texte</value>
+  </data>
+  <data name="LkInicianteLista" xml:space="preserve">
+    <value>/cours-de-dactylographie/debutant/francais</value>
+  </data>
+  <data name="LkIntermediarioLista" xml:space="preserve">
+    <value>/cours-de-dactylographie/intermediaire/francais</value>
+  </data>
+  <data name="LkMeusTextosLista" xml:space="preserve">
+    <value>/cours-de-dactylographie/mon-texte/francais</value>
+  </data>
+  <data name="LkPrimeiroExercicio" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LkReforcoLista" xml:space="preserve">
+    <value>/cours-de-dactylographie/intensification/francais</value>
+  </data>
+  <data name="Local" xml:space="preserve">
+    <value>lieu:</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginExterno" xml:space="preserve">
+    <value>Connexion Externe:</value>
+  </data>
+  <data name="LoginInvalido" xml:space="preserve">
+    <value>Login invalide</value>
+  </data>
+  <data name="LoginsRegistrados" xml:space="preserve">
+    <value>Logins enregistrés</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>~/imagens/logoMtt.png</value>
+  </data>
+  <data name="LoguinUtilizandoRedesSociais" xml:space="preserve">
+    <value>Connectez-vous en utilisant les réseaux sociaux.</value>
+  </data>
+  <data name="Medidores_em_tempo_real" xml:space="preserve">
+    <value>Mètres en temps réel</value>
+  </data>
+  <data name="MeusCursos" xml:space="preserve">
+    <value>Mes cours</value>
+  </data>
+  <data name="MeusTextos" xml:space="preserve">
+    <value>Mes Textes</value>
+  </data>
+  <data name="ModificarSenha" xml:space="preserve">
+    <value>Changez de mot de passe</value>
+  </data>
+  <data name="MuitoBoa" xml:space="preserve">
+    <value>Très bon</value>
+  </data>
+  <data name="MuitoRuim" xml:space="preserve">
+    <value>Très mauvais</value>
+  </data>
+  <data name="Muito_pratico_quando_se_precisa" xml:space="preserve">
+    <value>Très pratique lorsque vous avez besoin d'étudier un texte à apprendre, mémoriser ou étude. Quand il n'a pas beaucoup de temps à perdre, cette technique est très intéressante.</value>
+  </data>
+  <data name="MultiplosNiveis" xml:space="preserve">
+    <value>Approfondissez votre technique</value>
+  </data>
+  <data name="Nivelamento" xml:space="preserve">
+    <value>Stimulante</value>
+  </data>
+  <data name="NovaSenha" xml:space="preserve">
+    <value>Nouveau mot de passe</value>
+  </data>
+  <data name="NovoExercicio" xml:space="preserve">
+    <value>Nouvel exercice</value>
+  </data>
+  <data name="NovoExercicioParaCurso" xml:space="preserve">
+    <value>Nouvel exercice pour un cours</value>
+  </data>
+  <data name="NovoUsuario" xml:space="preserve">
+    <value>Nouveau Compte</value>
+  </data>
+  <data name="O" xml:space="preserve">
+    <value>Le</value>
+  </data>
+  <data name="ObrigadoConfirmarSeuEmail" xml:space="preserve">
+    <value>Merci pour vérifier votre e-mail. S'il vous plaît</value>
+  </data>
+  <data name="OcorreuErro" xml:space="preserve">
+    <value>Une erreur est survenue.</value>
+  </data>
+  <data name="OLoginExternoRemovido" xml:space="preserve">
+    <value>Le login externe a été enlevé avec succès.</value>
+  </data>
+  <data name="OnLineGratis" xml:space="preserve">
+    <value>En Ligne Gratuit</value>
+  </data>
+  <data name="ONumTelFoiAddSucesso" xml:space="preserve">
+    <value>Le numéro de téléphone a été ajouté avec succès.</value>
+  </data>
+  <data name="ONumTelRemovidoSecesso" xml:space="preserve">
+    <value>Le numéro de téléphone a été supprimé avec succès.</value>
+  </data>
+  <data name="OperacaoInvalida" xml:space="preserve">
+    <value>Opération invalide</value>
+  </data>
+  <data name="Os_medidores_instantaneos_trazem_resultados" xml:space="preserve">
+    <value>Instantanés mètres apporter des résultats au moment où il est entré, ce qui porte à l'utilisateur une expérience unique de défi.</value>
+  </data>
+  <data name="Os_resultados_sao_baseados" xml:space="preserve">
+    <value>Les résultats sont basés sur plusieurs critères qui contrôle la vitesse et la précision de mieux performace il est essentiel d'utiliser les doigts corrects pour chaque touche.</value>
+  </data>
+  <data name="OTextoDeveTerNoMinimo55Caracteres" xml:space="preserve">
+    <value>Le texte doit contenir au moins 55 caractères.</value>
+  </data>
+  <data name="O_Curso_de_digitacao_gratuito_online_dispoe_de_um_metodo_evolutivo" xml:space="preserve">
+    <value>Le cours de dactylo gratuit en ligne propose une méthode évolutive qui permet à l'utilisateur une nouvelle expérience lorsque vous voulez taper la manière correcte.</value>
+  </data>
+  <data name="O_digitador_pode_inserir_textos_proprios" xml:space="preserve">
+    <value>Le dactylo peut entrer propres textes pour former en toute liberté, ces cours sont évalués selon les mêmes critères des catégories précédentes.</value>
+  </data>
+  <data name="O_teclado_selecionado_inicialmente_pode_ser_modificado_pelo_digitador" xml:space="preserve">
+    <value>Le clavier sélectionné peut être modifié d'abord par le numériseur si vous utilisez un autre modèle de clavier, même si la langue esconlhida n'est pas la même chose.</value>
+  </data>
+  <data name="PalavrasPorMinuto" xml:space="preserve">
+    <value>Mots par Minute</value>
+  </data>
+  <data name="PgContato" xml:space="preserve">
+    <value>Page de contact.</value>
+  </data>
+  <data name="PorFavorInformeEmailConcluir" xml:space="preserve">
+    <value>S'il vous plaît entrer votre e-mail pour terminer l'enregistrement!</value>
+  </data>
+  <data name="Por_mais_que_o_usuario_ja_tenha_uma_digitacao_rapida" xml:space="preserve">
+    <value>Autant que vous avez déjà un frappe rapide, il est important de vérifier que vos doigts sont correctement positionnés et la posture lors de la frappe est confortable.</value>
+  </data>
+  <data name="ppm" xml:space="preserve">
+    <value>Mpm</value>
+  </data>
+  <data name="ppmUpper" xml:space="preserve">
+    <value>MPM</value>
+  </data>
+  <data name="PratiqueMais" xml:space="preserve">
+    <value>Pratiquez plus</value>
+  </data>
+  <data name="Precisao" xml:space="preserve">
+    <value>Précision:</value>
+  </data>
+  <data name="Proprios" xml:space="preserve">
+    <value>Mes textes</value>
+  </data>
+  <data name="Proprios_textos" xml:space="preserve">
+    <value>Propres Textes</value>
+  </data>
+  <data name="Proximo" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Razoavel" xml:space="preserve">
+    <value>Raisonnable</value>
+  </data>
+  <data name="Recuperar" xml:space="preserve">
+    <value>Récupérer</value>
+  </data>
+  <data name="RecuperarSenha" xml:space="preserve">
+    <value>Récupération de mot de passe</value>
+  </data>
+  <data name="RedesSociais" xml:space="preserve">
+    <value>Les Réseaux Sociaux</value>
+  </data>
+  <data name="Reforco" xml:space="preserve">
+    <value>Intensification</value>
+  </data>
+  <data name="Registrar" xml:space="preserve">
+    <value>Inscrivez vous</value>
+  </data>
+  <data name="RegistreseParaTerExerciciosSalvos" xml:space="preserve">
+    <value>Inscrivez-vous pour avoir vos séances d'entraînement enregistrées.</value>
+  </data>
+  <data name="REgistroExercicioAdd" xml:space="preserve">
+    <value>Exercice ajouté avec succès</value>
+  </data>
+  <data name="REgistroExercicioAtualizado" xml:space="preserve">
+    <value>Exercice tenu correctement mis à jour</value>
+  </data>
+  <data name="RegistroExercicioInvalido" xml:space="preserve">
+    <value>Exercice invalide</value>
+  </data>
+  <data name="RegistroExercicioSelecDeletado" xml:space="preserve">
+    <value>Exercice enregistrement sélectionné supprimé</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>Régulier</value>
+  </data>
+  <data name="Reiniciar" xml:space="preserve">
+    <value>Recommencer</value>
+  </data>
+  <data name="ResultadoDetalhadoExercResulvidos" xml:space="preserve">
+    <value>Les résultats détaillés des exercices résolus</value>
+  </data>
+  <data name="Resultados" xml:space="preserve">
+    <value>Résultats</value>
+  </data>
+  <data name="Ruim" xml:space="preserve">
+    <value>Mauvais</value>
+  </data>
+  <data name="SaibaMais" xml:space="preserve">
+    <value>Plus d'infos +</value>
+  </data>
+  <data name="Sair" xml:space="preserve">
+    <value>Sortie</value>
+  </data>
+  <data name="SemInstalacao" xml:space="preserve">
+    <value>Apprenez la technique de dactylo</value>
+  </data>
+  <data name="Senha" xml:space="preserve">
+    <value>Mot de Passe</value>
+  </data>
+  <data name="SenhaAntiga" xml:space="preserve">
+    <value>Ancien mot de passe</value>
+  </data>
+  <data name="SenhaCriadaSucesso" xml:space="preserve">
+    <value>Mot de passe créé avec succès.</value>
+  </data>
+  <data name="SenhaFoiReiniciadaSucesso" xml:space="preserve">
+    <value>Votre mot de passe a été réinitialisé, s'il vous plaît</value>
+  </data>
+  <data name="SeoParagrafo1" xml:space="preserve">
+    <value>Apprenez à taper rapidement avec tous les 10 doigts à l'aveugle en seulement quelques jours. Le mastertouchtyping.com est conçu pour vous permettre d’améliorer votre vitesse et votre précision de frappe</value>
+  </data>
+  <data name="SeoSubtitulo_1_H2" xml:space="preserve">
+    <value>Cours de Dactylographie</value>
+  </data>
+  <data name="SeoSubtitulo_2_H2" xml:space="preserve">
+    <value>Leçons</value>
+  </data>
+  <data name="SeoTituloH1" xml:space="preserve">
+    <value>Leçons de dactylographie en ligne | Apprenez à utiliser correctement le clavier</value>
+  </data>
+  <data name="Sobre" xml:space="preserve">
+    <value>Sur</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value>Rappelez-vous d'utiliser les doigts corrects indiqués par l'application pour obtenir les meilleurs résultats.</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Ce niveau est très important pour la stabilité et la précision.</value>
+  </data>
+  <data name="String106" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Il est important d'utiliser les doigts corrects indiqués par l'application pour obtenir les meilleurs résultats.</value>
+  </data>
+  <data name="String27" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>Répétez l'opération pour atteindre le niveau maximal!</value>
+  </data>
+  <data name="String35" xml:space="preserve">
+    <value>Complete (danger)</value>
+  </data>
+  <data name="String39" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>essayez à nouveau ou suivre l'exercice et revenir quand vous sentez que vous pouvez avoir de meilleurs résultats.</value>
+  </data>
+  <data name="String5" xml:space="preserve">
+    <value>revenez ici quand vous sentez que vous pouvez avoir de meilleurs résultats.</value>
+  </data>
+  <data name="String6" xml:space="preserve">
+    <value>plus d'erreur laissants incidences de plus en plus stable et précis</value>
+  </data>
+  <data name="String7" xml:space="preserve">
+    <value>votre position.</value>
+  </data>
+  <data name="String8" xml:space="preserve">
+    <value>précision. Chaque exercice a ses propres critères d'évaluation étant mesurés en fonction de leur niveau de complexité.</value>
+  </data>
+  <data name="SuaDigitacaoEstaRuim" xml:space="preserve">
+    <value>Votre niveau est mauvais, répétez l'exercice aussi souvent que vous vous sentez nécessaire.</value>
+  </data>
+  <data name="SuaDigitacaoEstaRuim2" xml:space="preserve">
+    <value>Votre niveau est très mauvais, répétez l'exercice aussi souvent que vous vous sentez nécessaire.</value>
+  </data>
+  <data name="SuaDigitacaoExcelente" xml:space="preserve">
+    <value>Votre niveau est excellent. Il est trop facile? Essayez un niveau supérieur!</value>
+  </data>
+  <data name="SuaDigitacaoMuitoBoa" xml:space="preserve">
+    <value>Votre niveau est très bon, continuez avec les prochains exercices ou quand vous vous sentez le besoin</value>
+  </data>
+  <data name="SuaDigitacaoRazoavel" xml:space="preserve">
+    <value>Votre niveau est moyen, mais vous avez encore beaucoup à améliorer.</value>
+  </data>
+  <data name="SuaDigitacaoRegular" xml:space="preserve">
+    <value>Votre niveau est intermédiaire. Continuez!</value>
+  </data>
+  <data name="SuaPrecisaoDentroEsperado" xml:space="preserve">
+    <value>Votre précision est bonne.</value>
+  </data>
+  <data name="SuaSenhaModificadaSucesso" xml:space="preserve">
+    <value>Votre mot de passe a été changé avec succès.</value>
+  </data>
+  <data name="Suporte_inicial_para_quem_nao_tem" xml:space="preserve">
+    <value>Le support initial pour ceux qui n'ont pas connaissance de la frappe. Il est important que le dactylo débutant utiliser correctement vos doigts comme suggéré par le programme, cela empêchera les dépendances futures.</value>
+  </data>
+  <data name="TeclasEstudadas" xml:space="preserve">
+    <value>Touches étudiées:</value>
+  </data>
+  <data name="Telefone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="TelefoneNumero" xml:space="preserve">
+    <value>#ERROR!</value>
+  </data>
+  <data name="Tempo" xml:space="preserve">
+    <value>Durée</value>
+  </data>
+  <data name="TempoDecorrido" xml:space="preserve">
+    <value>Temps Écoulé</value>
+  </data>
+  <data name="TemPorObjetivoReforcarTeclas" xml:space="preserve">
+    <value> vise à renforcer les touches</value>
+  </data>
+  <data name="Texto" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="TextoLabel" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="Titulo" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="TodosDireitosReservados" xml:space="preserve">
+    <value>Tous droits réservés</value>
+  </data>
+  <data name="TotalDeErros" xml:space="preserve">
+    <value>Faute de Frappe</value>
+  </data>
+  <data name="TotalmenteGratuito" xml:space="preserve">
+    <value>Aucune installation</value>
+  </data>
+  <data name="TrocarCurso" xml:space="preserve">
+    <value>Changement de cours</value>
+  </data>
+  <data name="TrocarDeSenha" xml:space="preserve">
+    <value>Changer Mot de passe</value>
+  </data>
+  <data name="UmResumoGeralDeDesempenho" xml:space="preserve">
+    <value>est la vue d'ensemble de la performance basée sur la vitesse de frappe et la précision. Chaque exercice a ses propres critères d'évaluation étant mesurés en fonction de leur niveau de complexité.</value>
+  </data>
+  <data name="Usuario" xml:space="preserve">
+    <value>Utilisateur</value>
+  </data>
+  <data name="Velocidade" xml:space="preserve">
+    <value>Vitesse</value>
+  </data>
+  <data name="VelocidadeDaDigitacao" xml:space="preserve">
+    <value>Vitesse de Frappe</value>
+  </data>
+  <data name="VelocidadeDigitacao" xml:space="preserve">
+    <value>Vitesse de frappe:</value>
+  </data>
+  <data name="VoltarACriacaoCurso" xml:space="preserve">
+    <value>Retour au cours Création</value>
+  </data>
+  <data name="VoltarALista" xml:space="preserve">
+    <value>Retour à la liste</value>
+  </data>
+  <data name="Course" xml:space="preserve">
+    <value>Cours</value>
+  </data>
+  <data name="Institution" xml:space="preserve">
+    <value>Establishment</value>
+  </data>
+  <data name="Keyboard" xml:space="preserve">
+    <value>Clavier</value>
+  </data>
+  <data name="LessonPresentation" xml:space="preserve">
+    <value>Présentation de la leçon</value>
+  </data>
+  <data name="LessonResult" xml:space="preserve">
+    <value>Résultat de la leçon</value>
+  </data>
+  <data name="TouchTyppingGo" xml:space="preserve">
+    <value>Touch Typping Go</value>
+  </data>
+  <data name="InstitutionCreated" xml:space="preserve">
+    <value>Institution créée avec succès</value>
+  </data>
+  <data name="checkTheMessages" xml:space="preserve">
+    <value>vérifier les messages</value>
+  </data>
+  <data name="EntityCreated" xml:space="preserve">
+    <value>{0} créée avec succès</value>
+  </data>
+  <data name="InstitutionNotCreated" xml:space="preserve">
+    <value>L'institution n'a pas été créée</value>
+  </data>
+  <data name="Teacher" xml:space="preserve">
+    <value>Professeur</value>
+  </data>
+</root>

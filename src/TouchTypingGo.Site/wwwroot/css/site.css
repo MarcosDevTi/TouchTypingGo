@@ -1,1 +1,54 @@
-﻿
+﻿.btnInicie{
+    margin-top: -150px; margin-right:-550px; font-size:30px;
+}
+.btnInicie2{
+    font-size:26px;
+}
+.imgTxt1{
+    font-size: 19em;
+    color: #0d170f;
+    background-color: rgba(211, 211, 211, 0.44);
+    border-radius: 25px;
+    width: 401px;
+    height: 287px;
+}
+.imgTxt2{
+    background-color: rgba(4, 88, 174, 0.13);
+    border-radius: 60px;
+    font-size: 20em;
+    width: 350px;
+    color: #555555;
+    height: 319px;
+}
+.imgTxt3{
+    font-size: 23em;
+    background-color: rgba(245, 229, 218, 0.38);
+    border-radius: 81px;
+    color: #1aa376;
+    height: 368px;
+    width: 487px;
+}
+.imgTxt4{
+    background-color: rgba(137, 255, 148, 0.23);
+    font-size: 22em;
+    color: #0069c4;
+    width: 354px;
+    height: 350px;
+    border-radius: 47px;
+}
+.titRodape{
+    font-size: 22px;
+    color: #fff;
+}
+#textoHome1{
+    margin-top: 44px;
+}
+#textoHome2{
+    margin-top: 63px;
+}
+#textoHome3{
+    margin-top: 93px;
+}
+#textoHome4{
+    margin-top: 77px;
+}

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace TouchTypingGo.Application.ViewModels
@@ -11,10 +12,8 @@ namespace TouchTypingGo.Application.ViewModels
         }
         [Key]
         public Guid Id { get; set; }
-        [Required(ErrorMessage = "O nome é obrigatório")]
-        [MinLength(2, ErrorMessage = "O tamanho mínimo é {1}")]
-        [MaxLength(150, ErrorMessage = "O tamanho máximo é {1}")]
-        [Display(Name = "Name do Curso")]
+
+        [Required, MinLength(2), MaxLength(150), DisplayName("Name")]
         public string Name { get; set; }
     }
 }

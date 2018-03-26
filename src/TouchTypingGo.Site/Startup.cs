@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TouchTypingGo.Application.Interfaces;
-using TouchTypingGo.Application.Services;
+using Microsoft.Extensions.Localization;
+using System.Collections.Generic;
+using System.Globalization;
 using TouchTypingGo.Infra.CrossCutting.Bus;
+using TouchTypingGo.Infra.CrossCutting.CookieManager;
 using TouchTypingGo.Infra.CrossCutting.Identity.Data;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models;
 using TouchTypingGo.Infra.CrossCutting.IoC;
-using Microsoft.AspNetCore.Hosting.Internal;
+using TouchTypingGo.Site.Validation;
 
 namespace TouchTypingGo.Site
 {
@@ -24,20 +25,57 @@ namespace TouchTypingGo.Site
     {
         private HostingEnvironment env;
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
-            Configuration = configuration;
-        }
+            IConfigurationBuilder builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath);
+            Configuration = builder.Build();
 
-        public Startup(HostingEnvironment env)
-        {
-            this.env = env;
+            Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
 
+        public void RegisterLocalizations(IServiceCollection services)
+        {
+            var mvcBuilder = services.AddMvc();
+
+            mvcBuilder.AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+            mvcBuilder.AddDataAnnotationsLocalization();
+            mvcBuilder.AddDataAnnotationsLocalization(options =>
+            {
+                options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(ValidationMessages));
+            });
+
+            services.Configure<LocalizationOptions>(options =>
+            {
+                options.ResourcesPath = "Resources";
+            });
+
+            services.Configure<MvcOptions>(options =>
+            {
+                options.ModelMetadataDetailsProviders.Add(
+                    new CustomValidationMetadataProvider());
+            });
+
+            services.Configure<RequestLocalizationOptions>(options =>
+                {
+                    options.SupportedUICultures = new List<CultureInfo>
+                    {
+                        new CultureInfo("fr"),
+                        new CultureInfo("en"),
+                        new CultureInfo("es"),
+                        new CultureInfo("pt"),
+                    };
+                    options.DefaultRequestCulture = new RequestCulture("en");
+                }
+            );
+        }
         public void ConfigureServices(IServiceCollection services)
         {
+
+            RegisterLocalizations(services);
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -45,17 +83,20 @@ namespace TouchTypingGo.Site
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc();
-            //services.AddAutoMapper();
-
             RegisterServices(services);
+
+            services.AddCookieManager(options =>
+            {
+                options.AllowEncryption = false;
+                options.ThrowForPartialCookies = true;
+                options.DefaultExpireTimeInDays = 30;
+            });
         }
 
-        public void Configure(IApplicationBuilder app, 
-            IHostingEnvironment env, 
+        public void Configure(IApplicationBuilder app,
+            IHostingEnvironment env,
             IHttpContextAccessor accessor)
         {
-            
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
@@ -68,9 +109,10 @@ namespace TouchTypingGo.Site
             }
 
             app.UseStaticFiles();
-            //app.UseIdentity();
 
-           app.UseAuthentication();
+            app.UseRequestLocalization();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
@@ -78,6 +120,7 @@ namespace TouchTypingGo.Site
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
             InMemoryBus.ContainerAcessor = () => accessor.HttpContext.RequestServices;
         }
 

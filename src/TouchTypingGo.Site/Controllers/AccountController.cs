@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TouchTypingGo.Application.Interfaces;
@@ -42,7 +43,8 @@ namespace TouchTypingGo.Site.Controllers
             IDomainNotificationHandler<DomainDotification> notification, 
             IStudentAppService studentAppService, 
             ITeacherAppService teacherAppService,
-            IUser user) : base(notification, user)
+            IUser user,
+            IStringLocalizer<BaseController> localizer) : base(notification, user, localizer)
         {
             _userManager = userManager;
             _signInManager = signInManager;

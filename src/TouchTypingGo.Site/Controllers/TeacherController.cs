@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
+using System;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Interfaces;
@@ -17,74 +15,49 @@ namespace TouchTypingGo.Site.Controllers
 
         public TeacherController(ITeacherAppService teacherAppService,
             IDomainNotificationHandler<DomainDotification> notifications,
-            IUser user) : base(notifications, user)
+            IUser user,
+            IStringLocalizer<BaseController> localizer) : base(notifications, user, localizer)
         {
             _teacherAppService = teacherAppService;
         }
 
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View(_teacherAppService.GetAll());
         }
 
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        public ActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TeacherViewModel teacherViewModel)
+        public IActionResult Create(TeacherViewModel teacherViewModel)
         {
             if (!ModelState.IsValid) return View(teacherViewModel);
             _teacherAppService.Add(teacherViewModel);
 
-            ViewBag.SuccessCreated = ValidOperation() ? "success,Professor criado com sucesso!" : "error,O professor não foi refistrado, verifique as mensagens";
+            ViewBag.SuccessCreated = GetMessageCreate(teacherViewModel);
             return View(teacherViewModel);
         }
 
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        public ActionResult Delete(Guid? id)
+        public IActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
             var teacherViewModel = _teacherAppService.GetById(id.Value);
-           
+
             return View(teacherViewModel);
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(Guid id)
+        public IActionResult DeleteConfirmed(Guid id)
         {
-           _teacherAppService.Delete(id);
+            _teacherAppService.Delete(id);
             return RedirectToAction("Index");
         }
     }

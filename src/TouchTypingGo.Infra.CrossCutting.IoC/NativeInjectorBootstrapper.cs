@@ -48,7 +48,7 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             services.AddSingleton(Mapper.Configuration);
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
 
-            services.AddScoped<IHaveCustomMappings, CourseViewModel>();
+            services.AddScoped<ICustomMappings, CourseViewModel>();
 
             //AppService
             services.AddScoped<ICourseAppService, CourseAppService>();

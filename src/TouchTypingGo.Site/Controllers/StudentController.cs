@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Interfaces;
@@ -18,86 +15,32 @@ namespace TouchTypingGo.Site.Controllers
         public StudentController(
             IStudentAppService studentAppService,
             IDomainNotificationHandler<DomainDotification> notifications,
-            IUser user) : base(notifications, user)
+            IUser user,
+            IStringLocalizer<BaseController> localizer) : base(notifications, user, localizer)
         {
             _studentAppService = studentAppService;
         }
-        // GET: Student
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View(_studentAppService.GetAll());
         }
 
-        // GET: Student/Details/5
-        public ActionResult Details(int id)
+        public IActionResult Create()
         {
             return View();
         }
 
-        // GET: Student/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Student/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(StudentViewModel studentViewModel)
+        public IActionResult Create(StudentViewModel studentViewModel)
         {
             if (!ModelState.IsValid) return View(studentViewModel);
 
             _studentAppService.Add(studentViewModel);
 
-            ViewBag.SuccessCreated = ValidOperation() ? "success,Professor criado com sucesso!" : "error,O professor não foi refistrado, verifique as mensagens";
+            ViewBag.SuccessCreated = GetMessageCreate(studentViewModel);
 
             return View(studentViewModel);
-        }
-
-        // GET: Student/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Student/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Student/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Student/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using System;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
@@ -14,7 +15,8 @@ namespace TouchTypingGo.Site.Controllers
 
         public CourseController(ICourseAppService courseAppService,
             IDomainNotificationHandler<DomainDotification> notifications,
-            IUser user, ILessonPresentationAppService lessonPresentationAppService) : base(notifications, user)
+            IUser user, ILessonPresentationAppService lessonPresentationAppService,
+            IStringLocalizer<BaseController> localizer) : base(notifications, user, localizer)
         {
             _courseAppService = courseAppService;
             _lessonPresentationAppService = lessonPresentationAppService;
@@ -23,16 +25,6 @@ namespace TouchTypingGo.Site.Controllers
         public IActionResult Index()
         {
             return View(_courseAppService.GetAll());
-        }
-
-        public IActionResult Details(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var courseViewModel = _courseAppService.GetById(id.Value);
-            return View(courseViewModel);
         }
 
         public IActionResult Create()
@@ -49,7 +41,7 @@ namespace TouchTypingGo.Site.Controllers
             if (!ModelState.IsValid) return View(courseViewModel);
             var code = _courseAppService.Add(courseViewModel);
 
-            ViewBag.SuccessCreated = ValidOperation() ? $"success,Curso criado com sucesso. O código gerado é: {code}" : "error,O curso não foi registrado, verifique as mensagens";
+            ViewBag.SuccessCreated = GetMessageCreate(courseViewModel);
             return View(courseViewModel);
         }
 
@@ -77,7 +69,7 @@ namespace TouchTypingGo.Site.Controllers
         {
             if (ModelState.IsValid) return View(courseViewModel);
             _courseAppService.Update(courseViewModel);
-            //TODO: Validar se operação occoreu com sucesso!
+            //TODO: Validation if success!
             return View(courseViewModel);
         }
 

@@ -1,4 +1,10 @@
-﻿////toastr.options = {
+﻿(function () {
+    $("#cultureForm select").on("change", function () {
+        $(this).parent().submit();
+    });
+}());
+
+////toastr.options = {
 ////    "closeButton": false,
 ////    "debug": false,
 ////    "newestOnTop": false,

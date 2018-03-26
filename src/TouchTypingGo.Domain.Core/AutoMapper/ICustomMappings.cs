@@ -2,7 +2,7 @@
 
 namespace TouchTypingGo.Domain.Core.AutoMapper
 {
-    public interface IHaveCustomMappings
+    public interface ICustomMappings
     {
         void CreateMappings(IMapperConfigurationExpression configuration);
     }

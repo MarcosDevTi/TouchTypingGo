@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using TouchTypingGo.Domain.Course.Commands.LessonResult;
 
 namespace TouchTypingGo.Application.ViewModels
 {
+    [DisplayName("LessonResult")]
     public class LessonResultViewModel
     {
         public int Try { get; set; }

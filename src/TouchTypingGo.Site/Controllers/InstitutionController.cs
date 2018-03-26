@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
+using System;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Interfaces;
@@ -14,78 +11,57 @@ namespace TouchTypingGo.Site.Controllers
     public class InstitutionController : BaseController
     {
         private readonly IInstitutionAppService _institutionAppService;
+        private readonly IStringLocalizer<BaseController> _localizer;
 
         public InstitutionController(
             IInstitutionAppService institutionAppService,
             IDomainNotificationHandler<DomainDotification> notification,
-            IUser user) : base(notification, user)
+            IUser user,
+            IStringLocalizer<BaseController> localizer) : base(notification, user, localizer)
         {
             _institutionAppService = institutionAppService;
+            _localizer = localizer;
         }
-        // GET: Institution
-        public ActionResult Index()
+
+        public IActionResult Index()
         {
             return View(_institutionAppService.GetAll());
         }
 
-        // GET: Institution/Create
-        public ActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Institution/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(InstitutionViewModel institution)
+        public IActionResult Create(InstitutionViewModel institution)
         {
+
+
             if (!ModelState.IsValid) return View(institution);
             _institutionAppService.Add(institution);
+            GetMessageCreate(institution);
 
-            ViewBag.SuccessCreated = ValidOperation() ? "success,Instituição criada com sucesso!" : "error,A Instituição não foi refistrado, verifique as mensagens";
+            ViewBag.SuccessCreated = GetMessageCreate(institution);
             return View(institution);
         }
 
-        // GET: Institution/Edit/5
-        public ActionResult Edit(Guid id)
+        public IActionResult Edit(Guid id)
         {
             var institution = _institutionAppService.GetByIdWithAddress(id);
             return View(institution);
         }
 
-        // POST: Institution/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(InstitutionViewModel institution)
+        public IActionResult Edit(InstitutionViewModel institution)
         {
             if (!ModelState.IsValid) return View(institution);
             _institutionAppService.Update(institution);
 
             return View(institution);
 
-        }
-
-        // GET: Institution/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Institution/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         public IActionResult AddAddress(Guid? id)
@@ -97,11 +73,6 @@ namespace TouchTypingGo.Site.Controllers
 
             var addressViewModel = _institutionAppService.GetByIdWithAddress(id.Value);
             return PartialView("_AddAddress", addressViewModel);
-        }
-
-        public ActionResult UpdateAddress(AddressViewModel addressViewModel)
-        {
-            return View();
         }
 
         public IActionResult Details(Guid? id)

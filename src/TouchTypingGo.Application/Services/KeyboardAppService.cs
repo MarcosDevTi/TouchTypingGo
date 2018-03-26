@@ -1,7 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Bus;
@@ -40,7 +39,7 @@ namespace TouchTypingGo.Application.Services
 
         public IEnumerable<KeyboardViewModel> GetAll()
         {
-           return _mapper.Map<IEnumerable<KeyboardViewModel>>(_keyboardRepository.GetAll());
+            return _mapper.Map<IEnumerable<KeyboardViewModel>>(_keyboardRepository.GetAll());
         }
 
         public KeyboardViewModel GetById(Guid id)

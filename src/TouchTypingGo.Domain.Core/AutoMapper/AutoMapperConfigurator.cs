@@ -62,10 +62,10 @@ namespace TouchTypingGo.Domain.Core.AutoMapper
         {
             var maps = (from t in types
                         from i in t.GetInterfaces()
-                        where typeof(IHaveCustomMappings).IsAssignableFrom(t) &&
+                        where typeof(ICustomMappings).IsAssignableFrom(t) &&
                               !t.IsAbstract &&
                               !t.IsInterface
-                        select (IHaveCustomMappings)Activator.CreateInstance(t)).ToArray();
+                        select (ICustomMappings)Activator.CreateInstance(t)).ToArray();
 
             foreach (var map in maps)
             {

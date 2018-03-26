@@ -6,68 +6,80 @@
     <title>@ViewData["Title"] - TouchTypingGo.Site</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">*@
+        <link href="~/lib/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/css/site.css" />
         <link href="~/css/App.css" rel="stylesheet" />
+
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true"/>
+        <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        @* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">*@
+        <link href="~/lib/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         <link href="~/css/site.css" rel="stylesheet" />
+
     </environment>
 </head>
 <body>
-    
-<nav class="site-header sticky-top py-1">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-        
-        
-        <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Institution" asp-action="Index">Institution</a>
-        <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Course" asp-action="Index">Course</a>
-        <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Keyboard" asp-action="Index">Keyboard</a>
-        <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="LessonPresentation" asp-action="Index">Lesson Presentation</a>
-        <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="LessonResult" asp-action="Index">Lesson Result</a>
-        <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="LessonList" asp-action="Index">Touch Typping Go</a>
-        
-        @await Html.PartialAsync("_LoginPartial")
+
+    <nav class="site-header sticky-top py-1">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+
+
+            <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Home" asp-action="Index">@localizer["Home"]</a>
+            <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="LessonPresentation" asp-action="Index">@localizer["LessonPresentation"]</a>
+            <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Institution" asp-action="Index">@localizer["Institution"]</a>
+            <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Course" asp-action="Index">@localizer["Course"]</a>
+            <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Keyboard" asp-action="Index">@localizer["Keyboard"]</a>
+            <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="LessonList" asp-action="Index">@localizer["TouchTyppingGo"]</a>
+            @Html.Partial("_CulturePartial")
+            @await Html.PartialAsync("_LoginPartial")
+        </div>
+    </nav>
+
+
+
+    <div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2018 - TouchTypingGo.Site</p>
+        </footer>
     </div>
-</nav>
-    
 
+    <environment include="Development">
+        @*<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>*@
+        <script src="~/lib/jquery-3.3.1.min.js"></script>
+        <script src="~/lib/popper.min.js"></script>
+        @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>*@
+        <script src="~/lib/bootstrap.min.js"></script>
+        @*<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />*@
+        <link href="~/lib/toastr.min.css" rel="stylesheet" />
+        @*<script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>*@
+        <script src="~/lib/toastr.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
 
-<div>
-    @RenderBody()
-    <hr/>
-    <footer>
-        <p>&copy; 2018 - TouchTypingGo.Site</p>
-    </footer>
-</div>
+    </environment>
+    <environment exclude="Development">
 
-<environment include="Development">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="~/lib/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        @*<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>*@
+        <script src="~/lib/jquery-3.3.1.min.js"></script>
+        <script src="~/lib/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>*@
+        <script src="~/lib/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-   
-    <script src="~/js/site.js" asp-append-version="true"></script>
+        @*<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />*@
+        <link href="~/lib/toastr.min.css" rel="stylesheet" />
+        @*<script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>*@
+        <script src="~/lib/toastr.min.js"></script>
 
-</environment>
-<environment exclude="Development">
-   
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
-    <script src="~/lib/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-   
-    <script src="~/js/site.min.js" asp-append-version="true"></script>
-    
-</environment>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
 
-@RenderSection("Scripts", required: false)
+    </environment>
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

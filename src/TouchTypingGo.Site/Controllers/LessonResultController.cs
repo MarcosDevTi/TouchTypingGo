@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Interfaces;
@@ -14,94 +10,36 @@ namespace TouchTypingGo.Site.Controllers
     public class LessonResultController : BaseController
     {
         private readonly IlessonResultAppService _lessonResultAppService;
-        private readonly ILessonPresentationAppService _lessonPresentationAppService;
+
         public LessonResultController(
             IlessonResultAppService lessonResultAppService,
-            ILessonPresentationAppService lessonPresentationAppService,
             IDomainNotificationHandler<DomainDotification> notification,
-            IUser user) : base(notification, user)
+            IUser user,
+            IStringLocalizer<BaseController> localizer) : base(notification, user, localizer)
         {
             _lessonResultAppService = lessonResultAppService;
-            _lessonPresentationAppService = lessonPresentationAppService;
         }
 
-        // GET: LessonResult
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View(_lessonResultAppService.GetAll());
         }
 
-        // GET: LessonResult/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: LessonResult/Create
-        public ActionResult Create()
+        public IActionResult Create()
         {
             ViewBag.lessonPresentations = _lessonResultAppService.lessonsPresentationsSelect();
             return View();
         }
 
-        // POST: LessonResult/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(LessonResultViewModel lessonResult)
+        public IActionResult Create(LessonResultViewModel lessonResult)
         {
             if (!ModelState.IsValid) return View(lessonResult);
             _lessonResultAppService.Add(lessonResult);
 
-            ViewBag.SuccessCreated = ValidOperation() ? "success,Resultado do Exercício criado com sucesso!" : "error,O Resultado do Exercício não foi refistrado, verifique as mensagens";
+            ViewBag.SuccessCreated = GetMessageCreate(lessonResult);
             return View(lessonResult);
         }
-
-        // GET: LessonResult/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: LessonResult/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: LessonResult/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: LessonResult/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-       
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using TouchTypingGo.Domain.Core.AutoMapper;
@@ -8,7 +9,8 @@ using TouchTypingGo.Domain.Course;
 
 namespace TouchTypingGo.Application.ViewModels
 {
-    public class CourseViewModel : IHaveCustomMappings
+    [DisplayName("Course")]
+    public class CourseViewModel : ICustomMappings
     {
         public CourseViewModel()
         {
@@ -17,19 +19,14 @@ namespace TouchTypingGo.Application.ViewModels
         [Key]
         public Guid Id { get; set; }
         public string Code { get; set; }
-        [Required(ErrorMessage = "O código é obrigatório")]
-        [MinLength(2, ErrorMessage = "O tamanho mínimo é {1}")]
-        [MaxLength(150, ErrorMessage = "O tamanho máximo é {1}")]
-        [Display(Name = "Name do Curso")]
+        [Required, MinLength(2), MaxLength(150), DisplayName("Name")]
         public string Name { get; set; }
-        [Display(Name = "Data de finalização")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayName("EndDate"), DataType(DataType.Date)]
         public DateTime? LimitDate { get; set; }
         public virtual ICollection<LessonPresentationViewModel> Lessons { get; set; }
         public virtual ICollection<StudentViewModel> Students { get; set; }
         public Guid TeacherId { get; set; }
-        [Display(Name = "Professor")]
+        [DisplayName("Teacher")]
         public virtual TeacherViewModel Teacher { get; set; }
 
         public bool Deleted { get; set; }
