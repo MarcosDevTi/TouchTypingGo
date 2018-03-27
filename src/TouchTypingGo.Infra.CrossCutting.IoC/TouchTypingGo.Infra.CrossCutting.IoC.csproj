@@ -12,6 +12,7 @@
     <ProjectReference Include="..\TouchTypingGo.Application\TouchTypingGo.Application.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Domain\TouchTypingGo.Domain.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.Bus\TouchTypingGo.Infra.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.Filters\TouchTypingGo.Infra.CrossCutting.Filters.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.Identity\TouchTypingGo.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Infra.Data\TouchTypingGo.Infra.Data.csproj" />
   </ItemGroup>

@@ -30,6 +30,7 @@ namespace TouchTypingGo.Infra.Data.Repository
             return _context.Courses
                 .Include(c => c.CourseLessonPresentations)
                 .ThenInclude(x => x.LessonPresentation).ToList();
+
         }
 
         public IEnumerable<Course> GetCoursesWithLessons()

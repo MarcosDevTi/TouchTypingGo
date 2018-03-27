@@ -11,6 +11,7 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
     <PackageReference Include="bootstrap" Version="4.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" PrivateAssets="All" />
   </ItemGroup>
@@ -25,6 +26,7 @@
     <ProjectReference Include="..\TouchTypingGo.Application\TouchTypingGo.Application.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.Bus\TouchTypingGo.Infra.CrossCutting.Bus.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.CookieManager\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj" />
+    <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.Filters\TouchTypingGo.Infra.CrossCutting.Filters.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.Identity\TouchTypingGo.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Infra.CrossCutting.IoC\TouchTypingGo.Infra.CrossCutting.IoC.csproj" />
   </ItemGroup>

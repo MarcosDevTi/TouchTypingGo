@@ -23,23 +23,21 @@ namespace TouchTypingGo.Site.Controllers
             _localizer = localizer;
         }
 
-
+        [Route("institutions")]
         public IActionResult Index()
         {
             return View(_institutionAppService.GetAll());
         }
 
+        [Route("new-institution")]
         public IActionResult Create()
         {
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, Route("new-institution")]
         public IActionResult Create(InstitutionViewModel institution)
         {
-
-
             if (!ModelState.IsValid) return View(institution);
             _institutionAppService.Add(institution);
             GetMessageCreate(institution);
@@ -47,15 +45,14 @@ namespace TouchTypingGo.Site.Controllers
             ViewBag.SuccessCreated = GetMessageCreate(institution);
             return View(institution);
         }
-
+        [Route("update-institution/{id:guid}")]
         public IActionResult Edit(Guid id)
         {
             var institution = _institutionAppService.GetByIdWithAddress(id);
             return View(institution);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, Route("update-institution/{id:guid}")]
         public IActionResult Edit(InstitutionViewModel institution)
         {
             if (!ModelState.IsValid) return View(institution);
@@ -65,6 +62,7 @@ namespace TouchTypingGo.Site.Controllers
 
         }
 
+        [Route("add-address-in-institution")]
         public IActionResult AddAddress(Guid? id)
         {
             if (id == null)
@@ -76,6 +74,7 @@ namespace TouchTypingGo.Site.Controllers
             return PartialView("_AddAddress", addressViewModel);
         }
 
+        [Route("course-details")]
         public IActionResult Details(Guid? id)
         {
             if (id == null)

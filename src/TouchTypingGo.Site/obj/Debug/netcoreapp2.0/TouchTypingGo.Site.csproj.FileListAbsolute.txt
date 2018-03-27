@@ -38,7 +38,6 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\To
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.Resources.Validation.ValidationMessages.pt.resources
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.csproj.GenerateResource.Cache
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.csproj.CoreCompileInputs.cache
-C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.AssemblyInfoInputs.cache
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.AssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\en\TouchTypingGo.Site.resources.dll
@@ -47,3 +46,6 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\fr
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\pt\TouchTypingGo.Site.resources.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\TouchTypingGo.Site.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Filters.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Filters.pdb

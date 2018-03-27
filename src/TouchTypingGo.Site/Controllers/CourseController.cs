@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using System;
+using Microsoft.AspNetCore.Authorization;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Interfaces;
@@ -22,20 +23,20 @@ namespace TouchTypingGo.Site.Controllers
             _lessonPresentationAppService = lessonPresentationAppService;
         }
 
-
+        [Route("courses"), Authorize(Policy = "CanReadCourses")]
         public IActionResult Index()
         {
             return View(_courseAppService.GetAll());
         }
 
+        [Route("new-course"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult Create()
         {
             ViewBag.UserLessons = _lessonPresentationAppService.GetAll();
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, Route("new-course"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult Create(CourseViewModel courseViewModel)
         {
 
@@ -47,7 +48,7 @@ namespace TouchTypingGo.Site.Controllers
         }
 
 
-
+        [Route("add-lesson-in-course/{id:guid}"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult AddLesson(Guid? id)
         {
             if (id == null)
@@ -58,14 +59,15 @@ namespace TouchTypingGo.Site.Controllers
 
             return PartialView("_AddLesson", courseViewModel);
         }
+
+        [Route("update-course"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult Edit(Guid id)
         {
             var course = _courseAppService.GetById(id);
             return View(course);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, Route("update-course"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult Edit(CourseViewModel courseViewModel)
         {
             if (ModelState.IsValid) return View(courseViewModel);
@@ -74,6 +76,7 @@ namespace TouchTypingGo.Site.Controllers
             return View(courseViewModel);
         }
 
+        [Route("delete-course/{id:guid}"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -84,8 +87,7 @@ namespace TouchTypingGo.Site.Controllers
             return View(courseViewModel);
         }
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ActionName("Delete"), ValidateAntiForgeryToken, Route("delete-course/{id:guid}"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult DeleteConfirmed(Guid id)
         {
             _courseAppService.Delete(id);

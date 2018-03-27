@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using TouchTypingGo.Infra.CrossCutting.Bus;
 using TouchTypingGo.Infra.CrossCutting.CookieManager;
+using TouchTypingGo.Infra.CrossCutting.Filters;
 using TouchTypingGo.Infra.CrossCutting.Identity.Data;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models;
 using TouchTypingGo.Infra.CrossCutting.IoC;
@@ -36,10 +37,77 @@ namespace TouchTypingGo.Site
 
         public IConfiguration Configuration { get; }
 
-        public void RegisterLocalizations(IServiceCollection services)
-        {
-            var mvcBuilder = services.AddMvc();
 
+        public void ConfigureServices(IServiceCollection services)
+        {
+            var mvcBuilder = services.AddMvc(options =>
+            {
+                options.Filters.Add(new ServiceFilterAttribute(typeof(GlobalExceptionHandlingFilter)));
+                options.Filters.Add(new ServiceFilterAttribute(typeof(GlobalActionLogger)));
+            });
+
+            RegisterLocalizations(services, mvcBuilder);
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+            RegisterServices(services);
+
+            services.AddCookieManager(options =>
+            {
+                options.AllowEncryption = false;
+                options.ThrowForPartialCookies = true;
+                options.DefaultExpireTimeInDays = 30;
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("CanReadCourses", policy => policy.RequireClaim("Courses", "Read"));
+                options.AddPolicy("CanWriteCourses", policy => policy.RequireClaim("Courses", "Write"));
+                options.AddPolicy("Create", policy => policy.RequireClaim("Course", "Create"));
+                options.AddPolicy("Create", policy => policy.RequireClaim("Lesson", "Create"));
+            });
+        }
+
+        public void Configure(IApplicationBuilder app,
+            IHostingEnvironment env,
+            IHttpContextAccessor accessor)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseBrowserLink();
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/error");
+                app.UseStatusCodePagesWithReExecute("/error/{0}");
+            }
+
+            app.UseStaticFiles();
+
+            app.UseRequestLocalization();
+
+            app.UseAuthentication();
+
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            InMemoryBus.ContainerAcessor = () => accessor.HttpContext.RequestServices;
+        }
+
+        public void RegisterLocalizations(IServiceCollection services, IMvcBuilder mvcBuilder)
+        {
             mvcBuilder.AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
             mvcBuilder.AddDataAnnotationsLocalization();
             mvcBuilder.AddDataAnnotationsLocalization(options =>
@@ -70,58 +138,6 @@ namespace TouchTypingGo.Site
                     options.DefaultRequestCulture = new RequestCulture("en");
                 }
             );
-        }
-        public void ConfigureServices(IServiceCollection services)
-        {
-
-            RegisterLocalizations(services);
-
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
-
-            RegisterServices(services);
-
-            services.AddCookieManager(options =>
-            {
-                options.AllowEncryption = false;
-                options.ThrowForPartialCookies = true;
-                options.DefaultExpireTimeInDays = 30;
-            });
-        }
-
-        public void Configure(IApplicationBuilder app,
-            IHostingEnvironment env,
-            IHttpContextAccessor accessor)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseBrowserLink();
-                app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
-
-            app.UseStaticFiles();
-
-            app.UseRequestLocalization();
-
-            app.UseAuthentication();
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
-
-            InMemoryBus.ContainerAcessor = () => accessor.HttpContext.RequestServices;
         }
 
         private static void RegisterServices(IServiceCollection services)

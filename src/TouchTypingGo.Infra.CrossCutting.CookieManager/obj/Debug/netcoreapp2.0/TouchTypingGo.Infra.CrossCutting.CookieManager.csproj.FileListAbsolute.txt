@@ -8,3 +8,4 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.CookieManage
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.AssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.csprojResolveAssemblyReference.cache

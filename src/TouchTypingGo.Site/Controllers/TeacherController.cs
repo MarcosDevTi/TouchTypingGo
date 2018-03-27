@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using System;
 using TouchTypingGo.Application.Interfaces;
@@ -21,18 +20,19 @@ namespace TouchTypingGo.Site.Controllers
             _teacherAppService = teacherAppService;
         }
 
+        [Route("teachers")]
         public IActionResult Index()
         {
             return View(_teacherAppService.GetAll());
         }
 
+        [Route("new-teacher")]
         public IActionResult Create()
         {
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, Route("new-teacher")]
         public IActionResult Create(TeacherViewModel teacherViewModel)
         {
             if (!ModelState.IsValid) return View(teacherViewModel);
@@ -42,6 +42,7 @@ namespace TouchTypingGo.Site.Controllers
             return View(teacherViewModel);
         }
 
+        [Route("delete-teacher/{id:guid}")]
         public IActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -53,8 +54,7 @@ namespace TouchTypingGo.Site.Controllers
             return View(teacherViewModel);
         }
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ActionName("Delete"), ValidateAntiForgeryToken, Route("delete-teacher/{id:guid}")]
         public IActionResult DeleteConfirmed(Guid id)
         {
             _teacherAppService.Delete(id);

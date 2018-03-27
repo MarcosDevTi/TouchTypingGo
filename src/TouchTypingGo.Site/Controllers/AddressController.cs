@@ -18,11 +18,14 @@ namespace TouchTypingGo.Site.Controllers
         {
             _addressAppService = addressAppService;
         }
+
+        [Route("addresses")]
         public IActionResult Index()
         {
             return View(_addressAppService.GetAll());
         }
 
+        [Route("new-address")]
         public IActionResult Create()
         {
             return View();
@@ -30,6 +33,7 @@ namespace TouchTypingGo.Site.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("new-address")]
         public IActionResult Create(AddressViewModel address)
         {
             if (!ModelState.IsValid) return View(address);

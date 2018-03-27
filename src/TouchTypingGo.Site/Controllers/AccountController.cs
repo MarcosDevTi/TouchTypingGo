@@ -231,6 +231,7 @@ namespace TouchTypingGo.Site.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -246,6 +247,9 @@ namespace TouchTypingGo.Site.Controllers
                     }
                     if (model.Teacher)
                     {
+                        await _userManager.AddClaimAsync(user, new Claim("Courses", "Read"));
+                        await _userManager.AddClaimAsync(user, new Claim("Courses", "Write"));
+
                         var teacher = new TeacherViewModel
                         {
                             Id = Guid.Parse(user.Id),
@@ -467,7 +471,7 @@ namespace TouchTypingGo.Site.Controllers
         [HttpGet]
         public IActionResult AccessDenied()
         {
-            return View();
+            return RedirectToAction("Error", "Error", new { id = 403 });
         }
 
         #region Helpers

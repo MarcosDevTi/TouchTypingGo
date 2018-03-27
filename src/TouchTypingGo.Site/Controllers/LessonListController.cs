@@ -22,17 +22,20 @@ namespace TouchTypingGo.Site.Controllers
             _lessonPresentationAppService = lessonPresentationAppService;
         }
 
-        public IActionResult App(Guid lessonId)
+        [Route("learning-lesson/{id:guid}")]
+        public IActionResult App(Guid id)
         {
-            var lesson = _lessonPresentationAppService.GetById(lessonId);
+            var lesson = _lessonPresentationAppService.GetById(id);
             return View(lesson);
         }
 
+        [Route("my-lessons")]
         public IActionResult Index()
         {
             return View(_lessonListAppService.PreviewLessonViewModels());
         }
 
+        [Route("learning-lesson-details/{id:guid}")]
         public IActionResult Lesson(Guid id)
         {
 

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
@@ -20,22 +19,22 @@ namespace TouchTypingGo.Site.Controllers
         {
             _studentAppService = studentAppService;
         }
+        [Route("students")]
         public IActionResult Index()
         {
             return View(_studentAppService.GetAll());
         }
 
+        [Route("new-student")]
         public IActionResult Create()
         {
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, Route("new-student")]
         public IActionResult Create(StudentViewModel studentViewModel)
         {
             if (!ModelState.IsValid) return View(studentViewModel);
-
             _studentAppService.Add(studentViewModel);
 
             ViewBag.SuccessCreated = GetMessageCreate(studentViewModel);

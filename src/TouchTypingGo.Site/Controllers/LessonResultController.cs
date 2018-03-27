@@ -20,19 +20,20 @@ namespace TouchTypingGo.Site.Controllers
             _lessonResultAppService = lessonResultAppService;
         }
 
+        [Route("lessons-results")]
         public IActionResult Index()
         {
             return View(_lessonResultAppService.GetAll());
         }
 
+        [Route("new-lesson-result")]
         public IActionResult Create()
         {
             ViewBag.lessonPresentations = _lessonResultAppService.LessonsPresentationsSelect();
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, Route("new-lesson-result")]
         public IActionResult Create(LessonResultViewModel lessonResult)
         {
             if (!ModelState.IsValid) return View(lessonResult);

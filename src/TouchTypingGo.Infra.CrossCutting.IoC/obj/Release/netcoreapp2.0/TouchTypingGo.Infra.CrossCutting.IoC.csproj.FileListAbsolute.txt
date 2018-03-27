@@ -20,3 +20,5 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.IoC\obj\Rele
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.IoC\obj\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.IoC.pdb
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.IoC\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.IoC\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Identity.pdb
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.IoC\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Filters.dll
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.IoC\bin\Release\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Filters.pdb

@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.Infra.CrossCu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.Infra.CrossCutting.Identity", "src\TouchTypingGo.Infra.CrossCutting.Identity\TouchTypingGo.Infra.CrossCutting.Identity.csproj", "{194C1A05-1860-41D3-8D3E-E2364EAFCE54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.Infra.CrossCutting.CookieManager", "src\TouchTypingGo.Infra.CrossCutting.CookieManager\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj", "{27D23E18-020D-4975-8C2D-53CFC8D3E9A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TouchTypingGo.Infra.CrossCutting.CookieManager", "src\TouchTypingGo.Infra.CrossCutting.CookieManager\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj", "{27D23E18-020D-4975-8C2D-53CFC8D3E9A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TouchTypingGo.Infra.CrossCutting.Filters", "src\TouchTypingGo.Infra.CrossCutting.Filters\TouchTypingGo.Infra.CrossCutting.Filters.csproj", "{26504CC7-DB56-401B-B482-7C4B1625FE4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{27D23E18-020D-4975-8C2D-53CFC8D3E9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27D23E18-020D-4975-8C2D-53CFC8D3E9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27D23E18-020D-4975-8C2D-53CFC8D3E9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26504CC7-DB56-401B-B482-7C4B1625FE4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26504CC7-DB56-401B-B482-7C4B1625FE4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26504CC7-DB56-401B-B482-7C4B1625FE4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26504CC7-DB56-401B-B482-7C4B1625FE4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{E87A2757-84BC-431C-A6A9-502115FA79C7} = {380DB3AC-72B2-45D4-8D87-9F8510940D96}
 		{194C1A05-1860-41D3-8D3E-E2364EAFCE54} = {380DB3AC-72B2-45D4-8D87-9F8510940D96}
 		{27D23E18-020D-4975-8C2D-53CFC8D3E9A9} = {380DB3AC-72B2-45D4-8D87-9F8510940D96}
+		{26504CC7-DB56-401B-B482-7C4B1625FE4E} = {380DB3AC-72B2-45D4-8D87-9F8510940D96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {749449B9-D054-4FA6-B48B-2321A70FD61E}

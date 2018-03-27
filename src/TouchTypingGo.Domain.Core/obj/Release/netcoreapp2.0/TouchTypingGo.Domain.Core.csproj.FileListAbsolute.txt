@@ -12,3 +12,4 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\bin\Release\netcore
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Hosting.xml
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Hosting.Abstractions.xml
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\bin\Release\netcoreapp2.0\Microsoft.Extensions.DependencyInjection.xml
+C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain.Core\obj\Release\netcoreapp2.0\TouchTypingGo.Domain.Core.csprojResolveAssemblyReference.cache

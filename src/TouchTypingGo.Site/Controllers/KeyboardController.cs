@@ -20,23 +20,25 @@ namespace TouchTypingGo.Site.Controllers
             _keyboardAppService = keyboardAppService;
         }
 
+        [Route("keyboards")]
         public IActionResult Index()
         {
             return View(_keyboardAppService.GetAll());
         }
 
+        [Route("keyboard-details")]
         public IActionResult Details(Guid id)
         {
             return View(_keyboardAppService.GetById(id));
         }
 
+        [Route("create-keyboard")]
         public IActionResult Create()
         {
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, Route("create-keyboard")]
         public IActionResult Create(KeyboardViewModel keyboardViewModel)
         {
             if (!ModelState.IsValid) return View(keyboardViewModel);

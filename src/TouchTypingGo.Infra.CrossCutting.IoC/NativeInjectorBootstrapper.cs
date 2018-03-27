@@ -1,11 +1,10 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using TouchTypingGo.Application.AutoMapper;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.Services;
 using TouchTypingGo.Application.Services.Helper;
-using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Bus;
 using TouchTypingGo.Domain.Core.Events;
 using TouchTypingGo.Domain.Core.Interfaces;
@@ -29,6 +28,7 @@ using TouchTypingGo.Domain.Institution.Events.Address;
 using TouchTypingGo.Domain.Institution.Events.Institution;
 using TouchTypingGo.Domain.Institution.Repository;
 using TouchTypingGo.Infra.CrossCutting.Bus;
+using TouchTypingGo.Infra.CrossCutting.Filters;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models;
 using TouchTypingGo.Infra.CrossCutting.Identity.Services;
 using TouchTypingGo.Infra.Data.Context;
@@ -48,7 +48,7 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             //services.AddSingleton(Mapper.Configuration);
             //services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
 
-            
+
 
             //AppService
             services.AddScoped<ICourseAppService, CourseAppService>();
@@ -149,6 +149,13 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUser, User>();
+
+            //Infra - Filters
+            services.AddScoped<ILogger<GlobalExceptionHandlingFilter>, Logger<GlobalExceptionHandlingFilter>>();
+            services.AddScoped<GlobalExceptionHandlingFilter>();
+
+            services.AddScoped<ILogger<GlobalActionLogger>, Logger<GlobalActionLogger>>();
+            services.AddScoped<GlobalActionLogger>();
         }
     }
 }
