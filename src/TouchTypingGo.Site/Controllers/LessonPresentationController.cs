@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
+using TouchTypingGo.Application.Cqrs.Query.Queries;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
+using TouchTypingGo.Domain.Core.Cqrs;
 using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Core.Notifications;
 
@@ -10,19 +12,21 @@ namespace TouchTypingGo.Site.Controllers
     public class LessonPresentationController : BaseController
     {
         private readonly ILessonPresentationAppService _lessonPresentationAppService;
+        private readonly IProcessor _processor;
 
         public LessonPresentationController(
             ILessonPresentationAppService lessonPresentationAppService,
             IDomainNotificationHandler<DomainDotification> notification,
             IUser user,
-            IStringLocalizer<BaseController> localizer) : base(notification, user, localizer)
+            IStringLocalizer<BaseController> localizer, IProcessor processor) : base(notification, user, localizer)
         {
             _lessonPresentationAppService = lessonPresentationAppService;
+            _processor = processor;
         }
         [Route("lessons-presentations")]
         public IActionResult Index()
         {
-            return View(_lessonPresentationAppService.GetAll());
+            return View(_processor.Process(new GetLessonPresentationsIndex()));
         }
 
         [Route("new-lesson-presentation")]

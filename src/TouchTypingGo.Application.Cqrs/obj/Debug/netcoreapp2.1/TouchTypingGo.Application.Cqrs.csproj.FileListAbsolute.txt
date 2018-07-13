@@ -1,0 +1,11 @@
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\bin\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.deps.json
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\bin\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.dll
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\bin\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.pdb
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\bin\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.dll
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\bin\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.pdb
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\obj\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.csproj.CoreCompileInputs.cache
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\obj\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.AssemblyInfoInputs.cache
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\obj\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.AssemblyInfo.cs
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\obj\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.csproj.CopyComplete
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\obj\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.dll
+C:\Users\marco\source\repos\TouchTypingGo2\src\TouchTypingGo.Application.Cqrs\obj\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.pdb

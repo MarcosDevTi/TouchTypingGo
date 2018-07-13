@@ -32,6 +32,7 @@ using TouchTypingGo.Infra.CrossCutting.Filters;
 using TouchTypingGo.Infra.CrossCutting.Identity.Models;
 using TouchTypingGo.Infra.CrossCutting.Identity.Services;
 using TouchTypingGo.Infra.Data.Context;
+using TouchTypingGo.Infra.Data.Extentions;
 using TouchTypingGo.Infra.Data.Repository;
 using TouchTypingGo.Infra.Data.UoW;
 
@@ -156,6 +157,9 @@ namespace TouchTypingGo.Infra.CrossCutting.IoC
 
             services.AddScoped<ILogger<GlobalActionLogger>, Logger<GlobalActionLogger>>();
             services.AddScoped<GlobalActionLogger>();
+
+            //Cqrs
+            services.AddCqrs();
         }
     }
 }

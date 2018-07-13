@@ -9,3 +9,15 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debu
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.AssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.deps.json
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.csprojAssemblyReference.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.csproj.CoreCompileInputs.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.AssemblyInfoInputs.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.AssemblyInfo.cs
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.csproj.CopyComplete
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.Bus.pdb

@@ -20,3 +20,15 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.AssemblyInfo.cs
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.deps.json
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\bin\Debug\netcoreapp2.0\TouchTypingGo.Domain.Core.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.csprojAssemblyReference.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.csproj.CoreCompileInputs.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.AssemblyInfoInputs.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.AssemblyInfo.cs
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.csproj.CopyComplete
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain\obj\Debug\netcoreapp2.0\TouchTypingGo.Domain.pdb

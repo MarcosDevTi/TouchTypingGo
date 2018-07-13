@@ -1,0 +1,9 @@
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain.Core\bin\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.deps.json
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain.Core\bin\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain.Core\bin\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.csproj.CoreCompileInputs.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.AssemblyInfoInputs.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.AssemblyInfo.cs
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Domain.Core\obj\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.csprojAssemblyReference.cache

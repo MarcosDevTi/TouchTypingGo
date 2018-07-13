@@ -9,3 +9,15 @@ C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.CookieManage
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.dll
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.pdb
 C:\touchtypinggo\TouchTypingGo\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.csprojResolveAssemblyReference.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.csprojAssemblyReference.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj.CoreCompileInputs.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.AssemblyInfoInputs.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.AssemblyInfo.cs
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.deps.json
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\bin\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.0\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj.CopyComplete

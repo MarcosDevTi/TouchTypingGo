@@ -1,0 +1,12 @@
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\bin\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.deps.json
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\bin\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\bin\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.csprojAssemblyReference.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj.CoreCompileInputs.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.AssemblyInfoInputs.cache
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.AssemblyInfo.cs
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.csproj.CopyComplete
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Infra.CrossCutting.CookieManager\obj\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.pdb
