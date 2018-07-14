@@ -1,15 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TouchTypingGo.Domain.Course;
-using TouchTypingGo.Infra.Data.Extentions;
 
 namespace TouchTypingGo.Infra.Data.Mappings
 {
-    public class CourseMapping : EntityTypeConfiguration<Course>
+    public class CourseMapping : IEntityTypeConfiguration<Course>
     {
-        public override void Map(EntityTypeBuilder<Course> builder)
+        public void Configure(EntityTypeBuilder<Course> builder)
         {
-
             builder.Property(c => c.Code)
                 .HasColumnType("varchar(10)")
                 .IsRequired();

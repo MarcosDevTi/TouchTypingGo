@@ -2198,11 +2198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marco\\source\\repos\\TouchTypingGo2\\src\\TouchTypingGo.Application.Cqrs\\TouchTypingGo.Application.Cqrs.csproj",
+      "projectUniqueName": "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Application.Cqrs\\TouchTypingGo.Application.Cqrs.csproj",
       "projectName": "TouchTypingGo.Application.Cqrs",
-      "projectPath": "C:\\Users\\marco\\source\\repos\\TouchTypingGo2\\src\\TouchTypingGo.Application.Cqrs\\TouchTypingGo.Application.Cqrs.csproj",
+      "projectPath": "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Application.Cqrs\\TouchTypingGo.Application.Cqrs.csproj",
       "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marco\\source\\repos\\TouchTypingGo2\\src\\TouchTypingGo.Application.Cqrs\\obj\\",
+      "outputPath": "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Application.Cqrs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2221,8 +2221,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\marco\\source\\repos\\TouchTypingGo2\\src\\TouchTypingGo.Domain.Core\\TouchTypingGo.Domain.Core.csproj": {
-              "projectPath": "C:\\Users\\marco\\source\\repos\\TouchTypingGo2\\src\\TouchTypingGo.Domain.Core\\TouchTypingGo.Domain.Core.csproj"
+            "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Domain.Core\\TouchTypingGo.Domain.Core.csproj": {
+              "projectPath": "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Domain.Core\\TouchTypingGo.Domain.Core.csproj"
             }
           }
         }

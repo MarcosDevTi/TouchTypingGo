@@ -1,7 +1,6 @@
 ﻿using System;
 using TouchTypingGo.Domain.Core.Cqrs.Command;
 using TouchTypingGo.Domain.Core.Cqrs.Query;
-using ICommand = System.Windows.Input.ICommand;
 
 namespace TouchTypingGo.Domain.Core.Cqrs
 {

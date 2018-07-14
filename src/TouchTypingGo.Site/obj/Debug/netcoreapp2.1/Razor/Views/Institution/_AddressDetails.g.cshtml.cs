@@ -214,7 +214,7 @@ using TouchTypingGo.Site.Controllers;
             WriteLiteral("        ");
             EndContext();
             BeginContext(1749, 187, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19710dce4f2148788923675112a9f87c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbe7b729a40745aaadab6de58150d874", async() => {
                 BeginContext(1869, 63, true);
                 WriteLiteral("\r\n            <span title=\"Edit\"></span> Edit Address\r\n        ");
                 EndContext();
@@ -267,7 +267,7 @@ using TouchTypingGo.Site.Controllers;
             WriteLiteral("                   \r\n                </th>\r\n            </tr>\r\n        </table>\r\n        ");
             EndContext();
             BeginContext(2332, 184, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "29f1364f9dee431db72cef02b348330e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3811a13b2bd64d959ff55ab9f37883db", async() => {
                 BeginContext(2444, 63, true);
                 WriteLiteral("\r\n            <span title=\"Edit\"></span> Edit Address\r\n        ");
                 EndContext();

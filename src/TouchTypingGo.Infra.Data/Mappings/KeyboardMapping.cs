@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TouchTypingGo.Domain.Course;
-using TouchTypingGo.Infra.Data.Extentions;
 
 namespace TouchTypingGo.Infra.Data.Mappings
 {
-    public class KeyboardMapping : EntityTypeConfiguration<Keyboard>
+    public class KeyboardMapping : IEntityTypeConfiguration<Keyboard>
     {
-        public override void Map(EntityTypeBuilder<Keyboard> builder)
+        public void Configure(EntityTypeBuilder<Keyboard> builder)
         {
             builder.Property(x => x.Name)
                 .HasColumnType("varchar(50)");

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TouchTypingGo.Application.Cqrs.Query.Models
+namespace TouchTypingGo.Application.Cqrs.Query.Models.LessonPresentation
 {
     public class LessonPresentationApp
     {

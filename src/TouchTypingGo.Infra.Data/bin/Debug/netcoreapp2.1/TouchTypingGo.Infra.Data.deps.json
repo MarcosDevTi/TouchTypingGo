@@ -15,6 +15,7 @@
           "Microsoft.Extensions.Configuration": "2.1.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "2.1.0",
           "Microsoft.Extensions.Configuration.Json": "2.1.0",
+          "TouchTypingGo.Application": "1.0.0",
           "TouchTypingGo.Application.Cqrs": "1.0.0",
           "TouchTypingGo.Domain": "1.0.0",
           "TouchTypingGo.Domain.Core": "1.0.0",
@@ -655,6 +656,16 @@
         }
       },
       "System.ValueTuple/4.5.0": {},
+      "TouchTypingGo.Application/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "7.0.1",
+          "TouchTypingGo.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.1.0.0"
+        },
+        "runtime": {
+          "TouchTypingGo.Application.dll": {}
+        }
+      },
       "TouchTypingGo.Application.Cqrs/1.0.0": {
         "dependencies": {
           "TouchTypingGo.Domain.Core": "1.0.0"
@@ -678,6 +689,14 @@
         },
         "runtime": {
           "TouchTypingGo.Domain.Core.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.ViewFeatures.Reference/2.1.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Mvc.ViewFeatures.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
         }
       }
     }
@@ -1178,6 +1197,11 @@
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
     },
+    "TouchTypingGo.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "TouchTypingGo.Application.Cqrs/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1190,6 +1214,11 @@
     },
     "TouchTypingGo.Domain.Core/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Mvc.ViewFeatures.Reference/2.1.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

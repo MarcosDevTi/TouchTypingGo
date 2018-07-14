@@ -5,7 +5,6 @@ using TouchTypingGo.Domain.Core.Events;
 using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Core.Notifications;
 using TouchTypingGo.Domain.Course.Commands.CommandHandlers;
-using TouchTypingGo.Domain.Course.Events;
 using TouchTypingGo.Domain.Course.Events.Course;
 using TouchTypingGo.Domain.Course.Repository;
 
@@ -32,12 +31,12 @@ namespace TouchTypingGo.Domain.Course.Commands.Course
             _user = user;
         }
 
-        
+
 
         public void Handle(CourseAddCommand message)
         {
             var course = Domain.Course.Course.CourseFactory.NewCourseFactory(message.Name, message.LimitDate, message.Code);
-           // if (!CouseValid(course)) return;
+            // if (!CouseValid(course)) return;
             //var teacher = _teacherRepository.GetById(message.TeacherId);
             //// Validações de negócio
             if (_teacherRepository.Find(t => t.Id == _user.GetUderId()).Any())
@@ -52,7 +51,7 @@ namespace TouchTypingGo.Domain.Course.Commands.Course
             {
                 _bus.RaiseEvent(new DomainDotification(message.MessageType, "É possível inserir curso somente sendo professor!"));
             }
-           
+
         }
 
         public void Handle(CourseUpdateCommand message)
@@ -93,5 +92,7 @@ namespace TouchTypingGo.Domain.Course.Commands.Course
             _bus.RaiseEvent(new DomainDotification(messageType, "Evento não encontrado"));
             return false;
         }
+
+
     }
 }

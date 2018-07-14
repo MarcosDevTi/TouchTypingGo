@@ -13,6 +13,7 @@ C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netc
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\pt\TouchTypingGo.Site.resources.dll
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Site.Views.dll
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Site.Views.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.dll
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Application.dll
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Domain.Core.dll
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Domain.dll
@@ -22,6 +23,7 @@ C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netc
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.Identity.dll
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.IoC.dll
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Infra.Data.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.pdb
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Application.pdb
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.Bus.pdb
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Infra.CrossCutting.CookieManager.pdb
@@ -136,5 +138,3 @@ C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netc
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.1\TouchTypingGo.Site.csproj.CopyComplete
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.1\TouchTypingGo.Site.dll
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.1\TouchTypingGo.Site.pdb
-C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.dll
-C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\bin\Debug\netcoreapp2.1\TouchTypingGo.Application.Cqrs.pdb

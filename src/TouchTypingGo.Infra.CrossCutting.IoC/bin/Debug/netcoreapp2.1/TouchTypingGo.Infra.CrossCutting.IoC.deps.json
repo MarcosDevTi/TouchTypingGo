@@ -4245,6 +4245,7 @@
           "Microsoft.Extensions.Configuration": "2.1.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "2.1.0",
           "Microsoft.Extensions.Configuration.Json": "2.1.0",
+          "TouchTypingGo.Application": "1.0.0",
           "TouchTypingGo.Application.Cqrs": "1.0.0",
           "TouchTypingGo.Domain": "1.0.0",
           "TouchTypingGo.Domain.Core": "1.0.0",

@@ -9,7 +9,9 @@
       "TouchTypingGo.Domain.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "7.0.1",
-          "FluentValidation": "7.6.103"
+          "FluentValidation": "7.6.103",
+          "Microsoft.AspNetCore.Html.Abstractions": "2.1.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.1.0.0"
         },
         "runtime": {
           "TouchTypingGo.Domain.Core.dll": {}
@@ -134,7 +136,23 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.ValueTuple/4.5.0": {}
+      "System.ValueTuple/4.5.0": {},
+      "Microsoft.AspNetCore.Html.Abstractions/2.1.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Html.Abstractions.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.ViewFeatures/2.1.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Mvc.ViewFeatures.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -282,6 +300,16 @@
       "sha512": "sha512-xZtSZNEHGa+tGsKuP4sh257vxJ/yemShz4EusmomkynMzuEDDjVaErBNewpzEF6swUgbcrSQAX3ELsEp1zCOwA==",
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Html.Abstractions/2.1.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Mvc.ViewFeatures/2.1.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

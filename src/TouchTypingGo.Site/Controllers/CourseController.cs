@@ -1,9 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using System;
-using Microsoft.AspNetCore.Authorization;
+using TouchTypingGo.Application.Cqrs.Command.Course;
+using TouchTypingGo.Application.Cqrs.Query.Models.Course;
+using TouchTypingGo.Application.Cqrs.Query.Queries;
+using TouchTypingGo.Application.Cqrs.Query.Queries.Course;
+using TouchTypingGo.Application.Cqrs.Query.Queries.LessonPresentation;
 using TouchTypingGo.Application.Interfaces;
-using TouchTypingGo.Application.ViewModels;
+using TouchTypingGo.Domain.Core.Cqrs;
 using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Core.Notifications;
 
@@ -12,39 +17,39 @@ namespace TouchTypingGo.Site.Controllers
     public class CourseController : BaseController
     {
         private readonly ICourseAppService _courseAppService;
-        private readonly ILessonPresentationAppService _lessonPresentationAppService;
+        private readonly IProcessor _processor;
 
         public CourseController(ICourseAppService courseAppService,
             IDomainNotificationHandler<DomainDotification> notifications,
-            IUser user, ILessonPresentationAppService lessonPresentationAppService,
-            IStringLocalizer<BaseController> localizer) : base(notifications, user, localizer)
+            IUser user,
+            IStringLocalizer<BaseController> localizer, IProcessor processor) : base(notifications, user, localizer)
         {
             _courseAppService = courseAppService;
-            _lessonPresentationAppService = lessonPresentationAppService;
+            _processor = processor;
         }
 
         [Route("courses"), Authorize(Policy = "CanReadCourses")]
         public IActionResult Index()
         {
-            return View(_courseAppService.GetAll());
+            return View(_processor.Process(new GetCoursesIndex()));
         }
 
         [Route("new-course"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult Create()
         {
-            ViewBag.UserLessons = _lessonPresentationAppService.GetAll();
+            ViewBag.UserLessons = _processor.Process(new GetLessonPresentationsIndex());
             return View();
         }
 
         [HttpPost, ValidateAntiForgeryToken, Route("new-course"), Authorize(Policy = "CanWriteCourses")]
-        public IActionResult Create(CourseViewModel courseViewModel)
+        public IActionResult Create(CreateCourse course)
         {
 
-            if (!ModelState.IsValid) return View(courseViewModel);
-            var code = _courseAppService.Add(courseViewModel);
+            if (!ModelState.IsValid) return View(course);
+            _processor.Send(course);
 
-            ViewBag.SuccessCreated = GetMessageCreate(courseViewModel);
-            return View(courseViewModel);
+            ViewBag.SuccessCreated = GetMessageCreate(course);
+            return View(course);
         }
 
 
@@ -63,17 +68,17 @@ namespace TouchTypingGo.Site.Controllers
         [Route("update-course"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult Edit(Guid id)
         {
-            var course = _courseAppService.GetById(id);
+            var course = _processor.Process(new GetCourseEditDetails(id));
             return View(course);
         }
 
         [HttpPost, ValidateAntiForgeryToken, Route("update-course"), Authorize(Policy = "CanWriteCourses")]
-        public IActionResult Edit(CourseViewModel courseViewModel)
+        public IActionResult Edit(CourseEditDetails course)
         {
-            if (ModelState.IsValid) return View(courseViewModel);
-            _courseAppService.Update(courseViewModel);
+            if (ModelState.IsValid) return View(course);
+            _processor.Send(course);
             //TODO: Validation if success!
-            return View(courseViewModel);
+            return View(course);
         }
 
         [Route("delete-course/{id:guid}"), Authorize(Policy = "CanWriteCourses")]
@@ -83,14 +88,14 @@ namespace TouchTypingGo.Site.Controllers
             {
                 return NotFound();
             }
-            var courseViewModel = _courseAppService.GetById(id.Value);
+            var courseViewModel = _processor.Process(new GetCourseDeleteDetails(id.Value));
             return View(courseViewModel);
         }
 
         [HttpPost, ActionName("Delete"), ValidateAntiForgeryToken, Route("delete-course/{id:guid}"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult DeleteConfirmed(Guid id)
         {
-            _courseAppService.Delete(id);
+            _processor.Send(new DeleteCourse(id));
             return RedirectToAction("Index");
         }
     }

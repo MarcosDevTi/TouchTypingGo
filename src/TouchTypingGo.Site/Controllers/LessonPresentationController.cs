@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using TouchTypingGo.Application.Cqrs.Query.Queries;
+using TouchTypingGo.Application.Cqrs.Query.Queries.LessonPresentation;
 using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Application.ViewModels;
 using TouchTypingGo.Domain.Core.Cqrs;

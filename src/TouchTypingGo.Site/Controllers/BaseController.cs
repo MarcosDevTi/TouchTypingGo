@@ -39,7 +39,7 @@ namespace TouchTypingGo.Site.Controllers
                 .FirstOrDefault() as DisplayNameAttribute;
 
             return ValidOperation()
-                ? $"success,{Localizer["EntityCreated", displayName == null ? "Entity" : Localizer[displayName.DisplayName]]}!"
+                ? $"success,{Localizer["EntityCreated", Localizer[displayName?.DisplayName]]}!"
                 : $"error,{Localizer["InstitutionNotCreated"]}, {Localizer["checkTheMessages"]}";
         }
     }

@@ -161,7 +161,7 @@ using TouchTypingGo.Site.Controllers;
             WriteLiteral("\r\n                        </td>\r\n                        <td>\r\n                            ");
             EndContext();
             BeginContext(962, 169, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20ac04fe4d894c479e84609e28e4985a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54f0f0f725fb42aeb5cefb2a11c935b2", async() => {
                 BeginContext(1010, 117, true);
                 WriteLiteral("\r\n                                Delete<span class=\"glyphicon glyphicon-trash\"></span>\r\n                            ");
                 EndContext();

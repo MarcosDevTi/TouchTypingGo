@@ -1,5 +1,5 @@
 ﻿using System;
-using TouchTypingGo.Application.Cqrs.Query.Models;
+using TouchTypingGo.Application.Cqrs.Query.Models.LessonPresentation;
 using TouchTypingGo.Domain.Core.Cqrs.Query;
 
 namespace TouchTypingGo.Application.Cqrs.Query.Queries

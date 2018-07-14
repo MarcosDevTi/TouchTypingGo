@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TouchTypingGo.Domain.Institution;
-using TouchTypingGo.Infra.Data.Extentions;
 
 namespace TouchTypingGo.Infra.Data.Mappings
 {
-    public class AddressMapping : EntityTypeConfiguration<Address>
+    public class AddressMapping : IEntityTypeConfiguration<Address>
     {
-        public override void Map(EntityTypeBuilder<Address> builder)
+        public void Configure(EntityTypeBuilder<Address> builder)
         {
             builder.Property(c => c.County)
                 .HasColumnType("varchar(40)")

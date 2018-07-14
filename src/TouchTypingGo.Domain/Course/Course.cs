@@ -97,6 +97,15 @@ namespace TouchTypingGo.Domain.Course
                     LimitDate = limitDate
                 };
             }
+            public static Course UpdateCourseFactory(Guid id, string name, DateTime? limitDate)
+            {
+                return new Course
+                {
+                    Id = id,
+                    Name = name,
+                    LimitDate = limitDate
+                };
+            }
         }
 
 

@@ -1119,6 +1119,20 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "TouchTypingGo.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "AutoMapper": "7.0.1",
+          "TouchTypingGo.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TouchTypingGo.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TouchTypingGo.Application.dll": {}
+        }
+      },
       "TouchTypingGo.Application.Cqrs/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -4235,6 +4249,11 @@
         "version.txt"
       ]
     },
+    "TouchTypingGo.Application/1.0.0": {
+      "type": "project",
+      "path": "../TouchTypingGo.Application/TouchTypingGo.Application.csproj",
+      "msbuildProject": "../TouchTypingGo.Application/TouchTypingGo.Application.csproj"
+    },
     "TouchTypingGo.Application.Cqrs/1.0.0": {
       "type": "project",
       "path": "../TouchTypingGo.Application.Cqrs/TouchTypingGo.Application.Cqrs.csproj",
@@ -4261,6 +4280,7 @@
       "Microsoft.Extensions.Configuration.FileExtensions >= 2.1.0",
       "Microsoft.Extensions.Configuration.Json >= 2.1.0",
       "Microsoft.NETCore.App >= 2.1.0",
+      "TouchTypingGo.Application >= 1.0.0",
       "TouchTypingGo.Application.Cqrs >= 1.0.0",
       "TouchTypingGo.Domain >= 1.0.0",
       "TouchTypingGo.Domain.Core >= 1.0.0",
@@ -4299,6 +4319,9 @@
           "projectReferences": {
             "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Application.Cqrs\\TouchTypingGo.Application.Cqrs.csproj": {
               "projectPath": "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Application.Cqrs\\TouchTypingGo.Application.Cqrs.csproj"
+            },
+            "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Application\\TouchTypingGo.Application.csproj": {
+              "projectPath": "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Application\\TouchTypingGo.Application.csproj"
             },
             "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Domain.Core\\TouchTypingGo.Domain.Core.csproj": {
               "projectPath": "C:\\Users\\marco\\Source\\Repos\\TouchTypingGo2\\src\\TouchTypingGo.Domain.Core\\TouchTypingGo.Domain.Core.csproj"

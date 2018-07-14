@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TouchTypingGo.Application.Cqrs.Query.Models;
+using TouchTypingGo.Application.Cqrs.Query.Models.LessonPresentation;
 using TouchTypingGo.Application.Cqrs.Query.Queries;
+using TouchTypingGo.Application.Cqrs.Query.Queries.LessonPresentation;
 using TouchTypingGo.Domain.Core.Cqrs.Query;
 using TouchTypingGo.Infra.Data.Context;
 

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TouchTypingGo.Application.Cqrs\TouchTypingGo.Application.Cqrs.csproj" />
+    <ProjectReference Include="..\TouchTypingGo.Application\TouchTypingGo.Application.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Domain.Core\TouchTypingGo.Domain.Core.csproj" />
     <ProjectReference Include="..\TouchTypingGo.Domain\TouchTypingGo.Domain.csproj" />
   </ItemGroup>
@@ -27,10 +28,6 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Handlers\Commands\" />
   </ItemGroup>
 
 </Project>

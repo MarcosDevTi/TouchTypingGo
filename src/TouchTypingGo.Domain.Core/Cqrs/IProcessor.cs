@@ -1,4 +1,4 @@
-﻿using System.Windows.Input;
+﻿using TouchTypingGo.Domain.Core.Cqrs.Command;
 using TouchTypingGo.Domain.Core.Cqrs.Query;
 
 namespace TouchTypingGo.Domain.Core.Cqrs

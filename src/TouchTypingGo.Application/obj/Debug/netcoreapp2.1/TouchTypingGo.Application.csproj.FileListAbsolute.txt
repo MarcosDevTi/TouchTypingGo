@@ -14,3 +14,5 @@ C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Application\obj\Deb
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Application\obj\Debug\netcoreapp2.1\TouchTypingGo.Application.csproj.CopyComplete
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Application\obj\Debug\netcoreapp2.1\TouchTypingGo.Application.dll
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Application\obj\Debug\netcoreapp2.1\TouchTypingGo.Application.pdb
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Application\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Html.Abstractions.xml

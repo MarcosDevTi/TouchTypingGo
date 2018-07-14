@@ -1,12 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TouchTypingGo.Domain.Course;
-using TouchTypingGo.Infra.Data.Extentions;
 
 namespace TouchTypingGo.Infra.Data.Mappings
 {
-    public class CourseLessonPresentationMapping : EntityTypeConfiguration<CourseLessonPresentation>
+    public class CourseLessonPresentationMapping : IEntityTypeConfiguration<CourseLessonPresentation>
     {
-        public override void Map(EntityTypeBuilder<CourseLessonPresentation> builder)
+        public void Configure(EntityTypeBuilder<CourseLessonPresentation> builder)
         {
             builder.HasKey(cl => new { cl.CourseId, cl.LessonPresentationId });
 

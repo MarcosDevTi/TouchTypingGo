@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using System.IO;
 using TouchTypingGo.Domain.Course;
 using TouchTypingGo.Domain.Institution;
-using TouchTypingGo.Infra.Data.Extentions;
 using TouchTypingGo.Infra.Data.Mappings;
 
 namespace TouchTypingGo.Infra.Data.Context
@@ -22,15 +21,15 @@ namespace TouchTypingGo.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.AddConfiguration(new CourseMapping());
-            modelBuilder.AddConfiguration(new LessonPresentationMapping());
-            modelBuilder.AddConfiguration(new LessonResultMapping());
-            modelBuilder.AddConfiguration(new StudentMapping());
-            modelBuilder.AddConfiguration(new TeacherMapping());
-            modelBuilder.AddConfiguration(new KeyboardMapping());
-            modelBuilder.AddConfiguration(new CourseLessonPresentationMapping());
-            modelBuilder.AddConfiguration(new AddressMapping());
-            modelBuilder.AddConfiguration(new InstitutionMapping());
+            modelBuilder.ApplyConfiguration(new CourseMapping());
+            modelBuilder.ApplyConfiguration(new LessonPresentationMapping());
+            modelBuilder.ApplyConfiguration(new LessonResultMapping());
+            modelBuilder.ApplyConfiguration(new StudentMapping());
+            modelBuilder.ApplyConfiguration(new TeacherMapping());
+            modelBuilder.ApplyConfiguration(new KeyboardMapping());
+            modelBuilder.ApplyConfiguration(new CourseLessonPresentationMapping());
+            modelBuilder.ApplyConfiguration(new AddressMapping());
+            modelBuilder.ApplyConfiguration(new InstitutionMapping());
 
             base.OnModelCreating(modelBuilder);
         }
@@ -41,6 +40,7 @@ namespace TouchTypingGo.Infra.Data.Context
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
+
 
             optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
 

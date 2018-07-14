@@ -1,15 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TouchTypingGo.Domain.Institution;
-using TouchTypingGo.Infra.Data.Extentions;
 
 namespace TouchTypingGo.Infra.Data.Mappings
 {
-    public class InstitutionMapping : EntityTypeConfiguration<Institution>
+    public class InstitutionMapping : IEntityTypeConfiguration<Institution>
     {
-        public override void Map(EntityTypeBuilder<Institution> builder)
+        public void Configure(EntityTypeBuilder<Institution> builder)
         {
-
             builder.Property(c => c.Name)
                 .HasColumnType("varchar(60)")
                 .IsRequired();

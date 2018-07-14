@@ -102,7 +102,7 @@ using TouchTypingGo.Site.Controllers;
             WriteLiteral("<\r\n<div>\r\n    ");
             EndContext();
             BeginContext(14, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c716e86e23e54030a61de2eec0ac67db", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d321d287b0a846d79bb42b7555908cc1", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -473,7 +473,7 @@ WriteAttributeValue("", 4428, localizer["LkInicianteLista"], 4428, 30, false);
             WriteLiteral("</span>\r\n                <div class=\"col-md-4\">\r\n                    <div class=\"testimonial-author\">\r\n                        <div class=\"testimonial-author-thumbnail img-thumbnail\">\r\n                            ");
             EndContext();
             BeginContext(6232, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2fe895d6d7f0475c97bf7290fb432a52", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "df8125a304a84403af6898e48b192ebf", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
