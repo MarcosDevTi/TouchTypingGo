@@ -72,6 +72,7 @@ C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netc
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.1\Razor\Views\Address\Create.g.cshtml.cs
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.1\Razor\Views\Address\Index.g.cshtml.cs
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.1\Razor\Views\Course\Create.g.cshtml.cs
+C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.1\Razor\Views\Course\Delete.g.cshtml.cs
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.1\Razor\Views\Course\Edit.g.cshtml.cs
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.1\Razor\Views\Course\Index.g.cshtml.cs
 C:\Users\marco\Source\Repos\TouchTypingGo2\src\TouchTypingGo.Site\obj\Debug\netcoreapp2.1\Razor\Views\Course\_AddLesson.g.cshtml.cs

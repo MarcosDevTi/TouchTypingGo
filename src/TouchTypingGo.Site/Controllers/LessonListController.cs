@@ -29,8 +29,14 @@ namespace TouchTypingGo.Site.Controllers
         [Route("learning-lesson/{id:guid}")]
         public IActionResult App(Guid id)
         {
-            //var lesson = _lessonPresentationAppService.GetById(id);
+
             return View(_processor.Process(new GetLessonPresentationApp(id)));
+        }
+
+        [Route("free-online-touch-typing/exercice/{idExerc}/speed/{velocFinal}")]
+        public IActionResult Resultados(Guid idExerc, int velocFinal)
+        {
+            return RedirectToAction("Index");
         }
 
         [Route("my-lessons")]

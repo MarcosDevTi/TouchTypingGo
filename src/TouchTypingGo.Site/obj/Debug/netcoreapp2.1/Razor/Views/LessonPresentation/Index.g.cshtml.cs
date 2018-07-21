@@ -116,7 +116,7 @@ using TouchTypingGo.Application.Cqrs.Query.Models.LessonPresentation;
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <div>\r\n            <div class=\"pull-left\">\r\n                ");
             EndContext();
             BeginContext(358, 180, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c7a35bb8cb4f8d8ca95139265aa782", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9b31a75eefa14c9493b1667c6e1607e9", async() => {
                 BeginContext(405, 129, true);
                 WriteLiteral("\r\n                    <span title=\"Novo Exercício\" class=\"glyphicon glyphicon-plus-sign\"> Novo Exercício</span>\r\n                ");
                 EndContext();
@@ -228,7 +228,7 @@ using TouchTypingGo.Application.Cqrs.Query.Models.LessonPresentation;
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(1652, 175, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79ebc42144444d10a5ec3e2e92c3aefe", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37b30c940cee456a90f44569ff96b69d", async() => {
                 BeginContext(1697, 126, true);
                 WriteLiteral("\r\n                        <span class=\"\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></span>\r\n                    ");
                 EndContext();
@@ -263,7 +263,7 @@ using TouchTypingGo.Application.Cqrs.Query.Models.LessonPresentation;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(1849, 174, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b618ed5ab784b2eb38a603164bb0b2d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "60a3eab461594d079b985963ff34a784", async() => {
                 BeginContext(1897, 122, true);
                 WriteLiteral("\r\n                        <span class=\"\"><i class=\"fa fa-search-plus\" aria-hidden=\"true\"></i></span>\r\n                    ");
                 EndContext();
@@ -298,7 +298,7 @@ using TouchTypingGo.Application.Cqrs.Query.Models.LessonPresentation;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(2045, 169, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b830b67951b4d7984c4fb3b6a145f74", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37e9438530a24ba6bd134fe25b1bb321", async() => {
                 BeginContext(2092, 118, true);
                 WriteLiteral("\r\n                        <span class=\"\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></span>\r\n                    ");
                 EndContext();

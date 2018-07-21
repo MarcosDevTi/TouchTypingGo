@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using TouchTypingGo.Application.Cqrs.Query.Models.Course;
 using TouchTypingGo.Application.Cqrs.Query.Queries;
@@ -39,8 +40,22 @@ namespace TouchTypingGo.Infra.Data.Handlers.Queries
 
         public CourseEditDetails Handle(GetCourseEditDetails query)
         {
-            var course = _context.Courses.Find(query.Id);
-            return new CourseEditDetails { Id = course.Id, Name = course.Name, LimitDate = course.LimitDate };
+            var course = _context.Courses
+                .Include(i => i.CourseLessonPresentations)
+                .ThenInclude(c=>c.LessonPresentation)
+                .First(x => x.Id == query.Id);
+            return new CourseEditDetails
+            {
+                Id = course.Id,
+                Name = course.Name,
+                LimitDate = course.LimitDate,
+                Lessons = course.CourseLessonPresentations.Select(x => new LessonsCourseIndex
+                {
+                    Id = x.LessonPresentationId,
+                    Name = x.LessonPresentation.Name,
+                    Text = x.LessonPresentation.Text
+                })
+            };
         }
 
         public CourseDeleteDetails Handle(GetCourseDeleteDetails query)

@@ -116,12 +116,12 @@ using TouchTypingGo.Site.Controllers;
             WriteLiteral("</h4>\r\n</div>\r\n\r\n");
             EndContext();
             BeginContext(363, 538, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf38650e135c4b6e82e25c98cfdf9782", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b69d16c73ee471d87f2d4ff482e6743", async() => {
                 BeginContext(393, 83, true);
                 WriteLiteral("\r\n    <div class=\"modal-body\">\r\n        <div class=\"form-horizontal\">\r\n            ");
                 EndContext();
                 BeginContext(476, 14, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:summary", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "83cffd75325c45a7866d30719a368b70", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:summary", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2a82f62ae5704daba5d517adab457340", async() => {
                 }
                 );
                 __SummaryViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Institution__AddAddress.__Generated__SummaryViewComponentTagHelper>();

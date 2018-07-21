@@ -128,12 +128,12 @@ using TouchTypingGo.Site.Controllers;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(405, 424, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a7fed21ab59146509bef7b1c6b9456d9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1c80b3b57d4046d286cd351cdb973d1d", async() => {
                 BeginContext(631, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(637, 183, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e957e5a2b11426dbf89e8912c143777", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "41fe152eae56423faa38dd6d20fb7cb3", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();

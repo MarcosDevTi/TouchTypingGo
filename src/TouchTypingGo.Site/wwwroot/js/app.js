@@ -34,30 +34,32 @@ var velocFinal = 0;
 
 var Time = 0;
 
+var LessonInitialized = null;
+
 
 function OnKeyDown(o, e) {
     var numTecla = window.event ? e.keyCode : e.which;
     var arr = Tcls[numTecla];
-
-    if (numTecla == 8 // back
-        || numTecla == 9 // tab
-        || numTecla == 16 // shift
-        || numTecla == 17 // ctrl
-        || numTecla == 18 // alt
-        || numTecla == 27 // esc
-        || numTecla == 33 // pg up
-        || numTecla == 34 // pg down
-        || numTecla == 35 // end
-        || numTecla == 36 // home
-        || numTecla == 37 // left
-        || numTecla == 38 // up
-        || numTecla == 39 // right
-        || numTecla == 40 // down
-        || numTecla == 45 // ins
-        || numTecla == 46 // del
-        || (numTecla == 65 && e.ctrlKey && !e.altKey) // ctrl + a
-        || (numTecla == 86 && e.ctrlKey && !e.altKey) // ctrl + v
-        || (numTecla == 88 && e.ctrlKey && !e.altKey) // ctrl + x
+    
+    if (numTecla === 8 // back
+        || numTecla === 9 // tab
+        || numTecla === 16 // shift
+        || numTecla === 17 // ctrl
+        || numTecla === 18 // alt
+        || numTecla === 27 // esc
+        || numTecla === 33 // pg up
+        || numTecla === 34 // pg down
+        || numTecla === 35 // end
+        || numTecla === 36 // home
+        || numTecla === 37 // left
+        || numTecla === 38 // up
+        || numTecla === 39 // right
+        || numTecla === 40 // down
+        || numTecla === 45 // ins
+        || numTecla === 46 // del
+        || (numTecla === 65 && e.ctrlKey && !e.altKey) // ctrl + a
+        || (numTecla === 86 && e.ctrlKey && !e.altKey) // ctrl + v
+        || (numTecla === 88 && e.ctrlKey && !e.altKey) // ctrl + x
     ) {
         if (o.setSelectionRange) {
             o.focus();
@@ -67,7 +69,7 @@ function OnKeyDown(o, e) {
         }
 
         var len = o.value.length;
-        if (numTecla == 8 && TipoPalvr && len > 0 && o.value.charAt(len - 1) != ' ') // back
+        if (numTecla === 8 && TipoPalvr && len > 0 && o.value.charAt(len - 1) !== ' ') // back
         {
             return;
         }
@@ -76,36 +78,39 @@ function OnKeyDown(o, e) {
             e.preventDefault();
         }
     }
+    
 }
 function OnKeyPress(o, e) {
+   
+
     var numTecla = window.event ? e.keyCode : e.which;
     var keychar = String.fromCharCode(numTecla);
 
-    if (Time == 0) {
+    if (Time === 0) {
         Time = new Date();
     }
 
     if (TipoPalvr) {
         var len = o.value.length;
-        if (numTecla == 8) // backspace
+        if (numTecla === 8) // backspace
         {
-            if (len > 0 && o.value.charAt(len - 1) != ' ') {
+            if (len > 0 && o.value.charAt(len - 1) !== ' ') {
                 o.value = o.value.substring(0, len - 1);
 
             }
         }
         else {
-            if (numTecla == 32 || numTecla == 13) {
+            if (numTecla === 32 || numTecla === 13) {
                 var c = o.value.charCodeAt(len - 1);
-                if (len > 0 && (c == 32 || c == 10)) {
+                if (len > 0 && (c === 32 || c === 10)) {
                     keychar = '';
                 }
                 else {
                     ++Pos;
                     TotalPos += TextCurrent.length + 1;
-                    HighlightText(numTecla == 13 ? '\r' : null);
+                    HighlightText(numTecla === 13 ? '\r' : null);
 
-                    if (Pos == 0) {
+                    if (Pos === 0) {
                         o.value = '';
                         keychar = '';
                     }
@@ -123,15 +128,15 @@ function OnKeyPress(o, e) {
         var keyval = Text[Index].charAt(Pos);
         var keycode = Text[Index].charCodeAt(Pos);
 
-        if (keycode == numTecla) {
+        if (keycode === numTecla) {
             o.value += keychar;
             ++Pos;
             ++TotalPos;
             HighlightText();
-            if (TotalPos == 1) {
-               // chronoStart();
+            if (TotalPos === 1) {
+                //chronoStart();
             }
-            if (Pos == 0) {
+            if (Pos === 0) {
                 o.value = '';
                 keychar = '';
             }
@@ -157,9 +162,11 @@ function OnKeyPress(o, e) {
     o.scrollTop = o.scrollHeight - o.clientHeight;
     console.log(Pos);
     console.log(IsTextLength());
+    console.log($("#identExerc").val());
     // end
-    if (Pos == 0 && !IsTextLength()) {
-        ShowConclusion();
+    if (Pos === 0 && !IsTextLength()) {
+        
+        ShowConclusion();  
     }
 
     return false;
@@ -365,7 +372,7 @@ function HighlightText(enter) {
                 t += enter;
 
 
-            LastError = (TextCurrent != t);
+            LastError = (TextCurrent !== t);
             TextDone += '<span class="done' + txt + (LastError ? '_bad' : '_ok') + '">'
                 + escapeHtml(TextCurrent) + '</span> ';
 
@@ -445,7 +452,7 @@ function ShowHint(delta) {
     var out = IsTextLength() ? Text[Index] : '';
     ById('text').innerHTML = out;
 
-    ById('hint_prev').style.display = (Index == 0 ? 'none' : 'block');
+    ById('hint_prev').style.display = (Index === 0 ? 'none' : 'block');
     ById('hint_next').style.display = (Index > Text.length - 2 ? 'none' : 'block');
     ById('hint_type').style.display = (Index < Text.length - 1 ? 'none' : 'block');
 
@@ -454,32 +461,39 @@ function ShowHint(delta) {
 
 var numLetras = [];
 var letras = [];
+
+
 function AddProgress(key, bad) {
 
-    if (bad == true) {
+    if (LessonInitialized === null) {
+        chronoStart();
+    }
+
+    LessonInitialized = true;
+
+    if (bad === true) {
         textoErrado += key;
     }
 
-
     if (!FirstTime) {
         FirstTime = !bad;
-
         return;
     }
-    if (FirstTime == false) {
+
+    if (FirstTime === false) {
         var ErrTotais = getFrequency(textoErrado);
         console.log(ErrTotais);
     }
 
     var qty = Progress[key];
-    if (qty == undefined)
+    if (qty === undefined)
         qty = 0;
 
     Progress[key] = ++qty;
 
     if (bad) {
         qty = ProgressBad[key];
-        if (qty == undefined)
+        if (qty === undefined)
             qty = 0;
         ProgressBad[key] = ++qty;
 
@@ -518,7 +532,7 @@ function AddProgress(key, bad) {
                 noyaxis: true,
                 textAccessible: true
             }
-        }).draw()
+        }).draw();
 
 
         /**
@@ -561,7 +575,7 @@ function ShowMeter() {
     var errDesc = ById('errosDesc');
     var txErr = ById('textoErrado');
 
-    if (meter == null)
+    if (meter === null)
         return;
 
     var percent = 0;
@@ -624,7 +638,7 @@ function ShowMeter() {
 
     meter2.innerHTML = velocideDigi + ': ' + wpm + ' ' + palavrMinuto;
     $(".GaugeMeter").attr('data-percent', wpm);
-    if (bad == 1) {
+    if (bad === 1) {
         lErr = ' Erro';
     } else {
         lErr = ' Erros';
@@ -653,6 +667,7 @@ function getFrequency(string) {
     return freq;
 };
 function Init(type) {
+    
     Text = Trim(ById('type_text').value).split('¶');
     Text.pop();
 
@@ -716,15 +731,15 @@ function addLoadEvent(f) {
     };
 }
 
-addLoadEvent(function () {
+addLoadEvent(function() {
     Init(3);
-})
+});
 
 var ltrExc = [
     " ", "?", "-"
 ];
 function existeExercicio(ltr) {
-    if (jQuery.inArray(ltr, ltrExc) != -1) {
+    if (jQuery.inArray(ltr, ltrExc) !== -1) {
         return true;
     } else {
         return false;
@@ -745,6 +760,13 @@ function ShowConclusion() {
     console.log("Palavras por minuto ideal do exercício " + PpmIdeal);
     console.log("velocidade Alcançada " + velocidade);
     console.log("Percentual de erros do Exercício " + percErros);
+    console.log("Puts");
+    console.log(idExerc);
+    console.log(velocFinal);
+    
+
+    
+    window.location.replace("/free-online-touch-typing/exercice/" + $("#identExerc").val() + "/speed/" + velocFinal);
 
     var letraErro = " ";
     if (!existeExercicio(ltrMErr) && qtdErrLtr > 3) {
@@ -753,25 +775,12 @@ function ShowConclusion() {
         letraErro = "£";
     }
 
-    function ScorePt() {
-        window.location.replace("/curso-de-digitacao/resultado/licao/" + idExerc + "/velocidade/" + velocFinal + "/tempo/" + TempoMinFinal + TempoSecFinal + "/erros/" + TotalErros + "/tecla-erro/" + letraErro);
-    };
+    
 
-    function ScoreEn() {
-        window.location.replace("/free-online-touch-typing/score/lesson/" + idExerc + "/speed/" + velocFinal + "/time/" + TempoMinFinal + TempoSecFinal + "/errors/" + TotalErros + "/error-key/" + letraErro);
-    };
+   //window.location.replace("/free-online-touch-typing/score/lesson/" + idExerc + "/speed/" + velocFinal + "/time/" + TempoMinFinal + TempoSecFinal + "/errors/" + TotalErros + "/error-key/" + letraErro);
 
-    function ScoreFr() {
-        window.location.replace("/cours-de-dactylographie/resultat/lecon/" + idExerc + "/vitesse/" + velocFinal + "/temps/" + TempoMinFinal + TempoSecFinal + "/erreurs/" + TotalErros + "/erreur-touche/" + letraErro);
-    };
 
-    function ScoreEs() {
-        window.location.replace("/tutoriales-de-mecanografia/resultado/leccion/" + idExerc + "/velocidad/" + velocFinal + "/tiempo/" + TempoMinFinal + TempoSecFinal + "/errores/" + TotalErros + "/error-tecla/" + letraErro);
-    };
-
-    function Antigos() {
-        window.location.replace("/free-online-touch-typing/app-antigo/" + idExerc + "/speed/" + velocFinal + "/time/" + TempoMinFinal + TempoSecFinal + "/errors/" + TotalErros + "/error-key/" + letraErro);
-    }
+    
 
     if (qtdErrLtr > 2 && !existeExercicio(ltrMErr)) {
         $("#txtLetra").text(ltrMErr);
@@ -792,28 +801,10 @@ function ShowConclusion() {
     $("#PPM").val(velocFinal);
     $("#TotalErros").val(TotalErros);
     //$("#btnResultadosView").click();
-    if ($("#identLingua").val() == 'En') {
-        ScoreEn();
-    }
-    if ($("#identLingua").val() == 'Pt') {
-        ScorePt();
-    }
-    if ($("#identLingua").val() == 'Fr') {
-        ScoreFr();
-    }
-    if ($("#identLingua").val() == 'Es') {
-        ScoreEs();
-    }
 
-    if ($("#identLingua").val() == 'Antigo') {
-        Antigos();
-    }
 
     //document.getElementById('btnResultadosView').click();
-
     chronoStop();
-
-
 }
 
 
@@ -848,7 +839,7 @@ function chrono() {
     timerID = setTimeout("chrono()", 10);
 
 
-    document.getElementById("labelMedidor2").innerHTML = textoTempo + ": " + min + ":" + sec;
+    //document.getElementById("labelMedidor2").innerHTML = textoTempo + ": " + min + ":" + sec;
     //timerID = setTimeout("chrono()", 10)
 }
 function chronoStart() {
@@ -872,7 +863,7 @@ function chronoReset() {
     cronInic = new Date();
 }
 function chronoStopReset() {
-    document.getElementById("labelMedidor").innerHTML = "00:00"
+    document.getElementById("labelMedidor").innerHTML = "00:00";
     document.chronoForm.startstop.onclick = chronoStart;
 }
 function chronoStop() {

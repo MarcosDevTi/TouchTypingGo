@@ -7,7 +7,6 @@ using TouchTypingGo.Application.Cqrs.Query.Models.Course;
 using TouchTypingGo.Application.Cqrs.Query.Queries;
 using TouchTypingGo.Application.Cqrs.Query.Queries.Course;
 using TouchTypingGo.Application.Cqrs.Query.Queries.LessonPresentation;
-using TouchTypingGo.Application.Interfaces;
 using TouchTypingGo.Domain.Core.Cqrs;
 using TouchTypingGo.Domain.Core.Interfaces;
 using TouchTypingGo.Domain.Core.Notifications;
@@ -16,23 +15,21 @@ namespace TouchTypingGo.Site.Controllers
 {
     public class CourseController : BaseController
     {
-        private readonly ICourseAppService _courseAppService;
         private readonly IProcessor _processor;
 
-        public CourseController(ICourseAppService courseAppService,
+        public CourseController(
             IDomainNotificationHandler<DomainDotification> notifications,
             IUser user,
-            IStringLocalizer<BaseController> localizer, IProcessor processor) : base(notifications, user, localizer)
+            IStringLocalizer<BaseController> localizer,
+            IProcessor processor,
+            IServiceProvider service)
+            : base(notifications, user, localizer)
         {
-            _courseAppService = courseAppService;
             _processor = processor;
         }
 
         [Route("courses"), Authorize(Policy = "CanReadCourses")]
-        public IActionResult Index()
-        {
-            return View(_processor.Process(new GetCoursesIndex()));
-        }
+        public IActionResult Index() => View(_processor.Process(new GetCoursesIndex()));
 
         [Route("new-course"), Authorize(Policy = "CanWriteCourses")]
         public IActionResult Create()
@@ -57,12 +54,11 @@ namespace TouchTypingGo.Site.Controllers
         public IActionResult AddLesson(Guid? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
-            var courseViewModel = _courseAppService.GetById(id.Value);
 
-            return PartialView("_AddLesson", courseViewModel);
+            var course = _processor.Process(new GetCourseEditDetails(id.Value));
+
+            return PartialView("_AddLesson", course);
         }
 
         [Route("update-course"), Authorize(Policy = "CanWriteCourses")]

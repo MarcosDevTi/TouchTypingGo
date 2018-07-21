@@ -107,7 +107,7 @@ using TouchTypingGo.Site.Controllers;
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(147, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "620bb3957d304411b84635f28c65537f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5369436d0d8e42359909c242eaa646aa", async() => {
                 BeginContext(170, 10, true);
                 WriteLiteral("Create New");
                 EndContext();

@@ -42,5 +42,7 @@ namespace TouchTypingGo.Site.Controllers
                 ? $"success,{Localizer["EntityCreated", Localizer[displayName?.DisplayName]]}!"
                 : $"error,{Localizer["InstitutionNotCreated"]}, {Localizer["checkTheMessages"]}";
         }
+
+
     }
 }

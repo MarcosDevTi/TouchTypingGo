@@ -100,7 +100,7 @@ using TouchTypingGo.Site.Controllers;
             WriteLiteral("\r\n<div class=\"panel panel-default\">\r\n    <div class=\"page-header\">\r\n        <strong>Endereço da Instituição</strong>\r\n    </div>\r\n   \r\n        <table class=\"table\">\r\n            <tr>\r\n                <th>\r\n                    ");
             EndContext();
             BeginContext(292, 179, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3e194b348d54ff09eb63b6f5a9d0611", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e2c56ce79294bf5b07f901738343307", async() => {
                 BeginContext(381, 86, true);
                 WriteLiteral("\r\n                        <span title=\"Edit\"></span> Add Address\r\n                    ");
                 EndContext();

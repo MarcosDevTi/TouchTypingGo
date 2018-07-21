@@ -129,7 +129,7 @@ Write(ViewData["Title"]);
             WriteLiteral("</h2>\r\n\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <div>\r\n            <div class=\"pull-left\">\r\n                ");
             EndContext();
             BeginContext(296, 183, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8060903eef8140809b93fbf4b611586b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16ee4301cac24193aad47f14f11b1483", async() => {
                 BeginContext(354, 121, true);
                 WriteLiteral("\r\n                    <span title=\"Novo Curso\" class=\"glyphicon glyphicon-plus-sign\"> Novo Curso</span>\r\n                ");
                 EndContext();
@@ -221,7 +221,7 @@ Write(ViewData["Title"]);
             WriteLiteral("\r\n                </td>\r\n\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(1408, 173, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab4997fc376040f5b0beac95557ceef9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98362b5d3a2a4c68806366050d142b36", async() => {
                 BeginContext(1477, 100, true);
                 WriteLiteral("\r\n                        Edit<span class=\"glyphicon glyphicon-pencil\"></span>\r\n                    ");
                 EndContext();
@@ -257,7 +257,7 @@ Write(ViewData["Title"]);
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(1603, 179, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "159900a7d1e34d0783a56f0fb15036b4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b09e5a592774b3494bf5fb8ab1b0fa3", async() => {
                 BeginContext(1675, 103, true);
                 WriteLiteral("\r\n                        Details<span class=\"glyphicon glyphicon-search\"></span>\r\n                    ");
                 EndContext();
@@ -293,7 +293,7 @@ Write(ViewData["Title"]);
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(1804, 175, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f6c32fb84fc54bcbaabf2bf6a60c54a1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09dfeaae543243e48f1d1033095b789c", async() => {
                 BeginContext(1874, 101, true);
                 WriteLiteral("\r\n                        Delete<span class=\"glyphicon glyphicon-trash\"></span>\r\n                    ");
                 EndContext();

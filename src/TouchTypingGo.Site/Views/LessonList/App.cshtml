@@ -1,14 +1,20 @@
-﻿@using TouchTypingGo.Application.Cqrs.Query.Models
-@using TouchTypingGo.Application.Cqrs.Query.Models.LessonPresentation
-@model TouchTypingGo.Application.Cqrs.Query.Models.LessonPresentation.LessonPresentationApp
-
+﻿@using TouchTypingGo.Application.Cqrs.Query.Models.LessonPresentation
+@model LessonPresentationApp
+<script src="~/lib/jquery-3.3.1.min.js"></script>
+<script src="~/js/RGraph.bar.js"></script>
+<script src="~/js/RGraph.common.core.js"></script>
+<script src="~/js/app.js"></script>
+<input type="hidden" value="@Model.Id" id="identExerc" />
 <div id="appView">
-   
+
     <div id="panelResults">
+        <div id="progresso" class="progress" style="height: 2px;">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
         <div id="results1">
             @*<button class="btn btn-default">Curtir</button>
-            <button class="btn btn-default">Compartilhar</button>*@
-            <a asp-action="Index" class="btn btn-light btn-block">Voltar à lista</a><hr/>
+                <button class="btn btn-default">Compartilhar</button>*@
+            <a asp-action="Index" class="btn btn-light btn-block">Voltar à lista</a><hr />
             <button class="btn btn-light btn-block">Próximo</button><hr />
             <button class="btn btn-light btn-block">Reiniciar</button>
         </div>
@@ -26,8 +32,15 @@
                 </div>
             </div>
         </div>
-        <div id="results3">Resultados3</div>
-        <div id="results4">Resultados4</div>
+        <div id="results3">
+            <div class="d-flex justify-content-center">
+                <canvas style="z-index: 1515151" class="graficoErros" id="cvs" width="324" height="100">[No canvas support]</canvas>
+            </div>
+
+        </div>
+        <div id="results4">
+            <span class="d-flex justify-content-center" style="font-size: 70px" id="labelMedidor">00:00</span>
+        </div>
         <div id="results5">Resultados4</div>
     </div>
 
@@ -42,26 +55,27 @@
                       style="width: 80%; background-color: #fff;font-family: Consolas, Courier, monospace;
                                                                                                                                                                                                                                                                                                                         border-radius: 4px; overflow:auto; margin-top: 4px;"></textarea>
             <input type="hidden" id="type_text" value="@Model.Text¶" />
+
             @Html.Partial("Keyboards/_in" + "_Kb_BrasileiroABNT_104")
             <input type="hidden" name="utf8" value="✓" />
         </form>
     </div>
     <!-- fim da escrita do texto -->
     <!-- início teclado -->
-    <hr/>
+    <hr />
     <div id="typing_info">
         <div class="">
-           
+
             <div>
                 <div id="TecladoContainer">
 
                     <div>
-                        <img class="mA" src="~/images/Hands/mE.png" id="mE" style="height: 250px"/>
-                        <img class="mA" src="~/images/Hands/e1.png" id="e1" style="height: 250px; display: block;"/>
-                        <img class="mA" src="~/images/Hands/e2.png" id="e2" style="height: 250px; display: block;"/>
-                        <img class="mA" src="~/images/Hands/e3.png" id="e3" style="height: 250px; display: block;"/>
-                        <img class="mA" src="~/images/Hands/e4.png" id="e4" style="height: 250px; display: block;"/>
-                        <img class="mA" src="~/images/Hands/e5.png" id="e5" style="height: 250px; display: block;"/>
+                        <img class="mA" src="~/images/Hands/mE.png" id="mE" style="height: 250px" />
+                        <img class="mA" src="~/images/Hands/e1.png" id="e1" style="height: 250px; display: block;" />
+                        <img class="mA" src="~/images/Hands/e2.png" id="e2" style="height: 250px; display: block;" />
+                        <img class="mA" src="~/images/Hands/e3.png" id="e3" style="height: 250px; display: block;" />
+                        <img class="mA" src="~/images/Hands/e4.png" id="e4" style="height: 250px; display: block;" />
+                        <img class="mA" src="~/images/Hands/e5.png" id="e5" style="height: 250px; display: block;" />
                     </div>
                     <div class="kb">
 
@@ -71,12 +85,12 @@
                     <!--Fim do kd-->
 
                     <div>
-                        <img class="mA" src="~/images/Hands/mD.png" id="mD" style="height: 250px; display: block;"/>
-                        <img class="mA" src="~/images/Hands/d1.png" id="d1" style="height: 250px; display: block;"/>
-                        <img class="mA" src="~/images/Hands/d2.png" id="d2" style="height: 250px; display: block;"/>
-                        <img class="mA" src="~/images/Hands/d3.png" id="d3" style="height: 250px; display: block;"/>
-                        <img class="mA" src="~/images/Hands/d4.png" id="d4" style="height: 250px; display: block;"/>
-                        <img class="mA" src="~/images/Hands/d5.png" id="d5" style="height: 250px; display: block;"/>
+                        <img class="mA" src="~/images/Hands/mD.png" id="mD" style="height: 250px; display: block;" />
+                        <img class="mA" src="~/images/Hands/d1.png" id="d1" style="height: 250px; display: block;" />
+                        <img class="mA" src="~/images/Hands/d2.png" id="d2" style="height: 250px; display: block;" />
+                        <img class="mA" src="~/images/Hands/d3.png" id="d3" style="height: 250px; display: block;" />
+                        <img class="mA" src="~/images/Hands/d4.png" id="d4" style="height: 250px; display: block;" />
+                        <img class="mA" src="~/images/Hands/d5.png" id="d5" style="height: 250px; display: block;" />
 
                     </div>
 
@@ -91,8 +105,6 @@
         </div>
 
     </div>
+
     <!-- fim teclado -->
 </div>
-
-
-<script src="~/js/app.js"></script>

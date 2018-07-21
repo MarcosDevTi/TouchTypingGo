@@ -15,19 +15,21 @@ namespace TouchTypingGo.Application.Services
         private readonly IBus _bus;
         private readonly ILessonPresentationRepository _lessonPresentationRepository;
         private readonly IUser _user;
+        private readonly IHelperService _helperService;
 
-        public LessonPresentationAppService(IBus bus, ILessonPresentationRepository lessonPresentationRepository, IUser user)
+        public LessonPresentationAppService(IBus bus, ILessonPresentationRepository lessonPresentationRepository, IUser user, IHelperService helperService)
         {
             _bus = bus;
             _lessonPresentationRepository = lessonPresentationRepository;
             _user = user;
+            _helperService = helperService;
         }
-
 
         public void Add(LessonPresentationViewModel lesson)
         {
+            var texto = _helperService.CreateLessonWithParagraph(lesson.Text, 55);
             _bus.SendCommand(new LessonPresentationAddCommand(
-               lesson.Name, lesson.Text, lesson.Category, lesson.SpeedReference,
+               lesson.Name, texto, lesson.Category, lesson.SpeedReference,
                lesson.TimeReference, lesson.PrecisionReference, lesson.FontSize,
                _user.GetUderId()));
         }
